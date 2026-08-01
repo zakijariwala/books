@@ -1,18 +1,32 @@
 #!/usr/bin/env bash
-# Runs Vale on staged Markdown in manuscript/. Errors block commit, warnings pass.
-set -euo pipefail
+# Runs Vale on staged Markdown in manuscript/. Errors block the commit,
+# warnings and suggestions are shown but pass.
+set -uo pipefail
 
-STAGED_MD=$(git diff --cached --name-only --diff-filter=ACM -- 'manuscript/*.md' || true)
+if ! command -v vale >/dev/null 2>&1; then
+    echo "pre-commit: vale not on PATH, cannot lint. Install it or fix PATH." >&2
+    echo "pre-commit: refusing to pass silently." >&2
+    exit 1
+fi
 
-if [ -z "$STAGED_MD" ]; then
+# --diff-filter=d keeps deletions out of the list; a deleted file cannot lint.
+mapfile -t STAGED_MD < <(git diff --cached --name-only --diff-filter=d -- 'manuscript/*.md')
+
+if [ ${#STAGED_MD[@]} -eq 0 ]; then
     exit 0
 fi
 
-OUTPUT=$(vale --config=.vale.ini --output=line $STAGED_MD 2>&1) || true
-echo "$OUTPUT"
+# First pass is for the author: show everything, including warnings.
+vale --config=.vale.ini "${STAGED_MD[@]}"
 
-if echo "$OUTPUT" | grep -qE '\berror\b'; then
-    echo "Vale found errors in staged Markdown. Fix them or amend the offending lines before committing."
+# Second pass is the gate. Vale exits non-zero when it finds an alert at or
+# above --minAlertLevel, so the exit code does the work. Do not try to detect
+# severity by grepping the output: the `line` output format carries no
+# severity word at all, which silently passed every commit.
+if ! vale --config=.vale.ini --minAlertLevel=error --output=line "${STAGED_MD[@]}" >/dev/null 2>&1; then
+    echo
+    echo "pre-commit: Vale found errors in staged Markdown. Commit blocked." >&2
+    echo "pre-commit: fix them, or run 'git commit --no-verify' to override." >&2
     exit 1
 fi
 

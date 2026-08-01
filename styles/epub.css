@@ -1,0 +1,79 @@
+/* EPUB styling for the ebook edition.
+ *
+ * Deliberately minimal. Ereaders override most typography and readers expect
+ * to control font and size themselves, so this file only fixes the things
+ * that break without it: figure sizing, code overflow, and table behaviour.
+ */
+
+/* Figures render at 1350px for print. Without a cap they overflow narrow
+ * screens; without auto height they distort on rotation. */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+figure {
+    margin: 1.2em 0;
+    text-align: center;
+    page-break-inside: avoid;
+}
+
+figcaption {
+    font-size: 0.85em;
+    font-style: italic;
+    margin-top: 0.4em;
+    text-align: center;
+}
+
+/* gcloud commands are hard-wrapped at ~60 chars for print. On a phone even
+ * that overflows, so allow the reader to scroll the block rather than
+ * letting it push the page width out. */
+pre {
+    overflow-x: auto;
+    white-space: pre;
+    font-size: 0.8em;
+    padding: 0.6em;
+    background: #f4f4f4;
+    border-left: 3px solid #999;
+}
+
+code {
+    font-size: 0.9em;
+}
+
+/* Decision tables are capped at three columns in the manuscript. Still give
+ * them room to scroll on the narrowest devices. */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 0.85em;
+    margin: 1.2em 0;
+}
+
+th, td {
+    border: 1px solid #999;
+    padding: 0.35em 0.5em;
+    text-align: left;
+}
+
+th {
+    background: #eee;
+}
+
+/* Exam-trap callouts are written as blockquotes, since fenced divs do not
+ * survive the DOCX path cleanly. */
+blockquote {
+    margin: 1.2em 0;
+    padding: 0.5em 1em;
+    border-left: 4px solid #666;
+    background: #f7f7f7;
+    font-style: normal;
+}
+
+h1 {
+    page-break-before: always;
+}
+
+h1, h2, h3 {
+    page-break-after: avoid;
+}

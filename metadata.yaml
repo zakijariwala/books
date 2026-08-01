@@ -1,0 +1,27 @@
+---
+title: "Google Cloud Professional Cloud Architect"
+subtitle: "A Decision-Mapping Guide for Experienced Architects"
+author:
+  - "TODO Author Name"
+publisher: "TODO Imprint"
+rights: "© TODO Year TODO Author Name. All rights reserved."
+lang: en-GB
+date: "TODO"
+
+# Pandoc reads this for the EPUB package identifier. KDP does not require an
+# ISBN for ebooks and assigns an ASIN, but a stable identifier is still needed
+# so readers' devices track the file across updates. A UUID is fine here; a
+# real ISBN goes in only if you buy one for the paperback.
+identifier:
+  - scheme: UUID
+    text: "TODO run: python -c \"import uuid; print(uuid.uuid4())\""
+
+# Cover is a KDP requirement for the ebook. 1600x2560px, portrait, RGB.
+# The paperback cover is a separate wraparound file built to KDP's spine
+# calculator once the final page count is known.
+# cover-image: assets/cover.png
+
+# Depth of the generated table of contents. Chapters and their top-level
+# sections only. Going deeper produces an unusable TOC on small screens.
+toc-depth: 2
+---

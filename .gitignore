@@ -6,3 +6,8 @@ venv/
 .venv/
 node_modules/
 .vale-styles-cache/
+
+# Third-party reference clones. Research material only, never tracked here.
+# See sources/datapoints/flags-stale-and-legal.md before using either.
+GCP_Professional_Architect/
+gcp-pca-prep/
