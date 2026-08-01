@@ -1,0 +1,11 @@
+flowchart TD
+    A{Large analytical<br/>scans?} -- Yes --> B[BigQuery]
+    A -- No --> C{Relational?}
+    C -- Yes --> D{Global and<br/>consistent?}
+    D -- Yes --> E[Spanner]
+    D -- No --> F[Cloud SQL,<br/>AlloyDB if larger]
+    C -- No --> G{Keyed lookup<br/>at volume?}
+    G -- Yes --> H[Bigtable]
+    G -- No --> I{Documents?}
+    I -- Yes --> J[Firestore]
+    I -- No --> K[Memorystore to cache,<br/>Cloud Storage for files]

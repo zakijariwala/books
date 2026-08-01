@@ -1,0 +1,128 @@
+# Outstanding Work
+
+State as of the drafting pass that completed Part I, Part II, the back matter,
+and all 32 figures. Manuscript is ~22,300 words against a 28,000 target.
+
+Ordered by risk: the things most likely to force rework sit at the top.
+
+## 1. Build the outputs
+
+**Pandoc has never been run on this manuscript.** No DOCX and no EPUB exist, so
+every claim about page layout is untested. This is the single highest-value
+task, because layout problems can force content changes and the content is
+otherwise finished.
+
+Build both (commands in [handover.md](file:///D:/books/handover.md) section 3.2)
+and check:
+
+- Figures land near their reference and do not orphan from their captions
+- The two 3-column AWS and Azure tables in the back matter hold at 6x9
+- No figure overflows the text block; `normalize_image.py` enforces this at
+  render time, but Pandoc placement is a separate question
+- Chapter breaks fall correctly with `--top-level-division=chapter`
+- The `assets/` PNGs must be rendered before either build, since they are
+  gitignored and will not be present on a fresh clone
+
+## 2. Lint — done at error level, open at warning level
+
+Vale now runs clean at error level across all 19 manuscript files, which is what
+the pre-commit hook gates on. Getting there involved three changes worth
+knowing about:
+
+- `styles/config/vocabularies/Book/accept.txt` was expanded from 21 entries to
+  the full technical vocabulary of the book, grouped by category. Most of the
+  293 initial errors were Vale not knowing words like `Bigtable`, `cutover`, or
+  the invented case-study company names.
+- `.vale.ini` disables three more Google rules — `EmDash`, `Quotes`, and
+  `LyHyphens` — each with a comment explaining why. All three encode US
+  documentation convention that contradicts the book's British house style, or
+  in the case of `LyHyphens`, flags `exactly-once` as a mistake when it is a
+  term of art. This extends the pattern already set by the four disabled rules.
+- Seven genuine prose nits were fixed rather than silenced: two `very`s, two
+  sentences opening with `So`, a cliche, and a gendered term.
+
+**Still open:** 546 warnings and 1,302 suggestions. These do not block commits
+and most should not be actioned — `write-good.E-Prime` objects to the verb "to
+be", and `Google.Contractions` wants contractions the house voice avoids. Worth
+one skim for real finds, not a cleanup pass.
+
+Note that Vale, like Graphviz, is installed but **not on PATH**. See
+handover.md section 3.2.
+
+## 3. Verify the volatile facts
+
+These were deliberately left unprinted or flagged rather than written from
+memory. Each needs confirming against current Google documentation before
+publication.
+
+| Fact | Where | Note |
+| --- | --- | --- |
+| Exam cost, duration, question count, renewal terms | back-matter.md | Carried from an earlier verification pass, not re-confirmed |
+| Current case-study list | back-matter.md, ch01 | Altostrat, Cymbal, EHR, KnightMotives |
+| Interconnect bandwidth tiers and SLA terms | ch03, ch13 | Text says verify rather than quoting figures |
+| Cloud Run request timeout ceiling | ch04 | Deliberately unstated; has moved more than once |
+| Vertex AI product and model names | ch08 | Written at decision level on purpose; fastest-moving area in the book |
+| Security Command Center tier contents | ch09 | Text says verify rather than listing |
+
+Chapters 7 and 8 will date soonest. Treat them as the first candidates for
+review on any reprint.
+
+## 4. Check ch17 against KnightMotives Automotive
+
+The original plan was to read the official KnightMotives case study before
+writing Part II, to be sure the book's own fleet-telemetry scenario (ch16,
+Ardwick) did not duplicate it. **That reading never happened.** ch16 and ch17
+were written as original scenarios without it.
+
+Two open questions, both flagged in BOOK-SPEC's "still to verify" section:
+
+- Does Ardwick (connected-vehicle telemetry) overlap KnightMotives closely
+  enough to look derivative?
+- ch17 (Brandell, legacy monolith) has no official analogue, which was the
+  intent, but confirm nothing in the current set now occupies that slot
+
+Reading the official case study is for *checking distinctness only*. Do not
+import its details. See
+[flags-stale-and-legal.md](file:///D:/books/sources/datapoints/flags-stale-and-legal.md).
+
+## 5. Decide the spare word budget
+
+About 5,600 words are unspent. Part I runs ~13,800 against a 19,500 allocation.
+
+This is a positioning decision, not a gap to fill by default:
+
+- **Spend it:** more worked examples in Part I, which is currently dense and
+  argument-led with few concrete walkthroughs
+- **Ship shorter:** ~22,300 words still clears the 79-page KDP threshold for
+  spine text comfortably, and the book's whole pitch is compression
+
+## 6. Sanity-check the Part II numbers
+
+The five scenarios are original and internally consistent, but their figures
+(fleet sizes, data volumes, staff counts, dates) were chosen for plausibility.
+A reader who does the arithmetic may find numbers that do not hold — for
+example Brandell's 11 TB database against its stated cutover window, or
+Ardwick's sampling rate against 240,000 vehicles.
+
+One inconsistency of this kind was already found and fixed in ch17. Assume
+others remain.
+
+## 7. Reconcile BOOK-SPEC with the manuscript
+
+BOOK-SPEC lists ch14 as "global live-event streaming". The file is a media
+company adopting generative AI (Wexley Broadcasting), which better matches the
+current case-study set's shift toward AI scenarios. The manuscript was followed
+deliberately; the spec now needs updating to match, or the divergence needs
+overturning.
+
+Also check the spec's figure count: it plans 40, the book has 32.
+
+## 8. Housekeeping
+
+- `current_state_review.md` is a snapshot from when only ch01–ch03 were drafted.
+  Its word-count table and per-chapter status are now wrong throughout. Either
+  regenerate it or delete it, since a stale review is worse than none.
+- The sample figure sources (`sample_hybrid.py`, `sample_flow.mmd`) were deleted
+  once real figures existed.
+- `agent_feedback.md` predates this drafting pass; re-read it before the next
+  one to check nothing in it went unaddressed.

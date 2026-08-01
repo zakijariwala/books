@@ -1,9 +1,0 @@
-flowchart TD
-    A[Start: Choose Compute Option] --> B{Workload Stateless?}
-    B -- Yes --> C[Cloud Run]
-    B -- No --> D{Needs Full VM Control?}
-    D -- Yes --> E[Compute Engine]
-    D -- No --> F[GKE Autopilot]
-    C --> G[Done]
-    E --> G
-    F --> G

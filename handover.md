@@ -14,6 +14,18 @@ This book is a decision-mapping prep guide targeted at experienced enterprise ar
 
 For details on the project structure, see the [BOOK-SPEC.md](file:///D:/books/BOOK-SPEC.md).
 
+### 1.1 Current State
+
+Every chapter, both parts, the back matter, and all 32 figures are drafted. The
+manuscript is **~22,300 words against a 28,000 target**, so it is under budget,
+not over.
+
+What has *not* happened: Pandoc has never been run, so no DOCX or EPUB exists
+and nothing about page layout is verified. Vale has never been run against any
+drafted chapter. Several facts are deliberately marked for verification rather
+than printed from memory. See [TASKS.md](file:///D:/books/TASKS.md) for the full
+list of what is outstanding and why.
+
 ---
 
 ## 2. Repository Directory Map
@@ -25,15 +37,17 @@ Here is the layout of the repository and the primary files you will interact wit
     *   [`ch01.md`](file:///D:/books/manuscript/ch01.md) — Chapter 1: Exam anatomy, case study reading, and question structures.
     *   [`ch02.md`](file:///D:/books/manuscript/ch02.md) — Chapter 2: Organization, folder, and project resource hierarchies; IAM/identity.
     *   [`ch03.md`](file:///D:/books/manuscript/ch03.md) — Chapter 3: Global VPCs, Shared VPCs, Private Access, and Interconnect.
-    *   [`ch04.md`](file:///D:/books/manuscript/ch04.md) to [`ch17.md`](file:///D:/books/manuscript/ch17.md) — Skeletons for chapters on compute, GKE, databases, data pipelines, AI/ML, operations, and the 5 original case studies.
-    *   [`back-matter.md`](file:///D:/books/manuscript/back-matter.md) — Playbook, AWS/Azure mapping table, glossary, and links.
-*   [`diagrams/`](file:///D:/books/diagrams/) — Source code for all book illustrations.
-    *   [`architecture/`](file:///D:/books/diagrams/architecture/) — Python scripts using the `diagrams` library. Every figure must render to grayscale and follow the on-prem/GCP side-by-side design device. See [`sample_hybrid.py`](file:///D:/books/diagrams/architecture/sample_hybrid.py).
-    *   [`flowcharts/`](file:///D:/books/diagrams/flowcharts/) — Mermaid flowchart sources (`.mmd`). See [`sample_flow.mmd`](file:///D:/books/diagrams/flowcharts/sample_flow.mmd).
+    *   [`ch04.md`](file:///D:/books/manuscript/ch04.md) to [`ch12.md`](file:///D:/books/manuscript/ch12.md) — Part I decision chapters: compute, containers, storage and databases, data pipelines, AI/ML, security, migration, reliability, operations and cost.
+    *   [`ch13.md`](file:///D:/books/manuscript/ch13.md) to [`ch17.md`](file:///D:/books/manuscript/ch17.md) — Part II, five original case studies. All companies and scenarios are invented; see section 5.
+    *   [`back-matter.md`](file:///D:/books/manuscript/back-matter.md) — Playbook, AWS and Azure mapping tables, glossary, and links.
+*   [`diagrams/`](file:///D:/books/diagrams/) — Source for all 32 book figures. One source file per figure, named `figNN_M_slug` to match its `Figure N.M` caption in the manuscript.
+    *   [`architecture/`](file:///D:/books/diagrams/architecture/) — 16 Python scripts using the `diagrams` library, one per `Figure N.1`. Each carries the on-prem-beside-GCP device and renders grayscale through `figstyle.py`.
+    *   [`flowcharts/`](file:///D:/books/diagrams/flowcharts/) — 16 Mermaid sources (`.mmd`), one per `Figure N.2`. Node labels are deliberately terse; see the print constraint under section 3.2.
+*   `assets/` — Rendered PNGs. **Gitignored on purpose**: regenerate from `diagrams/` rather than committing binaries. A publisher handoff needs these built first.
 *   [`scripts/`](file:///D:/books/scripts/) — Utility scripts for the print and build pipeline.
     *   [`figstyle.py`](file:///D:/books/scripts/figstyle.py) — Enforces shared print constraints (grayscale, DPI, width) for diagram generators.
     *   [`wordcount.py`](file:///D:/books/scripts/wordcount.py) — Analyzes manuscript length against the target word budget.
-    *   [`normalize_image.py`](file:///D:/books/scripts/normalize_image.py) — Resizes and prepares flowchart PNG exports.
+    *   [`normalize_image.py`](file:///D:/books/scripts/normalize_image.py) — Fits every figure to the text block, converts to grayscale, and fails the build if type would print below 8pt. Run it on any figure you render.
     *   [`make_reference_docx.py`](file:///D:/books/scripts/make_reference_docx.py) — Generates reference templates for Pandoc.
     *   [`patch_docx.py`](file:///D:/books/scripts/patch_docx.py) — Custom XML patches for word processor outputs.
 *   [`styles/`](file:///D:/books/styles/) — Formatting templates.
@@ -72,18 +86,47 @@ Since standard `make` is not natively installed on some Windows environments, ru
     .\venv\Scripts\python.exe scripts/wordcount.py --budget 28000 manuscript
     ```
 *   **Run Linter (Vale):**
+
+    Vale is installed via winget but, like Graphviz, is **not on PATH**. It
+    lives under `%LOCALAPPDATA%\Microsoft\WinGet\Packages\errata-ai.Vale_Microsoft.Winget.Source_8wekyb3d8bbwe`.
+    The pre-commit hook refuses to commit without it, by design.
     ```powershell
+    $env:PATH += ";$env:LOCALAPPDATA\Microsoft\WinGet\Packages\errata-ai.Vale_Microsoft.Winget.Source_8wekyb3d8bbwe"
     vale --config=.vale.ini manuscript
     ```
+    The hook gates on **errors only**. The manuscript is clean at that level.
+    Warnings and suggestions are numerous and mostly not worth actioning; see
+    [TASKS.md](file:///D:/books/TASKS.md) section 2.
+
+    When Vale reports an unknown technical term, add it to
+    `styles/config/vocabularies/Book/accept.txt` rather than rewording. Entries
+    are regular expressions: write `[Aa]utoscaling`, not `Autoscaling`, or
+    `Vale.Terms` will start demanding the capitalised form mid-sentence.
 *   **Compile Diagrams:**
+
+    Graphviz is installed at `C:\Program Files\Graphviz` but is **not on PATH**,
+    so the `diagrams` library fails with `ExecutableNotFound: dot`. Add it for
+    the session before rendering architecture figures:
+    ```powershell
+    $env:PATH += ";C:\Program Files\Graphviz\bin"
+    $env:PYTHONPATH = "scripts"
+    ```
     ```powershell
     # Render Python architecture diagram scripts
-    .\venv\Scripts\python.exe diagrams/architecture/sample_hybrid.py
+    .\venv\Scripts\python.exe diagrams/architecture/fig07_1_pipeline_shift.py
     
-    # Render flowcharts (requires Mermaid CLI 'mmdc' installed globally)
-    mmdc -i diagrams/flowcharts/sample_flow.mmd -o assets/flowcharts/sample_flow.png -c scripts/mermaid-config.json -p scripts/mermaid-puppeteer-config.json -w 1350 -b white
-    .\venv\Scripts\python.exe scripts/normalize_image.py assets/flowcharts/sample_flow.png
+    # Render flowcharts (requires Mermaid CLI 'mmdc' installed globally).
+    # Do NOT pass -w: the mermaid config sets useMaxWidth false so the diagram
+    # renders at its natural size, and normalize_image.py fits it to the page.
+    mmdc -i diagrams/flowcharts/fig06_2_database.mmd -o assets/flowcharts/fig06_2_database.png -c scripts/mermaid-config.json -p scripts/mermaid-puppeteer-config.json -b white
+    .\venv\Scripts\python.exe scripts/normalize_image.py assets/flowcharts/fig06_2_database.png
     ```
+
+    `normalize_image.py` fits each figure to the 4.5x7in text block, converts it
+    to grayscale, and **exits non-zero if the type would print below 8pt**. That
+    check is the constraint that matters: a 4.5in-wide flowchart holds about two
+    columns of short labels. If it fails, shorten the node labels or cut a rank
+    rather than enlarging the image, which cannot work on a fixed trim size.
 *   **Render Book Outputs (Requires Pandoc installed):**
     ```powershell
     # Render EPUB
@@ -124,7 +167,23 @@ The following core exam metrics have been verified against the current exam requ
 
 ## 6. Immediate Next Steps
 
-1.  **Draft Chapter 4 (Compute) and Chapter 5 (Containers):** Transition these files from draft skeletons to fully written prose following the exact word counts.
-2.  **Analyze KnightMotives Automotive:** Read the case study from the official Google guide. Determine its technology map and write the case study chapter in [`manuscript/ch17.md`](file:///D:/books/manuscript/ch17.md).
-3.  **Implement Diagrams:** Write diagram generator scripts under [`diagrams/architecture/`](file:///D:/books/diagrams/architecture/) and flowchart models under [`diagrams/flowcharts/`](file:///D:/books/diagrams/flowcharts/) to replace placeholders listed in the manuscript skeletons.
-4.  **Populate AWS/Azure Concept Table:** Complete the translation matrix in [`manuscript/back-matter.md`](file:///D:/books/manuscript/back-matter.md).
+All chapters, both case-study halves, the back matter, and all 32 figures are
+drafted. The manuscript stands at roughly 22,300 words against a 28,000 target,
+which is under budget rather than over. What remains:
+
+1.  **Proof the built outputs.** Nothing has been through Pandoc yet. Build the
+    DOCX and EPUB and check figure placement, table breaks at 6x9, and that no
+    figure lands orphaned from its caption.
+2.  **Run Vale.** The linter is configured but is not on PATH in this
+    environment, so no drafted chapter has been linted.
+3.  **Verify the volatile facts.** Chapters 7 and 8 move fastest. The exam
+    metrics in the back matter (cost, duration, question count, renewal terms)
+    and the current case-study list both need confirming against the
+    certification page before publication.
+4.  **Decide on the spare word budget.** About 5,600 words are unspent. Part I
+    is dense and could take more worked examples; alternatively the book ships
+    shorter, which still clears the 79-page KDP spine threshold comfortably.
+5.  **Second pass on Part II scenarios.** The five case studies are original and
+    internally consistent, but the numbers in them (fleet sizes, data volumes,
+    dates) were chosen for plausibility and should be sanity-checked for
+    arithmetic that a careful reader would test.

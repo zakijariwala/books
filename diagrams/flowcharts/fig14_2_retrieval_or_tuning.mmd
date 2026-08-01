@@ -1,0 +1,8 @@
+flowchart TD
+    A{Must cite clip<br/>and timecode?} -- No --> B{Gap is tone<br/>or format?}
+    B -- Yes --> C[Tune a model:<br/>no attribution]
+    B -- No --> D[Prompt the<br/>base model]
+    A -- Yes --> E[Embed transcripts<br/>and metadata]
+    E --> F[(Vector store)]
+    F --> G[Retrieve, then<br/>answer grounded]
+    G --> H[Citation is the<br/>retrieved record]

@@ -1,0 +1,13 @@
+flowchart TD
+    A{Standard task?} -- Yes --> B[Prebuilt API]
+    A -- No --> C{Must cite,<br/>or changes?}
+    C -- Yes --> D[Retrieval with<br/>grounding]
+    C -- No --> E{Tone or<br/>format?}
+    E -- Yes --> F[Tune a model]
+    E -- No --> G[Prompt the<br/>base model]
+    B --> H{Bulk scoring?}
+    D --> H
+    F --> H
+    G --> H
+    H -- Yes --> I[Batch prediction]
+    H -- No --> J[Online endpoint]

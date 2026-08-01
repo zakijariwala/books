@@ -1,0 +1,10 @@
+flowchart TD
+    A{Human user?} -- Yes --> B[Federate to<br/>existing IdP]
+    A -- No --> C{Runs in<br/>Google Cloud?}
+    C -- No --> D[Workload Identity<br/>Federation]
+    C -- Yes --> E{On GKE?}
+    E -- Yes --> F[Workload Identity<br/>for GKE]
+    E -- No --> G[Attached<br/>service account]
+    G --> H{Needs more<br/>access briefly?}
+    H -- Yes --> I[Impersonation]
+    H -- No --> J[Use as is]

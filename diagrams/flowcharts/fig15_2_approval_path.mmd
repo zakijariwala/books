@@ -1,0 +1,7 @@
+flowchart TD
+    A[Supplier data<br/>and image] --> B[Attributes extracted,<br/>description drafted]
+    B --> C[(Review queue)]
+    C --> D{Merchandiser}
+    D -- Reject --> B
+    D -- Approve<br/>or edit --> E[Publish]
+    E --> F[Record approver<br/>and timestamp]

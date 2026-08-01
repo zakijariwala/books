@@ -1,0 +1,9 @@
+flowchart TD
+    A{Team has run<br/>Kubernetes?} -- No --> B[Cloud Run]
+    A -- Yes --> C{Privileged pods<br/>or node agents?}
+    C -- Yes --> D[GKE Standard]
+    C -- No --> E{Well-packed<br/>nodes?}
+    E -- Yes --> D
+    E -- No --> F[GKE Autopilot]
+    D --> G[Production:<br/>regional, stable<br/>channel]
+    F --> G

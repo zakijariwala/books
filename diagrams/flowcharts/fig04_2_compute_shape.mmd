@@ -1,0 +1,9 @@
+flowchart TD
+    A{App can<br/>be changed?} -- No --> B[Compute Engine,<br/>sole-tenant if<br/>licensed per core]
+    A -- Yes --> C{Serves<br/>requests?}
+    C -- No --> D{Interruptible?}
+    D -- Yes --> E[Spot in a MIG]
+    D -- No --> F[Cloud Run jobs]
+    C -- Yes --> G{Stateful or<br/>long-lived?}
+    G -- Yes --> H[GKE or GCE]
+    G -- No --> I[Cloud Run]

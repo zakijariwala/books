@@ -1,0 +1,10 @@
+flowchart TD
+    A{Existing Spark<br/>or Hadoop?} -- Yes --> B[Dataproc,<br/>ephemeral]
+    A -- No --> C{Unbounded?}
+    C -- Yes --> D[Dataflow,<br/>event-time windows]
+    C -- No --> E{Many linked<br/>jobs?}
+    E -- Yes --> F[Cloud Composer]
+    E -- No --> G[Dataflow batch]
+    B --> H[Raw lands in<br/>Cloud Storage]
+    D --> H
+    G --> H

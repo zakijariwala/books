@@ -18,6 +18,15 @@
     "clusterBkg": "#f2f2f2",
     "clusterBorder": "#000000",
     "edgeLabelBackground": "#ffffff",
-    "fontFamily": "Helvetica, Arial, sans-serif"
+    "fontFamily": "Helvetica, Arial, sans-serif",
+    "fontSize": "20px"
+  },
+  "flowchart": {
+    "nodeSpacing": 30,
+    "rankSpacing": 40,
+    "padding": 8,
+    "useMaxWidth": false,
+    "htmlLabels": true,
+    "curve": "linear"
   }
 }
