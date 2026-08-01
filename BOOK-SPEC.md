@@ -201,13 +201,37 @@ with book convention in four places. Disabled in `.vale.ini`:
 Everything else in the package stays active. Add technical terms to
 `styles/config/vocabularies/Book/accept.txt` as spelling errors surface.
 
-## Verify before drafting
+## Exam guide facts
 
-Check both against the current live exam guide. Google revises them, and a prep
-book citing stale ones dies fast.
+`VERIFIED` against the official exam guide PDF, version 6.1. Full detail and
+sources in `sources/datapoints/exam-guide-verified.md`.
 
-- Section names and percentage weights
-- The current official case study list
+| # | Section | Weight |
+| --- | --- | --- |
+| 1 | Designing and planning a cloud solution architecture | ~25% |
+| 2 | Managing and provisioning a cloud solution infrastructure | ~17.5% |
+| 3 | Designing for security and compliance | ~17.5% |
+| 4 | Analyzing and optimizing technical and business processes | ~15% |
+| 5 | Managing implementation | ~12.5% |
+| 6 | Ensuring solution and operations excellence | ~12.5% |
 
-The two cloned reference repos in the repo root are useful here, but they are
-someone else's snapshot. Check against the source.
+Each exam includes two case studies, shown on a split screen. Case study
+questions are 20-30% of the exam, which justifies Part II taking roughly a
+quarter of the word budget.
+
+The four current case studies are **Altostrat Media**, **Cymbal Retail**,
+**EHR Healthcare**, and **KnightMotives Automotive**.
+
+Mountkirk Games, Helicopter Racing League, TerramEarth, and Dress4Win are all
+retired. Any prep material still teaching them is out of date, which is a
+useful thing to say plainly in chapter 1.
+
+Two of the four current case studies, Altostrat and Cymbal, are generative-AI
+scenarios. That confirms chapter 8 and means the Part II case studies should
+weight toward AI-era problems rather than classic lift-and-shift.
+
+## Still to verify
+
+- Question count, duration, cost, recertification period
+- KnightMotives Automotive: unread, may overlap the fleet-telemetry case study
+  planned for Part II
