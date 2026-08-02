@@ -133,14 +133,22 @@ Five original case studies, 1,200 words each.
 
 | File | Case study | Exercises |
 | --- | --- | --- |
-| ch13.md | Regulated healthcare data platform | Compliance, data residency, CMEK, VPC Service Controls |
-| ch14.md | Global live-event streaming | Latency, CDN, autoscaling, multi-region |
-| ch15.md | Game backend, global launch | Stateful scale, global load balancing, session state |
-| ch16.md | Industrial fleet telemetry | Ingest at scale, Pub/Sub, Dataflow, ML pipeline |
-| ch17.md | Legacy monolith modernization | Lift-shift versus replatform, Interconnect, AD federation |
+| ch13.md | Regulated healthcare leaving a co-location facility | Compliance, residency, CMEK, VPC Service Controls, AD federation |
+| ch14.md | Media company adopting generative AI | Prebuilt APIs, retrieval against tuning, fleets, SLO diagnosis |
+| ch15.md | Hybrid retailer with a generative catalogue | Human-in-the-loop approval, database consolidation, event-driven ingest, cost |
+| ch16.md | Connected vehicle telemetry | Ingest at scale, Pub/Sub, Dataflow, the three-store split, ML pipeline |
+| ch17.md | Legacy monolith against a lease expiry | Rehost versus refactor, CDC cutover, Interconnect, programme management |
 
 Case study 5 is the differentiator. It is the purest expression of the book's
 core visual device.
+
+Two of these diverged from an earlier plan and the divergence was kept
+deliberately. ch14 was drafted as a live-event streaming scenario and became a
+generative-AI one, because two of the four current official case studies are
+generative-AI scenarios and the book needed to exercise chapter 8 against a
+customer that has already migrated. ch15 was a game backend and became a hybrid
+retailer, which carries the human-approval governance constraint that the game
+scenario had nowhere to put.
 
 ### Copyright constraint
 
@@ -169,7 +177,10 @@ Repeatable skeleton. Keeps word count predictable and the book consistent.
 
 ## Figures
 
-Forty total. Roughly three per Part I chapter, two per case study.
+Thirty-three built: two per chapter across Part I and Part II, plus a migration
+programme diagram in ch10. The original plan said forty at roughly three per
+chapter, which the 6x9 measure did not support — see the print constraint
+below.
 
 Figure-dense and prose-lean is deliberate. In a decision-mapping book the
 flowchart carries the decision logic and the prose only explains the tradeoff.
@@ -181,6 +192,13 @@ Every architecture figure should carry it where the topic allows.
 - Architecture figures: one `.py` per figure in `diagrams/architecture/`
 - Flowcharts: one `.mmd` per figure in `diagrams/flowcharts/`
 - Captions numbered per chapter, `Figure 3.2`
+
+**The print constraint on figure density.** A 4.5in-wide figure holds about two
+columns of short labels before its type drops below 8pt, which is the floor
+`scripts/normalize_image.py` enforces. This is a hard limit on how much decision
+logic one figure can carry, and it is why the flowcharts use terse labels rather
+than sentences. A figure that fails the check should be simplified or split; it
+cannot be fixed by enlarging the image, because the page size does not move.
 
 ## Formatting
 

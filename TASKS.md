@@ -1,15 +1,16 @@
 # Outstanding Work
 
-State as of the drafting pass that completed Part I, Part II, the back matter,
-and all 32 figures. Manuscript is ~22,300 words against a 28,000 target.
+State after the editorial-review pass and the test suite. Manuscript is 31,112
+words against a 33,000 budget, with 33 figures. Vale clean at error level, 156
+tests passing, both formats building.
 
 Ordered by risk: the things most likely to force rework sit at the top.
 
 ## 1. Build the outputs — building, needs a human read
 
-Both formats now build. EPUB and DOCX each carry all 32 figures, and the
-structure checks out: valid EPUB zip with correct mimetype, 23 spine items, no
-broken image references; DOCX at 6x9 with a 4.5in measure and mirrored margins.
+Both formats build, and the structure is now asserted by the test suite rather
+than checked by hand: valid EPUB zip, every figure embedded, DOCX at 6x9 with a
+4.5in measure and mirrored margins, no table exceeding the measure.
 
 Two defects were found and fixed in the process, both of which had been silently
 producing wrong output:
@@ -29,17 +30,16 @@ make:
 - Open `build/book.docx` in Word and read it. Check that figures sit near their
   reference rather than drifting pages away, and that no caption is orphaned
   from its figure.
-- 11 of the 32 figures are 7.02in tall against a 7.5in text block, so they
+- 11 of the 33 figures are 7.02in tall against a 7.5in text block, so they
   become full-page figures. That is legitimate but it leaves partly blank pages
   before them. Decide whether that reads acceptably or whether those figures
   should be cut down further. Note that shrinking them costs type size, and
   several are already close to the 8pt floor.
 - Open the EPUB in a reader and check reflow, particularly the two 33-row
-  mapping tables.
+  mapping tables and the long Appendix B trap tables.
 
-**Extent:** roughly 71 text pages plus figure space, so about 90 pages. That
-clears KDP's 79-page threshold for spine text, but not by a wide margin. If
-content is cut, re-check it.
+**Extent:** roughly 100 text pages plus figure space, so about 115 pages after
+the review additions. Comfortably past KDP's 79-page spine threshold now.
 
 Note that `assets/` is gitignored, so a fresh clone must render the figures
 before either build will produce a book with images.
@@ -128,43 +128,52 @@ Reading the official case study is for *checking distinctness only*. Do not
 import its details. See
 [flags-stale-and-legal.md](file:///D:/books/sources/datapoints/flags-stale-and-legal.md).
 
-## 5. Decide the spare word budget
+## 5. Spare word budget — mostly spent
 
-About 5,600 words are unspent. Part I runs ~13,800 against a 19,500 allocation.
+1,888 words remain of the 33,000 budget, raised from 28,000 during the editorial
+review. The drills, decision tables, and appendices consumed the rest.
 
-This is a positioning decision, not a gap to fill by default:
+The obvious use for what is left is Appendix B, which has 59 traps against the
+review's suggested 100. Adding rows is cheap and the appendix is pure revision
+value. Anything else needs the budget raised again, which would start to cost
+the compression positioning in BOOK-SPEC.
 
-- **Spend it:** more worked examples in Part I, which is currently dense and
-  argument-led with few concrete walkthroughs
-- **Ship shorter:** ~22,300 words still clears the 79-page KDP threshold for
-  spine text comfortably, and the book's whole pitch is compression
+## 6. Part II numbers — checked
 
-## 6. Sanity-check the Part II numbers
+Every quantity in the five scenarios was worked through. Two did not hold and
+are fixed:
 
-The five scenarios are original and internally consistent, but their figures
-(fleet sizes, data volumes, staff counts, dates) were chosen for plausibility.
-A reader who does the arithmetic may find numbers that do not hold — for
-example Brandell's 11 TB database against its stated cutover window, or
-Ardwick's sampling rate against 240,000 vehicles.
+- **Ardwick (ch16).** 240,000 vehicles sampling every few seconds generates
+  roughly 1.4 billion readings a day, which fills a nine-terabyte database in
+  about six weeks. The scenario simultaneously had warranty engineers analysing
+  "several years" of history out of that same database. The fix turns the hole
+  into the point: the current system purges after two months, keeping only a
+  daily average, which is exactly why "retain all raw telemetry" is a stated
+  requirement.
+- **Wexley (ch14).** 400,000 hours of archive across sixty years works out to
+  18 hours of finished programming every single day, which no factual
+  broadcaster produces. Reduced to 120,000 hours, or about 5.5 hours a day.
 
-One inconsistency of this kind was already found and fixed in ch17. Assume
-others remain.
+Checked and sound: Halverston's backlog (90,000 items at 400 a week is 4.3
+years, which supports the argument being made), and Brandell's 11 TB against its
+cutover window (24 hours at 1 Gbps, so an export-and-import genuinely does not
+fit, as the text claims).
 
-## 7. Reconcile BOOK-SPEC with the manuscript
+## 7. BOOK-SPEC reconciled
 
-BOOK-SPEC lists ch14 as "global live-event streaming". The file is a media
-company adopting generative AI (Wexley Broadcasting), which better matches the
-current case-study set's shift toward AI scenarios. The manuscript was followed
-deliberately; the spec now needs updating to match, or the divergence needs
-overturning.
-
-Also check the spec's figure count: it plans 40, the book has 32.
+Done. The Part II table listed ch14 as live-event streaming and ch15 as a game
+backend; both had drifted in the skeletons before drafting and the manuscript
+versions are better, so the spec now matches the book and records why the
+divergence was kept. Figure count corrected from the planned 40 to the 33 built,
+with the print constraint that caused it written down: a 4.5in figure holds
+about two columns of short labels before type drops below the 8pt floor.
 
 ## 8. Housekeeping
 
-- `current_state_review.md` is a snapshot from when only ch01–ch03 were drafted.
-  Its word-count table and per-chapter status are now wrong throughout. Either
-  regenerate it or delete it, since a stale review is worse than none.
+- `current_state_review.md` was deleted: a snapshot from when only ch01-ch03
+  were drafted, wrong throughout by the time the manuscript was finished, and a
+  stale review is worse than none. Recoverable from git history at 9861160 if
+  any of it is wanted. Current state lives in handover.md section 1.1 and here.
 - The sample figure sources (`sample_hybrid.py`, `sample_flow.mmd`) were deleted
   once real figures existed.
 - `agent_feedback.md` predates this drafting pass; re-read it before the next
