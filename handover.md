@@ -127,13 +127,25 @@ Since standard `make` is not natively installed on some Windows environments, ru
     check is the constraint that matters: a 4.5in-wide flowchart holds about two
     columns of short labels. If it fails, shorten the node labels or cut a rank
     rather than enlarging the image, which cannot work on a fixed trim size.
-*   **Render Book Outputs (Requires Pandoc installed):**
+*   **Render Book Outputs:**
+
+    Pandoc is installed but **not on PATH**; it lives in
+    `%LOCALAPPDATA%\Pandoc`. That makes three tools in this project installed
+    and invisible: Graphviz, Vale, and Pandoc. Check there before concluding
+    anything is missing.
+    ```powershell
+    $env:PATH += ";$env:LOCALAPPDATA\Pandoc"
+    ```
+    On Windows `--resource-path` must be separated with `;`, not `:`. With the
+    wrong separator Pandoc still exits 0 and produces a book containing no
+    figures at all, warning `Could not fetch resource` for each one. The
+    Makefile now switches on `$(OS)`; the commands below are the Windows form.
     ```powershell
     # Render EPUB
-    pandoc metadata.yaml manuscript/front-matter.md manuscript/ch*.md manuscript/back-matter.md --resource-path=.:assets:assets/architecture:assets/flowcharts --toc --top-level-division=chapter --css=styles/epub.css --epub-title-page=false -o build/book.epub
+    pandoc metadata.yaml manuscript/front-matter.md manuscript/ch*.md manuscript/back-matter.md --resource-path=".;assets;assets/architecture;assets/flowcharts" --toc --top-level-division=chapter --css=styles/epub.css --epub-title-page=false -o build/book.epub
     
     # Render Word DOCX (with reference template and patcher)
-    pandoc metadata.yaml manuscript/front-matter.md manuscript/ch*.md manuscript/back-matter.md --resource-path=.:assets:assets/architecture:assets/flowcharts --toc --top-level-division=chapter --reference-doc=styles/reference.docx -o build/book.docx
+    pandoc metadata.yaml manuscript/front-matter.md manuscript/ch*.md manuscript/back-matter.md --resource-path=".;assets;assets/architecture;assets/flowcharts" --toc --top-level-division=chapter --reference-doc=styles/reference.docx -o build/book.docx
     .\venv\Scripts\python.exe scripts/patch_docx.py build/book.docx
     ```
 

@@ -5,23 +5,44 @@ and all 32 figures. Manuscript is ~22,300 words against a 28,000 target.
 
 Ordered by risk: the things most likely to force rework sit at the top.
 
-## 1. Build the outputs
+## 1. Build the outputs — building, needs a human read
 
-**Pandoc has never been run on this manuscript.** No DOCX and no EPUB exist, so
-every claim about page layout is untested. This is the single highest-value
-task, because layout problems can force content changes and the content is
-otherwise finished.
+Both formats now build. EPUB and DOCX each carry all 32 figures, and the
+structure checks out: valid EPUB zip with correct mimetype, 23 spine items, no
+broken image references; DOCX at 6x9 with a 4.5in measure and mirrored margins.
 
-Build both (commands in [handover.md](file:///D:/books/handover.md) section 3.2)
-and check:
+Two defects were found and fixed in the process, both of which had been silently
+producing wrong output:
 
-- Figures land near their reference and do not orphan from their captions
-- The two 3-column AWS and Azure tables in the back matter hold at 6x9
-- No figure overflows the text block; `normalize_image.py` enforces this at
-  render time, but Pandoc placement is a separate question
-- Chapter breaks fall correctly with `--top-level-division=chapter`
-- The `assets/` PNGs must be rendered before either build, since they are
-  gitignored and will not be present on a fresh clone
+- **The Makefile's `--resource-path` used the Unix `:` separator.** On Windows
+  Pandoc wants `;`. This does not fail the build. It warns
+  `Could not fetch resource` once per figure and emits a book with no images at
+  all. Now switched on `$(OS)`.
+- **Pandoc sized every table to 5.50in inside a 4.5in text block**, running an
+  inch into the outside margin. Not a template fault — `reference.docx` is
+  correct. `scripts/patch_docx.py` now rescales tables proportionally to the
+  real measure, alongside the mirrored-margins patch it already did.
+
+**Still needs a human eye**, because these are judgement calls a script cannot
+make:
+
+- Open `build/book.docx` in Word and read it. Check that figures sit near their
+  reference rather than drifting pages away, and that no caption is orphaned
+  from its figure.
+- 11 of the 32 figures are 7.02in tall against a 7.5in text block, so they
+  become full-page figures. That is legitimate but it leaves partly blank pages
+  before them. Decide whether that reads acceptably or whether those figures
+  should be cut down further. Note that shrinking them costs type size, and
+  several are already close to the 8pt floor.
+- Open the EPUB in a reader and check reflow, particularly the two 33-row
+  mapping tables.
+
+**Extent:** roughly 71 text pages plus figure space, so about 90 pages. That
+clears KDP's 79-page threshold for spine text, but not by a wide margin. If
+content is cut, re-check it.
+
+Note that `assets/` is gitignored, so a fresh clone must render the figures
+before either build will produce a book with images.
 
 ## 2. Lint — done at error level, open at warning level
 

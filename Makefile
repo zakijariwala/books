@@ -28,7 +28,15 @@ MD_CHAPTERS := $(wildcard $(MANUSCRIPT)/front-matter.md) \
 	$(MD_BODY) \
 	$(wildcard $(MANUSCRIPT)/back-matter.md)
 
-RESOURCE_PATH := .:$(ASSETS):$(ASSETS)/architecture:$(ASSETS)/flowcharts
+# Pandoc splits this on the platform's path separator: ';' on Windows, ':'
+# elsewhere. Getting it wrong does not fail the build -- Pandoc warns
+# "Could not fetch resource" for every figure and emits a book with no images.
+ifeq ($(OS),Windows_NT)
+PATH_SEP := ;
+else
+PATH_SEP := :
+endif
+RESOURCE_PATH := .$(PATH_SEP)$(ASSETS)$(PATH_SEP)$(ASSETS)/architecture$(PATH_SEP)$(ASSETS)/flowcharts
 
 PANDOC_COMMON := $(METADATA) $(MD_CHAPTERS) \
 	--resource-path=$(RESOURCE_PATH) \
