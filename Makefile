@@ -43,9 +43,9 @@ PANDOC_COMMON := $(METADATA) $(MD_CHAPTERS) \
 	--toc \
 	--top-level-division=chapter
 
-.PHONY: all diagrams grayscale epub docx lint wordcount reference clean
+.PHONY: all diagrams grayscale epub docx lint test test-build wordcount reference clean
 
-all: diagrams lint epub docx
+all: diagrams lint test epub docx
 
 diagrams: $(ARCH_PNGS) $(FLOW_PNGS)
 
@@ -86,6 +86,15 @@ docx: diagrams $(REFERENCE_DOCX)
 
 lint:
 	vale --config=.vale.ini $(MANUSCRIPT)
+
+# Fast: script behaviour and manuscript print invariants. No Pandoc needed, so
+# the pre-commit hook runs this on every commit.
+test:
+	@$(PY) -m pytest -m "not build"
+
+# Slow: assertions against the built book. Requires epub and docx to exist.
+test-build: epub docx
+	@$(PY) -m pytest -m build
 
 wordcount:
 	@$(PY) scripts/wordcount.py --budget $(WORD_BUDGET) $(MANUSCRIPT)

@@ -81,6 +81,19 @@ To set up dependencies, activate the virtual environment and install requirement
 ### 3.2 Running Commands (When `make` is Missing)
 Since standard `make` is not natively installed on some Windows environments, run the backing python/utility commands directly:
 
+*   **Run the tests:**
+    ```powershell
+    .\venv\Scripts\python.exe -m pytest -m "not build"   # fast, no Pandoc
+    .\venv\Scripts\python.exe -m pytest -m build         # needs a built book
+    ```
+    The fast set runs in the pre-commit hook. It checks the print-pipeline
+    scripts and the manuscript's structural invariants: heading depth, table
+    column counts, figure references resolving to real sources, code-line
+    width. The `build` set asserts against `build/book.docx` and
+    `build/book.epub` and needs `make epub docx` to have run first.
+
+    Dependencies live in `requirements-dev.txt`.
+
 *   **Check Word Count:**
     ```powershell
     .\venv\Scripts\python.exe scripts/wordcount.py --budget 28000 manuscript

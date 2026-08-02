@@ -44,6 +44,28 @@ content is cut, re-check it.
 Note that `assets/` is gitignored, so a fresh clone must render the figures
 before either build will produce a book with images.
 
+## 1b. Tests — in place
+
+There is now a suite: `make test` for the fast checks, `make test-build` for
+assertions against the built book. 156 tests. The fast set also runs in the
+pre-commit hook alongside Vale.
+
+What it covers: `normalize_image.py` fit-to-block maths, grayscale conversion,
+the stored-scale idempotency, and the 8pt legibility floor; `patch_docx.py`
+table rescaling, proportion preservation, and mirrored margins; manuscript
+invariants (heading depth, three-column tables, no placeholders, figure
+references resolving to real sources, unique figure numbers, code-line width);
+and the built DOCX and EPUB.
+
+Both defects that previously reached the built book — the Unix resource-path
+separator producing an image-less book at exit 0, and Pandoc's oversized tables
+— were reproduced and confirmed to fail the suite before it was committed. An
+assertion never seen failing is not protection.
+
+**Not covered**, and worth knowing: `wordcount.py` and `figstyle.py` have no
+tests, and nothing verifies the figures' *content* — only their dimensions. A
+diagram can be wrong and still pass.
+
 ## 2. Lint — done at error level, open at warning level
 
 Vale now runs clean at error level across all 19 manuscript files, which is what
