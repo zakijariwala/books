@@ -31,6 +31,41 @@ That framing matches the exam. All four case studies describe companies with
 existing systems and awkward constraints. None of them asks you to design
 something from nothing.
 
+## How to read this book
+
+Two hours, straight through, is the intended first pass. It is short on purpose:
+the point is to hold the whole decision space in your head at once, which you
+cannot do across a 450-page reference. Read it early in your preparation rather
+than the night before, because its job is to give the labs somewhere to land.
+
+Then use it three more times, differently each time.
+
+**Work the drills properly.** Every chapter in Part I ends with an architecture
+drill: a scenario, four questions, then a discussion. The discussion is
+deliberately placed after the questions, and you should treat that gap as real.
+Stop reading. Write your four answers down — on paper, in a file, anywhere you
+cannot quietly revise them once you see the argument. Then read the discussion
+and compare.
+
+The value is entirely in the gap between what you wrote and what the discussion
+argues. Where they agree, you have confirmed a decision you can defend under
+time pressure. Where they differ, you have found something worth understanding
+before somebody asks you about it in a scored exam. Reading the discussion first
+feels faster and teaches nothing: recognising a good argument is not the same
+skill as producing one, and the exam only pays for the second.
+
+**Argue with it.** The book takes positions. Some are contestable, and a few
+are stated more bluntly than the evidence strictly supports, because a hedged
+claim is impossible to disagree with and therefore impossible to learn from. If
+you think a recommendation is wrong for your context, work out why. That
+reasoning is the exam's actual subject.
+
+**Revise from the back.** The appendices are built for the week before you sit:
+cheat sheets condensing each chapter to the sentence you will be given,
+grouped exam traps, and a method for attacking whichever case studies are live
+on the day. The decision matrices in chapters 6 and 9 belong in the same
+category — mark them now, because you will want them later.
+
 ## Exam coverage
 
 Chapters follow architectural decisions rather than the exam guide's section

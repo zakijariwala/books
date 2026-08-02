@@ -168,6 +168,19 @@ divergence was kept. Figure count corrected from the planned 40 to the 33 built,
 with the print constraint that caused it written down: a 4.5in figure holds
 about two columns of short labels before type drops below the 8pt floor.
 
+## 7b. Before uploading to KDP
+
+- **Imprint name.** `metadata.yaml` still says TODO. KDP needs one: invent an
+  imprint or use "Independently published". Everything else in that file is
+  filled: author, rights, date, and a generated EPUB identifier.
+- **Cover.** Not started, and it is the one asset with no source in this
+  repository. 1600x2560 for Kindle; the paperback wrap needs the final page
+  count for the spine, so do it after the layout pass.
+- **Layout pass in Word**, applying `PRODUCTION-NOTES.md` — particularly the
+  distinct treatment for the five high-yield pages.
+- **Positioning copy.** Draft the KDP description from `AGENT-BRIEF.md`, which
+  leads on compression and the evergreen case studies rather than coverage.
+
 ## 8. Housekeeping
 
 - `current_state_review.md` was deleted: a snapshot from when only ch01-ch03

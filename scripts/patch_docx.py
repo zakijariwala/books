@@ -19,8 +19,8 @@ are preserved and nothing overflows.
 
 Run: python scripts/patch_docx.py build/book.docx
 """
+import os
 import re
-import shutil
 import sys
 import zipfile
 from pathlib import Path
@@ -104,6 +104,10 @@ def patch_tables(xml: str) -> tuple[str, int]:
     return re.sub(r"<w:tbl>.*?</w:tbl>", sub, xml, flags=re.S), count
 
 
+class TargetLocked(Exception):
+    """The DOCX is open in another process, most often Word."""
+
+
 def patch(path: Path) -> list[str]:
     src = zipfile.ZipFile(path)
     names = src.namelist()
@@ -113,31 +117,51 @@ def patch(path: Path) -> list[str]:
 
     notes = []
     tmp = path.with_suffix(".tmp.docx")
-    with zipfile.ZipFile(tmp, "w", zipfile.ZIP_DEFLATED) as dst:
-        for item in names:
-            data = src.read(item)
-            if item == SETTINGS:
-                before = data.decode("utf-8")
-                after = patch_settings(before)
-                if after != before:
-                    notes.append("mirrored margins enabled")
-                data = after.encode("utf-8")
-            elif item == DOCUMENT:
-                after, count = patch_tables(data.decode("utf-8"))
-                if count:
-                    inches = measure_twips(after) / TWIPS_PER_INCH
-                    notes.append(f"{count} table(s) rescaled to {inches:.2f}in")
-                data = after.encode("utf-8")
-            dst.writestr(item, data)
-    src.close()
-    shutil.move(str(tmp), str(path))
+    try:
+        with zipfile.ZipFile(tmp, "w", zipfile.ZIP_DEFLATED) as dst:
+            for item in names:
+                data = src.read(item)
+                if item == SETTINGS:
+                    before = data.decode("utf-8")
+                    after = patch_settings(before)
+                    if after != before:
+                        notes.append("mirrored margins enabled")
+                    data = after.encode("utf-8")
+                elif item == DOCUMENT:
+                    after, count = patch_tables(data.decode("utf-8"))
+                    if count:
+                        inches = measure_twips(after) / TWIPS_PER_INCH
+                        notes.append(f"{count} table(s) rescaled to {inches:.2f}in")
+                    data = after.encode("utf-8")
+                dst.writestr(item, data)
+        src.close()
+
+        # os.replace is atomic and overwrites; shutil.move refuses when the
+        # destination exists on Windows. Either way a file open in Word cannot
+        # be replaced, which happens constantly when proofing a layout.
+        try:
+            os.replace(tmp, path)
+        except PermissionError as exc:
+            raise TargetLocked(
+                f"{path} is open in another process (probably Word). "
+                "Close it and re-run."
+            ) from exc
+    finally:
+        src.close()
+        # Never leave a half-written .tmp.docx beside the real one.
+        tmp.unlink(missing_ok=True)
+
     return notes
 
 
 if __name__ == "__main__":
     for arg in sys.argv[1:]:
         target = Path(arg)
-        applied = patch(target)
+        try:
+            applied = patch(target)
+        except TargetLocked as exc:
+            print(f"patch_docx: {exc}", file=sys.stderr)
+            sys.exit(1)
         if applied:
             print(f"patched {target}: {'; '.join(applied)}")
         else:

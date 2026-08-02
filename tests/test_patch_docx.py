@@ -145,3 +145,31 @@ def test_patch_leaves_a_valid_zip(tmp_path):
     patch(p)
     with zipfile.ZipFile(p) as z:
         assert z.testzip() is None
+
+
+def test_locked_target_raises_a_clear_error(tmp_path, monkeypatch):
+    # Proofing a layout means the DOCX is open in Word, and a rebuild then hits
+    # a locked file. That should be one readable line, not a stack trace.
+    from patch_docx import TargetLocked
+    import patch_docx as module
+
+    p = build_docx(tmp_path / "book.docx")
+
+    def refuse(src, dst):
+        raise PermissionError(32, "in use")
+
+    monkeypatch.setattr(module.os, "replace", refuse)
+    with pytest.raises(TargetLocked, match="open in another process"):
+        patch(p)
+
+
+def test_no_temp_file_is_left_behind_when_locked(tmp_path, monkeypatch):
+    import patch_docx as module
+
+    p = build_docx(tmp_path / "book.docx")
+    monkeypatch.setattr(
+        module.os, "replace", lambda s, d: (_ for _ in ()).throw(PermissionError())
+    )
+    with pytest.raises(Exception):
+        patch(p)
+    assert not (tmp_path / "book.tmp.docx").exists()

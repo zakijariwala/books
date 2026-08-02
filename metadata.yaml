@@ -2,11 +2,13 @@
 title: "Google Cloud Professional Cloud Architect"
 subtitle: "A Decision-Mapping Guide for Experienced Architects"
 author:
-  - "TODO Author Name"
+  - "Zaki Jariwala"
+# Imprint is blocked on the publishing route: a trade publisher supplies its
+# own, a direct KDP launch needs one invented. See AGENT-BRIEF.md.
 publisher: "TODO Imprint"
-rights: "© TODO Year TODO Author Name. All rights reserved."
+rights: "© 2026 Zaki Jariwala. All rights reserved."
 lang: en-GB
-date: "TODO"
+date: "2026"
 
 # Pandoc reads this for the EPUB package identifier. KDP does not require an
 # ISBN for ebooks and assigns an ASIN, but a stable identifier is still needed
@@ -14,7 +16,7 @@ date: "TODO"
 # real ISBN goes in only if you buy one for the paperback.
 identifier:
   - scheme: UUID
-    text: "TODO run: python -c \"import uuid; print(uuid.uuid4())\""
+    text: "2d8ac606-9d99-4f9e-a700-7ce03b7e5bf0"
 
 # Cover is a KDP requirement for the ebook. 1600x2560px, portrait, RGB.
 # The paperback cover is a separate wraparound file built to KDP's spine
