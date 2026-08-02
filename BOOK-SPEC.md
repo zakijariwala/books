@@ -38,9 +38,10 @@ renamed. Otherwise the book degrades into a translation table.
 ## Relationship to Google's official learning path
 
 Google's Professional Cloud Architect learning path runs 24 activities and
-roughly 182 hours. This book is about two hours of reading. That is a 90:1
-compression ratio, and it settles the positioning: the book is not a coverage
-substitute. Position it as read-alongside, not read-instead.
+roughly 182 hours. This book is about two and a half hours of reading, plus
+appendices to revise from. That is still better than a 70:1 compression ratio,
+and it settles the positioning: the book is not a coverage substitute. Position
+it as read-alongside, not read-instead.
 
 Do not reweight chapters to mirror the path's hour distribution. The path
 optimizes for hands-on practitioner skill. The exam optimizes for architectural
@@ -64,18 +65,26 @@ worked case studies.
 
 ## Word budget
 
-Target 28,000 words. Enforced by `make wordcount` against `WORD_BUDGET` in the
+Target 33,000 words. Enforced by `make wordcount` against `WORD_BUDGET` in the
 Makefile.
 
 | Component | Words |
 | --- | --- |
 | Front matter and coverage map | 600 |
 | Part I, 12 decision chapters | 19,500 |
+| Part I architecture drills | 3,000 |
 | Part II, 5 case studies | 6,000 |
-| Back matter | 1,400 |
-| Total | 27,500 |
+| Back matter and appendices | 4,000 |
+| Total | 33,100 |
 
-Projected extent at 6x9 trim, 11pt serif, ~310 words per page: about 123 pages.
+Raised from 28,000 after editorial review. The added words are drills,
+decision tables, and revision appendices rather than more exposition: they are
+reference material a reader consults, not prose read end to end. Reading time
+therefore rises by less than the word count suggests, and the positioning below
+survives. Do not spend the increase on more narrative.
+
+Projected extent at 6x9 trim, 11pt serif, ~310 words per page: about 115 pages
+including figure space.
 
 Do not cut below roughly 20,000 words. KDP requires 79+ pages for spine text.
 A book without spine text looks amateur shelved spine-out.

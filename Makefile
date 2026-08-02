@@ -4,7 +4,7 @@ BUILD := build
 MANUSCRIPT := manuscript
 STYLES := styles
 GRAYSCALE_PROOF := $(ASSETS)/grayscale-proof
-WORD_BUDGET := 28000
+WORD_BUDGET := 33000
 
 # Figure scripts import scripts/figstyle.py for shared print constraints.
 # This must not be the repo root: a local diagrams/ directory would shadow

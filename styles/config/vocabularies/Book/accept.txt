@@ -70,7 +70,7 @@ onprem
 [Rr]ebalancing
 [Ss]essionisation
 [Cc]olocation
-[Dd]atacentre
+[Dd]atacentres?
 [Dd]atastore
 [Ii]nterruptible
 [Bb]ursty
@@ -83,6 +83,16 @@ onprem
 [Rr]unbooks?
 [Ll]ookups
 [Tt]imecode
+IPs
+[Ee]xpiries
+[Pp]reventively
+[Ss]ubtree
+[Aa]uditable
+[Rr]etryable
+[Aa]utoscale
+[Cc]ron
+[Pp]roductionised
+[Aa]llowlist
 [Pp]layout
 [Hh]omeware
 GPUs
