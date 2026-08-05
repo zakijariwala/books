@@ -26,12 +26,16 @@ manual and `STYLE-GUIDE.md` is the prose style.
 
 A chapter is done when all of these hold:
 
-- [ ] Content complete — no placeholders, no TODOs.
+- [ ] Content complete — no placeholders, no `STORY-TODO`, no unrendered `FIGURE`
+      markers.
+- [ ] `/review` verdict is ship (or its named fixes are applied).
+- [ ] `/verify` run; every stale-able fact verified and logged in
+      `sources/research/`.
+- [ ] `/approve` run — concepts and examples recorded in the registries.
 - [ ] Every figure it references has a rendered source (`make diagrams` clean).
 - [ ] `make lint` passes at error level.
 - [ ] `make test` passes (structural invariants hold).
 - [ ] Within its word budget (`make wordcount`).
-- [ ] Every stale-able fact verified and logged (see below).
 - [ ] Reads cleanly once, out loud or in a built EPUB — a human pass a linter
       cannot replace.
 

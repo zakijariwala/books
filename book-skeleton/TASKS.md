@@ -1,37 +1,65 @@
 # Outstanding Work
 
-The living backlog. Order by risk — the things most likely to force rework sit
-at the top. Keep it current; a stale task list is worse than none.
+The living backlog, ordered so each block unblocks the next. Tasks marked
+**you** need the author and cannot be delegated to a model without deleting the
+reason the book exists. Keep it current; a stale task list is worse than none.
 
-This is the starter set for a new book. Delete what you have done, add what you
-discover.
+This is the starter set for a new book. Delete what you finish, add what you find.
 
-## Setup
+## Stage 0 — setup
 
 - [ ] `bash scripts/bootstrap.sh` — venv, dependencies, tool check, `vale sync`.
 - [ ] `make hooks` — install the pre-commit gate.
+- [ ] `make test` passes green on the empty skeleton.
 - [ ] Fill in `metadata.yaml` (title, author, imprint, UUID, lang).
-- [ ] Write `BOOK-SPEC.md`: positioning, reader, word budget, structure.
-- [ ] Set `WORD_BUDGET` in the `Makefile` to match the spec.
-- [ ] Decide voice and spelling in `STYLE-GUIDE.md` (and `lang` in metadata).
-- [ ] Confirm `make test` passes green on the empty skeleton.
 
-## Writing
+## Stage 1 — decide (blocks everything)
 
-- [ ] Draft chapters from the template in `manuscript/ch01.md`, one branch each.
-- [ ] Render each figure as you reference it (`make diagrams`) — no placeholders.
-- [ ] Keep `make wordcount` inside budget.
+- [ ] **you** Write the thesis into `BOOK-SPEC.md`. One paragraph every chapter serves.
+- [ ] **you** Write `docs/buyer.md`: the one reader, their outcomes, the second
+      layer if any, the purchase moment, any bulk buyer.
+- [ ] **you** Set the word budget in `BOOK-SPEC.md` and `WORD_BUDGET` in the `Makefile`.
 
-## Verification
+## Stage 1b — find the voice (blocks drafting)
 
-- [ ] Log every stale-able fact in `sources/research/` with source and date.
-- [ ] Keep `BOOK-SPEC.md` "Facts to verify" current.
+- [ ] **you** Record voice notes per `voice/BRIEF.md`. Talk, do not write.
+- [ ] **you** Transcribe, delete filler only, paste into `voice/sample.md`.
+- [ ] **you** React to the specimen in `voice/BRIEF.md`; fold each correction into
+      `CLAUDE.md`'s voice list and, where mechanical, into Vale.
+
+## Stage 2 — freeze the structure
+
+- [ ] Run `prompts/stage2-kill-test.md` → `docs/toc-review.md`.
+- [ ] **you** Accept/reject/amend each cut and merge. Fold into `docs/toc.md`. Freeze. Commit.
+
+## Stage 3 — standards
+
+- [ ] Run `prompts/stage3-standards.md`: chapter template, terminology,
+      registries, voice lint rules.
+- [ ] **you** Edit `docs/terminology.md` yourself afterward.
+
+## Stage 4 — pilots (these carry the project)
+
+- [ ] `/article N` for two or three chapters that test different demands.
+- [ ] **you** Fill every STORY-TODO. Publish. Watch who forwards. Collect replier emails.
+- [ ] **you** Confirm or reopen the reader direction on the evidence.
+
+## Stage 5 — chapters
+
+- [ ] Per chapter: `/draft N`, `/review N`, revise, `/verify N`, `/approve N`.
+- [ ] Keep `make wordcount` inside budget and the registries current.
+- [ ] **you** Send the first two chapters to three people who match `buyer.md`;
+      adjust standards on what they say.
+
+## Stage 6 — figures and build
+
+- [ ] After three approved chapters, run `prompts/stage6-figures.md`.
+- [ ] `make lint` clean at error level; `make test-build` passes against EPUB + DOCX.
+- [ ] Human read of the built book: figure placement, orphaned captions, table
+      breaks at 6x9, EPUB reflow.
 
 ## Pre-publication
 
-- [ ] `make lint` clean at error level across the manuscript.
-- [ ] `make test-build` passes against built EPUB and DOCX.
-- [ ] Human read of the built book: figure placement, orphaned captions, table
-      breaks at 6x9, EPUB reflow.
 - [ ] Cover made; imprint set; layout pass done (`PRODUCTION-NOTES.md`).
+- [ ] All stale-able facts verified and logged; `BOOK-SPEC.md` "Facts to verify" clear.
 - [ ] Store description drafted (`AGENT-BRIEF.md`).

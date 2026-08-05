@@ -1,20 +1,25 @@
 # Style Guide
 
-House style for this book. Vale enforces what can be automated
-(`.vale.ini` + `styles/`); this document holds the decisions a linter cannot
-make and the ones a human reviewer or AI collaborator should apply. When prose
-and this guide disagree, this guide wins — then fix the prose.
+Prose mechanics for this book. Vale enforces what can be automated
+(`.vale.ini` + `styles/`); this document holds the mechanical decisions a linter
+needs told. **Register and voice do not live here — they live in
+`voice/sample.md`**, which is the authoritative style source. When drafting,
+match the sample; use this guide for spelling, punctuation, and banned words.
 
-## Voice
+## Voice (pointer)
 
-- TODO: Describe the voice in a line or two. (e.g. "Direct, opinionated,
-  addresses the reader as 'you'. Assumes an intelligent adult. Holds positions
-  and defends them.")
+The voice is defined by `voice/sample.md` — the author's own transcript, not a
+rules list. Extract it per `voice/BRIEF.md` before drafting. The rules below are
+the mechanical floor that applies under any voice:
+
 - Write to be understood on one read. Prefer the plain word to the impressive
   one.
 - Cut hedging and throat-clearing: "it is worth noting that", "in order to",
   "very", "really", "basically". If the `stop-slop` skill is installed, apply
   it to every draft — it targets the predictable tells of machine-written prose.
+- As you extract voice rules from the sample (e.g. "no em dashes", "no -ly
+  adverbs", "no 'not X, it's Y'"), record them in `CLAUDE.md`'s voice section and
+  turn the mechanical ones into Vale rules (see `prompts/stage3-standards.md`).
 
 ## Spelling and regional English
 
