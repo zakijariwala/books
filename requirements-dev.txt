@@ -1,9 +1,0 @@
-# Python dependencies for building figures and running the test suite.
-#   venv/Scripts/python.exe -m pip install -r requirements-dev.txt
-#
-# Not pinned: this is a book toolchain, not a deployed service, and the
-# packages below are stable enough that floating versions cause less trouble
-# than stale pins. Pin them if a build ever breaks under an upgrade.
-diagrams
-pillow
-pytest

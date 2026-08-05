@@ -1,9 +1,0 @@
-flowchart TD
-    A{Clause names<br/>key control?} -- No --> B[Google-managed<br/>keys]
-    A -- Yes --> C{Keys may sit<br/>in Google?}
-    C -- No --> D[External<br/>Key Manager]
-    C -- Yes --> E{Hardware level<br/>named?}
-    E -- Yes --> F[Cloud HSM]
-    E -- No --> G[CMEK in<br/>Cloud KMS]
-    F --> H[Separate key project<br/>and administrators]
-    G --> H

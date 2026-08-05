@@ -1,7 +1,0 @@
-flowchart TD
-    A{Who reads it?} -- Nothing decided,<br/>retain all --> B[Cloud Storage,<br/>lifecycle rules]
-    A -- One vehicle,<br/>sub-second --> C[Bigtable]
-    A -- Fleet-wide,<br/>years --> D[BigQuery]
-    A -- Training and<br/>scoring --> E[Vertex AI]
-    C --> F[Row key: vehicle<br/>plus reversed time]
-    D --> G[Partition by date,<br/>cluster on filters]

@@ -1,9 +1,0 @@
-flowchart TD
-    A{Target?} -- Google API --> B{Endpoint in<br/>your range?}
-    B -- No --> C[Private<br/>Google Access]
-    B -- Yes --> D[Private Service<br/>Connect]
-    A -- Cloud SQL,<br/>Memorystore --> E[Private Services<br/>Access]
-    A -- Another VPC's<br/>service --> D
-    E --> F{On-prem must<br/>reach it?}
-    F -- Yes --> G[Export custom<br/>routes]
-    F -- No --> H[VPC only]

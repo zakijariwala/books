@@ -1,9 +1,0 @@
-flowchart TD
-    A{RPO near zero?} -- No --> B{RTO in hours?}
-    A -- Yes --> C{RTO in minutes?}
-    C -- Yes --> D[Hot standby]
-    C -- No --> E[Warm standby]
-    B -- Yes --> F{All infra<br/>as code?}
-    B -- No --> G[Backup<br/>and restore]
-    F -- Yes --> H[Cold standby]
-    F -- No --> E

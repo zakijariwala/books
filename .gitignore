@@ -1,13 +1,7 @@
-assets/
-build/
+# This repository holds book-writing skeletons, not a book. Each skeleton carries
+# its own .gitignore for build artefacts; this one only keeps stray OS and editor
+# files out of the top level.
+.DS_Store
+*.swp
 __pycache__/
-*.pyc
-venv/
-.venv/
-node_modules/
-.vale-styles-cache/
-
-# Third-party reference clones. Research material only, never tracked here.
-# See sources/datapoints/flags-stale-and-legal.md before using either.
-GCP_Professional_Architect/
-gcp-pca-prep/
+.pytest_cache/
