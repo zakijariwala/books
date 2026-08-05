@@ -1,0 +1,29 @@
+# Terms Vale's dictionary does not carry, that are correct in this book.
+# Grouped so additions stay findable. Add proper nouns, product names, and
+# terms of art here as Vale flags them, rather than rewording around them.
+#
+# IMPORTANT: entries are regular expressions, not literals.
+#   - Write [Aa]utoscaling, not Autoscaling, or Vale will demand the capital
+#     form mid-sentence.
+#   - Write VPCs? to accept both singular and plural.
+#   - Escape regex metacharacters if a term contains them.
+#
+# The toolchain terms below are the ones this repository's own docs use. Keep
+# them; add your subject's vocabulary underneath.
+
+# Toolchain and repository
+Pandoc
+Vale
+Graphviz
+Mermaid
+[Tt]oolchain
+[Rr]enderers?
+Markdown
+EPUB
+DOCX
+PNGs?
+KDP
+[Ss]keleton
+
+# --- Your book's vocabulary below this line -------------------------------
+# e.g. product names, invented company names for case studies, domain terms.

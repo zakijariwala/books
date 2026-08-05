@@ -1,0 +1,19 @@
+%% Figure 1.2: an example decision flowchart. Replace with your own.
+%%
+%% Flowcharts carry the decision logic; the prose only explains the tradeoff.
+%% Keep node labels terse and break long ones with <br/>. A 4.5in-wide figure
+%% holds about two columns of short labels before type drops below the 8pt print
+%% floor. If normalize_image.py reports the type is too small, shorten labels or
+%% cut a branch -- do not enlarge the image, the trim size does not move.
+%%
+%% Render: mmdc -i diagrams/flowcharts/fig01_2_example.mmd \
+%%              -o assets/flowcharts/fig01_2_example.png \
+%%              -c scripts/mermaid-config.json \
+%%              -p scripts/mermaid-puppeteer-config.json -b white
+%%         python scripts/normalize_image.py assets/flowcharts/fig01_2_example.png
+flowchart TD
+    A{Is the choice<br/>reversible?} -- Yes --> B[Decide fast,<br/>move on]
+    A -- No --> C{Enough<br/>information?}
+    C -- Yes --> D[Commit and<br/>document why]
+    C -- No --> E[Buy information<br/>cheaply first]
+    E --> C

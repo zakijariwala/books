@@ -1,0 +1,16 @@
+# Python dependencies for building figures and running the test suite.
+#   python -m pip install -r requirements-dev.txt
+#
+# Not pinned: this is a book toolchain, not a deployed service, and the
+# packages below are stable enough that floating versions cause less trouble
+# than stale pins. Pin them if a build ever breaks under an upgrade.
+#
+# External (non-pip) tools the pipeline also needs -- install via your OS
+# package manager, see scripts/bootstrap.sh:
+#   pandoc          EPUB/DOCX/PDF conversion
+#   vale            prose linter
+#   graphviz (dot)  architecture figures
+#   mermaid-cli     flowcharts  (npm install -g @mermaid-js/mermaid-cli)
+diagrams
+pillow
+pytest

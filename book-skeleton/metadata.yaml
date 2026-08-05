@@ -1,0 +1,36 @@
+---
+# Pandoc reads this block for EPUB and DOCX metadata. Fill every TODO before a
+# real build. See GOVERNANCE.md for the publishing checklist.
+title: "TODO Book Title"
+subtitle: "TODO Subtitle"
+author:
+  - "TODO Author Name"
+
+# Publisher / imprint line. A print-on-demand launch needs one: invent an
+# imprint or use "Independently published". A trade publisher supplies its own.
+publisher: "TODO Imprint"
+rights: "© TODO-YEAR TODO Author. All rights reserved."
+
+# Language and regional spelling. en-US or en-GB changes how you should
+# configure Vale and how you spell throughout -- decide once, record it in
+# STYLE-GUIDE.md, and keep the manuscript consistent with it.
+lang: en-US
+date: "TODO-YEAR"
+
+# Pandoc reads this for the EPUB package identifier. A stable identifier lets
+# readers' devices track the file across updates. A UUID is fine here; replace
+# with a real ISBN only if you buy one for the paperback. Generate a fresh UUID
+# per book: `python -c "import uuid; print(uuid.uuid4())"`.
+identifier:
+  - scheme: UUID
+    text: "TODO-GENERATE-A-UUID"
+
+# Cover image, once you have one. Ebook covers are portrait RGB (KDP wants
+# 1600x2560). The print wraparound cover is a separate file built to the
+# service's spine calculator once the final page count is known.
+# cover-image: assets/cover.png
+
+# Depth of the generated table of contents. Chapters and their top-level
+# sections only. Deeper produces an unusable TOC on small screens.
+toc-depth: 2
+---

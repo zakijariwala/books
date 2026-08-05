@@ -1,0 +1,29 @@
+# Build products and rendered assets. Regenerate with `make`; never commit.
+assets/
+build/
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+.pytest_cache/
+
+# Node (mermaid-cli, if installed locally rather than globally)
+node_modules/
+
+# Vale style packages fetched by `vale sync`. Not committed: they are large,
+# versioned upstream, and reproduced by `vale sync`. The custom vocabulary in
+# styles/config/ IS committed (see the negations below).
+styles/*/
+styles/.vale-config/
+.vale-styles-cache/
+!styles/config/
+
+# Editors / OS
+.DS_Store
+*.swp
+
+# Third-party reference material cloned for research. Keep it out of the repo;
+# log what you consulted in sources/research/ instead. See GOVERNANCE.md.
+reference-clones/

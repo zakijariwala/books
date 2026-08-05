@@ -1,0 +1,11 @@
+# Words this book should never use. Vale flags any occurrence as an error.
+# Entries are regular expressions, same as accept.txt.
+#
+# Use this for banned phrasings and your own tics -- the words you overuse and
+# want caught. Examples (uncomment or edit to taste):
+#
+# [Ll]everage
+# [Uu]tilize
+# [Ss]eamless(ly)?
+# [Gg]ame.?changer
+# [Ss]ynerg(y|ies|ise|ize)
