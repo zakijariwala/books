@@ -12,13 +12,11 @@ venv/
 # Node (mermaid-cli, if installed locally rather than globally)
 node_modules/
 
-# Vale style packages fetched by `vale sync`. Not committed: they are large,
-# versioned upstream, and reproduced by `vale sync`. The custom vocabulary in
-# styles/config/ IS committed (see the negations below).
-styles/*/
-styles/.vale-config/
+# Vale style packages (Google, write-good, proselint) ARE committed here for
+# offline, reproducible builds — see styles/README.md. Only Vale's transient
+# cache is ignored. To go back to fetch-on-demand, re-add `styles/*/` below and
+# keep `!styles/config/`, then `git rm -r --cached` the package dirs.
 .vale-styles-cache/
-!styles/config/
 
 # Editors / OS
 .DS_Store

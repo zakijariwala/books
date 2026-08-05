@@ -4,6 +4,11 @@ Vale's style directory.
 
 ## What is committed
 
+- **The style packages** — `Google/`, `write-good/`, `proselint/`. These are
+  committed (vendored) so the seed lints offline and reproducibly, with no
+  `vale sync` needed and no dependence on the packages staying available
+  upstream. They are third-party, MIT/similar-licensed rule sets; each carries
+  its own upstream provenance.
 - `config/vocabularies/Book/accept.txt` — words Vale's dictionary lacks that
   are correct here (product names, terms of art, invented case-study names).
 - `config/vocabularies/Book/reject.txt` — words this book bans.
@@ -12,18 +17,22 @@ Vale's style directory.
   `scripts/make_reference_docx.py` (run `make reference`). Committing it is
   optional; it is reproducible from the script.
 
-## What is NOT committed
+## Updating the packages
 
-The style **packages** — `Google/`, `write-good/`, `proselint/` — are large,
-versioned upstream, and fetched on demand. `.gitignore` excludes them. After
-cloning, run:
+The committed copies are a snapshot. To refresh them from upstream:
 
 ```
-vale sync
+vale sync            # re-downloads the packages named in .vale.ini
+git add styles/Google styles/write-good styles/proselint
+git commit -m "chore: update Vale style packages"
 ```
 
-This reads the `Packages =` line in `.vale.ini` and downloads them into this
-directory. Do it once per clone (the bootstrap script does it for you).
+Only Vale's transient `.vale-styles-cache/` is gitignored.
 
-If you prefer fully offline, reproducible builds, delete the `styles/*/` lines
-from `.gitignore` and commit the packages — at the cost of a much larger repo.
+## Prefer fetch-on-demand instead?
+
+If you would rather keep the repo lean and download the packages per clone,
+`git rm -r --cached styles/Google styles/write-good styles/proselint`, add
+`styles/*/` and `!styles/config/` back to `.gitignore`, and run `vale sync`
+after cloning (the bootstrap script does it for you). The `Packages =` line in
+`.vale.ini` supports both modes unchanged.
