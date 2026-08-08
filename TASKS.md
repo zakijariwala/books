@@ -5,47 +5,48 @@ to a model without deleting the reason the book exists.
 
 ---
 
-## Blocking everything
+## Voice: unblocked via the reference article (2026-08-08)
+
+The transcript no longer blocks everything. The author supplied an article as a
+register target (`voice/reference-article.md`), the CLAUDE.md voice rules were
+blended to fit it, and a pilot (`voice/pilot-ch01.md`) confirmed the voice
+holds. Drafting can proceed. The transcript is still wanted, but its job is now
+to fill `STORY-TODO` markers with first-hand beats, not to gate the project.
 
 - [ ] **you** Record three voice notes per `voice/BRIEF.md`. 25 minutes, no
       preparation, no restarts. The night something broke. What you do all day,
       told to a cousin who sells insurance. The thing non-technical colleagues
-      believe that is wrong.
+      believe that is wrong. Fills the STORY-TODO markers.
 - [ ] **you** Transcribe with Whisper. Delete filler and nothing else. No
       tidying. Paste into `voice/sample.md`, replacing the stub.
-- [ ] **you** React to the specimen in `voice/BRIEF.md`. Every "I would never
-      say that" is a rule the spec cannot produce.
 
-## Blocking the TOC freeze
+## TOC freeze (done 2026-08-08)
 
-- [ ] **you** Write the thesis paragraph into the top of `CLAUDE.md`, replacing
-      the bracketed placeholder.
-- [ ] **you** Read `docs/toc-review.md`. Accept, reject, or amend each cut:
-      chapter 13 cut, chapter 10 cut and redistributed, chapter 14 merged,
-      chapter 1 shrunk.
-- [ ] **you** Decide the Part IV question. Three parts with economics promoted,
-      or lock-in stays as a short chapter 12.
+- [x] Thesis written into `CLAUDE.md` (the eighteen-month gap), replacing the placeholder.
+- [x] Kill test decided: cut old 10 and old 14 (merged), shrink ch1. Chapter 13
+      (AI Infrastructure Wars) kept as an authored override and re-aimed as the
+      closer, ch12. See `docs/toc.md`.
+- [x] Part IV question resolved: keeping AI Wars gives Part IV two chapters
+      (Economics + AI Wars). No promotion needed.
+- [x] Cuts folded into `docs/toc.md` and frozen.
 - [ ] **you** Decide where the discussion guide lives. Back matter,
-      downloadable, or both.
-- [ ] **you** Fold the accepted cuts into `docs/toc.md`. Freeze it. Commit.
+      downloadable, or both. Deferred; does not block drafting.
 
-## Blocking chapter 4
+## Cost rule (done 2026-08-08)
 
-- [ ] Write the cost rule into `CLAUDE.md`. The book teaches cost shape, not
-      cost. No dollars, no rate cards. One paragraph, before any chapter that
-      touches money.
+- [x] Cost rule written into `CLAUDE.md` hard content rules: teach cost shape,
+      not price. No dollars, no rate cards.
 
-## Stage 3, one run, after the TOC freezes
+## Stage 3 scaffolding (done 2026-08-08, except tooling)
 
-- [ ] `docs/chapter-template.md` with per-section word budgets totalling 3,800
-      to 4,200, optional sections marked, and the layer rule from
-      `docs/buyer.md` reflected in the section notes.
-- [ ] `docs/terminology.md`. One approved definition per term.
-- [ ] **you** Edit `docs/terminology.md` yourself afterward. This one does not
-      survive being left to a model.
-- [ ] `docs/concept-registry.md`, prefilled from the frozen TOC.
-- [ ] `docs/case-study-registry.md`. Borrowed rows filled with sources and
-      fact-check dates, first-hand rows left empty for you.
+- [x] `docs/chapter-template.md` with per-section word budgets totalling 3,800
+      to 4,200 and the buyer.md layer rule reflected per section.
+- [x] `docs/terminology.md` seeded. One definition per term.
+- [ ] **you** Edit `docs/terminology.md` yourself. This one does not survive
+      being left to a model. Seeded definitions are marked for your review.
+- [x] `docs/concept-registry.md`, prefilled from the frozen TOC.
+- [x] `docs/case-study-registry.md`. Borrowed rows seeded (verify before use),
+      first-hand rows left as STORY-TODO for you.
 - [ ] `.vale.ini` and `.vale/styles/Book/`. Six rule families come straight from
       CLAUDE.md today: em dashes, `-ly` adverbs, not-X-it's-Y, corporate jargon,
       vendor evangelism, exam-prep phrasing. Severity warning, not error.

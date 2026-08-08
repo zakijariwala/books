@@ -1,8 +1,11 @@
 # Handover
 
 **Book:** The Clouds, for People Who Don't Do Servers
-**State as of 2026-08-02:** scaffold complete, structure reviewed, no prose written.
-**Next action:** record the voice transcript. See TASKS.md.
+**State as of 2026-08-08:** TOC frozen (12 chapters), thesis and cost rule
+written, Stage 3 scaffolding built, voice unblocked via a reference article and
+confirmed by a pilot. Ready to draft.
+**Next action:** `/article 2` or `/draft 1`. First-hand beats land as STORY-TODO
+until the transcript exists. See TASKS.md.
 
 ---
 
@@ -10,12 +13,15 @@
 
 | Path | What it is | State |
 |------|-----------|-------|
-| `CLAUDE.md` | Thesis, reader, budget, voice rules, hard content rules. Loads every session. | Live. Thesis paragraph still a placeholder. |
+| `CLAUDE.md` | Thesis, reader, budget, voice rules, hard content rules. Loads every session. | Live. Thesis written (the eighteen-month gap). Cost rule added. Voice rules blended for the reference article. |
 | `docs/buyer.md` | The reader. Wins any argument about scope. | Written. Option A, layered. |
-| `docs/toc.md` | 14 seeded chapters. | **Not frozen.** Kill test done, cuts not yet folded in. |
-| `docs/toc-review.md` | Kill test output: promises, cuts, dependency map, callback thread. | Complete. Read this before touching the TOC. |
+| `docs/toc.md` | 12 chapters, four parts. | **Frozen 2026-08-08.** Cuts folded in; ch12 (AI Wars) kept as authored override. |
+| `docs/toc-review.md` | Kill test output: promises, cuts, dependency map, callback thread. | Complete. Historical record; ch13 recommendation was overridden. |
+| `docs/chapter-template.md` `docs/terminology.md` `docs/concept-registry.md` `docs/case-study-registry.md` | Stage 3 scaffolding. | Built 2026-08-08. terminology.md awaits author edit. |
+| `voice/reference-article.md` | The register target the author supplied. | Live. Rhythm and argument source. |
+| `voice/pilot-ch01.md` | Voice pilot, ch1 opening (~817 words). | Written. Confirmed the blended voice holds. |
 | `voice/BRIEF.md` | Target register, extraction method, straw-man specimen. | Written. Not a voice source, do not read it as style input. |
-| `voice/sample.md` | The transcript. | **Stub. Blocks everything downstream.** |
+| `voice/sample.md` | The transcript. | Stub. No longer blocking; fills STORY-TODO beats when it exists. |
 | `prompts/` | Stage 2, 3, and 6 prompt text. | Stage 2 spent. Stage 3 ready. Stage 6 deferred. |
 | `.claude/skills/` | `/article` `/draft` `/review` `/approve` `/verify` | Live. |
 | `articles/` `manuscript/` `reviews/` `scripts/` | Empty. | Waiting on the transcript. |

@@ -1,8 +1,13 @@
 # The Clouds, for People Who Don't Do Servers
 
 ## Thesis
-[Your paragraph. Every chapter, analogy, case study, and figure serves this
-sentence. Cut anything that does not.]
+The cloud exists because demand moves in weeks and physical capacity moves in
+eighteen months. This book teaches a business reader to picture where her data
+actually lives, name what each part of the system costs, and know what breaks
+when it breaks, so she can ask the question that changes the meeting instead of
+writing down a term she never looks up.
+Every chapter, analogy, case study, and figure serves this sentence. Cut
+anything that does not.
 
 ## What this repo is
 A nonfiction book for business readers. Chapters live in /manuscript as Markdown.
@@ -49,6 +54,10 @@ default style:
 
 ## Hard content rules
 - Never state vendor prices. Never quote SKU-level tiers or quotas.
+- Teach cost shape, not cost. Name which line dominates, which one surprises,
+  which grows with users and which grows with data, and the ratios between them.
+  No dollars, no rate cards, no SKU tiers. When a chapter needs to say something
+  is expensive, say what it is expensive relative to.
 - Any figure that can go stale carries the year it was true.
 - Every chapter contains at least one first-hand story. When it is not written
   yet, insert `<!-- STORY-TODO: what this needs -->` and move on. Never invent
