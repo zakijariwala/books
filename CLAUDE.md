@@ -23,18 +23,29 @@ Every chapter answers: why does this exist, who pays for it, what happens when
 it breaks.
 
 ## Voice
-Match voice/sample.md. These rules override any default style:
+Two files set the target. voice/reference-article.md carries the rhythm, the
+irony, and the number-driven argument. voice/sample.md carries the first-hand
+voice and is still a stub until the author records it. These rules override any
+default style:
 - No em dashes.
-- Active voice with human subjects. People do things. Systems do not happen.
-- No adverbs.
-- No "not X, it's Y" constructions.
+- Prefer human subjects doing things. People do things. Systems do not happen.
+  Passive is allowed only when the actor is unknown or the thing acted upon is
+  the point ("the region was cut over at 2am").
+- Adverbs earn their place or get cut. Never one to prop up a weak verb. If the
+  sentence stands without it, cut it.
+- No "not just X, it's Y" hype cliche. The plain antithesis is allowed when both
+  halves carry a real idea: "You are not paid for what you produce. You are paid
+  for the performance of productivity."
 - No throat-clearing openers. Start on the concrete noun.
 - Specific nouns over vague declaratives. "The Mumbai region" beats "the cloud
   environment".
 - Vary sentence length. Short sentences carry weight.
-- Narrator: a tour guide who has run the infrastructure. Observationally funny.
-  No motivational language, no corporate jargon, no gatekeeping, no vendor
-  evangelism, no exam-prep phrasing, no implementation tutorials.
+- Narrator: a tour guide who ran the infrastructure and cannot help telling you
+  why it got built this way. Observationally funny. Willing to step back and
+  make the structural argument, land it on a figure, and take one clean swing at
+  how the industry talks about itself. No motivational language, no corporate
+  jargon, no gatekeeping, no vendor evangelism, no exam-prep phrasing, no
+  implementation tutorials.
 
 ## Hard content rules
 - Never state vendor prices. Never quote SKU-level tiers or quotas.
