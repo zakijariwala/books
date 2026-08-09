@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" width="900" height="520" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif">
+<rect width="900" height="520" fill="#ffffff"/>
+<defs>
+<pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="8" stroke="#c4c4c4" stroke-width="3.2"/></pattern>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1a1a1a"/></marker>
+<marker id="arm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6f6f6f"/></marker>
+</defs>
+<path d="M 130 96 L 790 96 L 750 192 L 170 192 Z" fill="#ffffff" stroke="#1a1a1a" stroke-width="3.6" stroke-linejoin="round" stroke-linecap="round"/>
+<g transform="translate(218.3,144.0) scale(0.42)">
+<rect x="-15.0" y="-24.0" width="30.0" height="48.0" rx="4" fill="#ffffff" stroke="#1a1a1a" stroke-width="2.2"/>
+<line x1="-8.0" y1="-17.0" x2="8.0" y2="-17.0" stroke="#1a1a1a" stroke-width="1.4" stroke-linecap="round"/>
+<circle cx="0" cy="16" r="2.6" fill="#1a1a1a"/>
+</g>
+<g transform="translate(315.0,144.0) scale(0.42)">
+<path d="M -20 26 L -20 -8 A 20 20 0 0 1 20 -8 L 20 26 Z" fill="#ffffff" stroke="#1a1a1a" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="10" cy="10" r="2.6" fill="#1a1a1a"/>
+</g>
+<rect x="363.3" y="104" width="96.7" height="80" fill="url(#hatch)" stroke="none"/>
+<g transform="translate(411.7,144.0) scale(0.42)">
+<path d="M -26 26 L -26 -4 L 0 -22 L 26 -4 L 26 26 Z" fill="#ffffff" stroke="#1a1a1a" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="-13.0" y1="26.0" x2="-13.0" y2="6.0" stroke="#1a1a1a" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="13.0" y1="26.0" x2="13.0" y2="6.0" stroke="#1a1a1a" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="-26.0" y1="6.0" x2="26.0" y2="6.0" stroke="#1a1a1a" stroke-width="1.4" stroke-linecap="round"/>
+</g>
+<g transform="translate(508.3,144.0) scale(0.42)">
+<circle cx="0" cy="4" r="20" fill="#ffffff" stroke="#1a1a1a" stroke-width="2.2"/>
+<line x1="-7.0" y1="-20.0" x2="7.0" y2="-20.0" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="0.0" y1="-20.0" x2="0.0" y2="-16.0" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="0.0" y1="4.0" x2="0.0" y2="-8.0" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="0.0" y1="4.0" x2="9.0" y2="9.0" stroke="#1a1a1a" stroke-width="1.4" stroke-linecap="round"/>
+</g>
+<g transform="translate(605.0,144.0) scale(0.42)">
+<rect x="-19.0" y="-23.0" width="38.0" height="46.0" rx="3" fill="#ffffff" stroke="#1a1a1a" stroke-width="2.2"/>
+<line x1="-11.0" y1="-12.0" x2="11.0" y2="-12.0" stroke="#1a1a1a" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="-11.0" y1="-3.0" x2="4.0" y2="-3.0" stroke="#1a1a1a" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="-11.0" y1="6.0" x2="11.0" y2="6.0" stroke="#1a1a1a" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="-11.0" y1="15.0" x2="4.0" y2="15.0" stroke="#1a1a1a" stroke-width="1.4" stroke-linecap="round"/>
+</g>
+<g transform="translate(701.7,144.0) scale(0.42)">
+<rect x="-15.0" y="-24.0" width="30.0" height="48.0" rx="4" fill="#ffffff" stroke="#1a1a1a" stroke-width="2.2"/>
+<line x1="-8.0" y1="-17.0" x2="8.0" y2="-17.0" stroke="#1a1a1a" stroke-width="1.4" stroke-linecap="round"/>
+<circle cx="0" cy="16" r="2.6" fill="#1a1a1a"/>
+</g>
+<line x1="266.7" y1="98.0" x2="266.7" y2="190.0" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="363.3" y1="98.0" x2="363.3" y2="190.0" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="460.0" y1="98.0" x2="460.0" y2="190.0" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="556.7" y1="98.0" x2="556.7" y2="190.0" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="653.3" y1="98.0" x2="653.3" y2="190.0" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<text x="96.0" y="84.0" font-size="19" font-weight="700" text-anchor="start" fill="#1a1a1a">bulkheads hold</text>
+<text x="790.0" y="232.0" font-size="15.5" font-weight="400" text-anchor="end" fill="#6f6f6f">one compartment</text>
+<path d="M 130 312 L 790 312 L 750 408 L 170 408 Z" fill="#ffffff" stroke="#1a1a1a" stroke-width="3.6" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="170.0" y="320" width="96.7" height="80" fill="url(#hatch)" stroke="none"/>
+<g transform="translate(218.3,360.0) scale(0.42)">
+<rect x="-15.0" y="-24.0" width="30.0" height="48.0" rx="4" fill="#ffffff" stroke="#1a1a1a" stroke-width="2.2"/>
+<line x1="-8.0" y1="-17.0" x2="8.0" y2="-17.0" stroke="#1a1a1a" stroke-width="1.4" stroke-linecap="round"/>
+<circle cx="0" cy="16" r="2.6" fill="#1a1a1a"/>
+</g>
+<rect x="266.7" y="320" width="96.7" height="80" fill="url(#hatch)" stroke="none"/>
+<g transform="translate(315.0,360.0) scale(0.42)">
+<path d="M -20 26 L -20 -8 A 20 20 0 0 1 20 -8 L 20 26 Z" fill="#ffffff" stroke="#1a1a1a" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="10" cy="10" r="2.6" fill="#1a1a1a"/>
+</g>
+<rect x="363.3" y="320" width="96.7" height="80" fill="url(#hatch)" stroke="none"/>
+<g transform="translate(411.7,360.0) scale(0.42)">
+<path d="M -26 26 L -26 -4 L 0 -22 L 26 -4 L 26 26 Z" fill="#ffffff" stroke="#1a1a1a" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="-13.0" y1="26.0" x2="-13.0" y2="6.0" stroke="#1a1a1a" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="13.0" y1="26.0" x2="13.0" y2="6.0" stroke="#1a1a1a" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="-26.0" y1="6.0" x2="26.0" y2="6.0" stroke="#1a1a1a" stroke-width="1.4" stroke-linecap="round"/>
+</g>
+<rect x="460.0" y="320" width="96.7" height="80" fill="url(#hatch)" stroke="none"/>
+<g transform="translate(508.3,360.0) scale(0.42)">
+<circle cx="0" cy="4" r="20" fill="#ffffff" stroke="#1a1a1a" stroke-width="2.2"/>
+<line x1="-7.0" y1="-20.0" x2="7.0" y2="-20.0" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="0.0" y1="-20.0" x2="0.0" y2="-16.0" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="0.0" y1="4.0" x2="0.0" y2="-8.0" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="0.0" y1="4.0" x2="9.0" y2="9.0" stroke="#1a1a1a" stroke-width="1.4" stroke-linecap="round"/>
+</g>
+<rect x="556.7" y="320" width="96.7" height="80" fill="url(#hatch)" stroke="none"/>
+<g transform="translate(605.0,360.0) scale(0.42)">
+<rect x="-19.0" y="-23.0" width="38.0" height="46.0" rx="3" fill="#ffffff" stroke="#1a1a1a" stroke-width="2.2"/>
+<line x1="-11.0" y1="-12.0" x2="11.0" y2="-12.0" stroke="#1a1a1a" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="-11.0" y1="-3.0" x2="4.0" y2="-3.0" stroke="#1a1a1a" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="-11.0" y1="6.0" x2="11.0" y2="6.0" stroke="#1a1a1a" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="-11.0" y1="15.0" x2="4.0" y2="15.0" stroke="#1a1a1a" stroke-width="1.4" stroke-linecap="round"/>
+</g>
+<rect x="653.3" y="320" width="96.7" height="80" fill="url(#hatch)" stroke="none"/>
+<g transform="translate(701.7,360.0) scale(0.42)">
+<rect x="-15.0" y="-24.0" width="30.0" height="48.0" rx="4" fill="#ffffff" stroke="#1a1a1a" stroke-width="2.2"/>
+<line x1="-8.0" y1="-17.0" x2="8.0" y2="-17.0" stroke="#1a1a1a" stroke-width="1.4" stroke-linecap="round"/>
+<circle cx="0" cy="16" r="2.6" fill="#1a1a1a"/>
+</g>
+<line x1="266.7" y1="316.0" x2="266.7" y2="342.0" stroke="#1a1a1a" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="266.7" y1="378.0" x2="266.7" y2="404.0" stroke="#1a1a1a" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="363.3" y1="316.0" x2="363.3" y2="342.0" stroke="#1a1a1a" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="363.3" y1="378.0" x2="363.3" y2="404.0" stroke="#1a1a1a" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="460.0" y1="316.0" x2="460.0" y2="342.0" stroke="#1a1a1a" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="460.0" y1="378.0" x2="460.0" y2="404.0" stroke="#1a1a1a" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="556.7" y1="316.0" x2="556.7" y2="342.0" stroke="#1a1a1a" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="556.7" y1="378.0" x2="556.7" y2="404.0" stroke="#1a1a1a" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="653.3" y1="316.0" x2="653.3" y2="342.0" stroke="#1a1a1a" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="653.3" y1="378.0" x2="653.3" y2="404.0" stroke="#1a1a1a" stroke-width="1.4" stroke-linecap="round"/>
+<text x="96.0" y="300.0" font-size="19" font-weight="700" text-anchor="start" fill="#1a1a1a">bulkheads open</text>
+<text x="790.0" y="448.0" font-size="15.5" font-weight="400" text-anchor="end" fill="#6f6f6f">all six</text>
+<text x="450.0" y="486.0" font-size="19" font-weight="400" text-anchor="middle" fill="#6f6f6f" font-style="italic">same hole, different blast radius</text>
+</svg>

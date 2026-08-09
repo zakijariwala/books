@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" width="900" height="560" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif">
+<rect width="900" height="560" fill="#ffffff"/>
+<defs>
+<pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="8" stroke="#c4c4c4" stroke-width="3.2"/></pattern>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1a1a1a"/></marker>
+<marker id="arm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6f6f6f"/></marker>
+</defs>
+<path d="M 112 440 C 340 416, 510 254, 848 128 L 848 262 L 606 262 L 606 352 L 358 352 L 358 440 Z" fill="url(#hatch)" stroke="none" stroke-width="0" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="112.0" y1="104.0" x2="112.0" y2="448.0" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="112.0" y1="448.0" x2="848.0" y2="448.0" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<path d="M 112 440 L 358 440 L 358 352 L 606 352 L 606 262 L 848 262" fill="none" stroke="#1a1a1a" stroke-width="3.6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 112 440 C 340 416, 510 254, 848 128" fill="none" stroke="#6f6f6f" stroke-width="3.6" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="96.0" y="106.0" font-size="15.5" font-weight="400" text-anchor="end" fill="#6f6f6f">capacity</text>
+<text x="844.0" y="108.0" font-size="19" font-weight="700" text-anchor="end" fill="#6f6f6f">industry demand</text>
+<text x="372.0" y="382.0" font-size="19" font-weight="700" text-anchor="start" fill="#1a1a1a">chips and power</text>
+<text x="430.0" y="200.0" font-size="19" font-weight="700" text-anchor="start" fill="#1a1a1a" font-style="italic">the gap</text>
+<line x1="112.0" y1="448.0" x2="112.0" y2="456.0" stroke="#1a1a1a" stroke-width="1.4" stroke-linecap="round"/>
+<text x="112.0" y="480.0" font-size="15.5" font-weight="400" text-anchor="start" fill="#6f6f6f">2022</text>
+<line x1="357.3" y1="448.0" x2="357.3" y2="456.0" stroke="#1a1a1a" stroke-width="1.4" stroke-linecap="round"/>
+<text x="357.3" y="480.0" font-size="15.5" font-weight="400" text-anchor="middle" fill="#6f6f6f">2023</text>
+<line x1="602.7" y1="448.0" x2="602.7" y2="456.0" stroke="#1a1a1a" stroke-width="1.4" stroke-linecap="round"/>
+<text x="602.7" y="480.0" font-size="15.5" font-weight="400" text-anchor="middle" fill="#6f6f6f">2024</text>
+<line x1="848.0" y1="448.0" x2="848.0" y2="456.0" stroke="#1a1a1a" stroke-width="1.4" stroke-linecap="round"/>
+<text x="848.0" y="480.0" font-size="15.5" font-weight="400" text-anchor="end" fill="#6f6f6f">2026</text>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" width="900" height="400" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif">
+<rect width="900" height="400" fill="#ffffff"/>
+<defs>
+<pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="8" stroke="#c4c4c4" stroke-width="3.2"/></pattern>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1a1a1a"/></marker>
+<marker id="arm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6f6f6f"/></marker>
+</defs>
+<rect x="96.0" y="128.0" width="700.0" height="62.0" rx="3" fill="#ffffff" stroke="#1a1a1a" stroke-width="2.2"/>
+<rect x="736.0" y="128.0" width="60.0" height="62.0" rx="3" fill="url(#hatch)" stroke="#1a1a1a" stroke-width="2.2"/>
+<text x="96.0" y="112.0" font-size="15.5" font-weight="400" text-anchor="start" fill="#6f6f6f">one month</text>
+<text x="440.0" y="168.0" font-size="19" font-weight="600" text-anchor="middle" fill="#1a1a1a">promised</text>
+<text x="796.0" y="220.0" font-size="15.5" font-weight="400" text-anchor="end" fill="#1a1a1a">permitted, about forty minutes</text>
+<rect x="736.0" y="268.0" width="9.0" height="30.0" rx="0" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="2.2"/>
+<text x="722.0" y="292.0" font-size="15.5" font-weight="600" text-anchor="end" fill="#1a1a1a">what the credit refunds</text>
+<text x="96.0" y="344.0" font-size="15.5" font-weight="400" text-anchor="start" fill="#6f6f6f" font-style="italic">the guarantee measures their component, not your customer</text>
+</svg>

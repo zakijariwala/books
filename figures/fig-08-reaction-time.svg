@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" width="900" height="520" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif">
+<rect width="900" height="520" fill="#ffffff"/>
+<defs>
+<pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="8" stroke="#c4c4c4" stroke-width="3.2"/></pattern>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1a1a1a"/></marker>
+<marker id="arm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6f6f6f"/></marker>
+</defs>
+<path d="M 156 400 L 156 126 L 696 126 L 696 210 L 526 210 L 526 308 L 326 308 L 326 400 Z" fill="url(#hatch)" stroke="none"/>
+<line x1="96.0" y1="96.0" x2="96.0" y2="400.0" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="96.0" y1="400.0" x2="856.0" y2="400.0" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+<path d="M 96 394 L 154 394 L 156 126 L 856 126" fill="none" stroke="#6f6f6f" stroke-width="3.6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 96 394 L 326 394 L 326 308 L 526 308 L 526 210 L 696 210 L 696 126 L 856 126" fill="none" stroke="#1a1a1a" stroke-width="3.6" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="850.0" y="114.0" font-size="19" font-weight="700" text-anchor="end" fill="#6f6f6f">traffic</text>
+<text x="692.0" y="198.0" font-size="19" font-weight="700" text-anchor="end" fill="#1a1a1a">capacity</text>
+<text x="346.0" y="224.0" font-size="19" font-weight="700" text-anchor="start" fill="#1a1a1a" font-style="italic">the outage</text>
+<line x1="96.0" y1="400.0" x2="96.0" y2="408.0" stroke="#1a1a1a" stroke-width="1.4" stroke-linecap="round"/>
+<text x="96.0" y="432.0" font-size="15.5" font-weight="400" text-anchor="middle" fill="#6f6f6f">0</text>
+<line x1="349.3" y1="400.0" x2="349.3" y2="408.0" stroke="#1a1a1a" stroke-width="1.4" stroke-linecap="round"/>
+<text x="349.3" y="432.0" font-size="15.5" font-weight="400" text-anchor="middle" fill="#6f6f6f">2 min</text>
+<line x1="602.7" y1="400.0" x2="602.7" y2="408.0" stroke="#1a1a1a" stroke-width="1.4" stroke-linecap="round"/>
+<text x="602.7" y="432.0" font-size="15.5" font-weight="400" text-anchor="middle" fill="#6f6f6f">4 min</text>
+<line x1="856.0" y1="400.0" x2="856.0" y2="408.0" stroke="#1a1a1a" stroke-width="1.4" stroke-linecap="round"/>
+<text x="856.0" y="432.0" font-size="15.5" font-weight="400" text-anchor="middle" fill="#6f6f6f">6 min</text>
+<text x="96.0" y="476.0" font-size="15.5" font-weight="400" text-anchor="start" fill="#6f6f6f" font-style="italic">capacity arrives. the customers did not wait.</text>
+</svg>

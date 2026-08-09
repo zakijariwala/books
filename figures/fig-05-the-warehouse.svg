@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" width="900" height="420" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif">
+<rect width="900" height="420" fill="#ffffff"/>
+<defs>
+<pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="8" stroke="#c4c4c4" stroke-width="3.2"/></pattern>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1a1a1a"/></marker>
+<marker id="arm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6f6f6f"/></marker>
+</defs>
+<g transform="translate(450.0,214.0) scale(2.9)">
+<path d="M -26 26 L -26 -4 L 0 -22 L 26 -4 L 26 26 Z" fill="#ffffff" stroke="#1a1a1a" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="-13.0" y1="26.0" x2="-13.0" y2="6.0" stroke="#1a1a1a" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="13.0" y1="26.0" x2="13.0" y2="6.0" stroke="#1a1a1a" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="-26.0" y1="6.0" x2="26.0" y2="6.0" stroke="#1a1a1a" stroke-width="1.4" stroke-linecap="round"/>
+</g>
+<line x1="96.0" y1="214.0" x2="330.0" y2="214.0" stroke="#6f6f6f" stroke-width="2.2" stroke-linecap="round" marker-end="url(#ar)"/>
+<text x="96.0" y="188.0" font-size="15.5" font-weight="400" text-anchor="start" fill="#6f6f6f">in, free or close to it</text>
+<path d="M 424 250 A 30 30 0 1 1 452 262" fill="none" stroke="#1a1a1a" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#ar)"/>
+<text x="450.0" y="332.0" font-size="15.5" font-weight="400" text-anchor="middle" fill="#1a1a1a">keep, a little every month, forever</text>
+<line x1="572.0" y1="214.0" x2="820.0" y2="214.0" stroke="#1a1a1a" stroke-width="9.0" stroke-linecap="butt" marker-end="url(#ar)"/>
+<text x="820.0" y="186.0" font-size="19" font-weight="700" text-anchor="end" fill="#1a1a1a">out, metered</text>
+<text x="450.0" y="386.0" font-size="15.5" font-weight="400" text-anchor="middle" fill="#6f6f6f" font-style="italic">storing is cheap, moving is not</text>
+</svg>

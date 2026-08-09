@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" width="900" height="500" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif">
+<rect width="900" height="500" fill="#ffffff"/>
+<defs>
+<pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="8" stroke="#c4c4c4" stroke-width="3.2"/></pattern>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1a1a1a"/></marker>
+<marker id="arm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6f6f6f"/></marker>
+</defs>
+<line x1="450.0" y1="92.0" x2="450.0" y2="428.0" stroke="#c4c4c4" stroke-width="1.4" stroke-linecap="round"/>
+<text x="60.0" y="122.0" font-size="19" font-weight="700" text-anchor="start" fill="#1a1a1a">bigger</text>
+<line x1="60.0" y1="168.0" x2="410.0" y2="168.0" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="7 6"/>
+<text x="410.0" y="158.0" font-size="15.5" font-weight="400" text-anchor="end" fill="#6f6f6f">largest size sold</text>
+<path d="M 72 282 L 118.8 282 L 118.8 305.2 L 150 305.2 L 150 322 L 72 322 Z" fill="#ffffff" stroke="#1a1a1a" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="87.6" cy="331" r="9" fill="#ffffff" stroke="#1a1a1a" stroke-width="2.2"/>
+<circle cx="134.4" cy="331" r="9" fill="#ffffff" stroke="#1a1a1a" stroke-width="2.2"/>
+<line x1="172.0" y1="302.0" x2="212.0" y2="302.0" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round" marker-end="url(#ar)"/>
+<path d="M 232 230 L 322.0 230 L 322.0 283.36 L 382 283.36 L 382 322 L 232 322 Z" fill="#ffffff" stroke="#1a1a1a" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="262.0" cy="331" r="9" fill="#ffffff" stroke="#1a1a1a" stroke-width="2.2"/>
+<circle cx="352.0" cy="331" r="9" fill="#ffffff" stroke="#1a1a1a" stroke-width="2.2"/>
+<text x="226.0" y="396.0" font-size="15.5" font-weight="400" text-anchor="middle" fill="#6f6f6f" font-style="italic">one machine, a ceiling</text>
+<text x="492.0" y="122.0" font-size="19" font-weight="700" text-anchor="start" fill="#1a1a1a">more</text>
+<g transform="translate(676.0,200.0) scale(0.8)">
+<path d="M -20 26 L -20 -8 A 20 20 0 0 1 20 -8 L 20 26 Z" fill="#ffffff" stroke="#1a1a1a" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="10" cy="10" r="2.6" fill="#1a1a1a"/>
+</g>
+<path d="M 500 286 L 539.6 286 L 539.6 306.88 L 566 306.88 L 566 322 L 500 322 Z" fill="#ffffff" stroke="#1a1a1a" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="513.2" cy="331" r="9" fill="#ffffff" stroke="#1a1a1a" stroke-width="2.2"/>
+<circle cx="552.8" cy="331" r="9" fill="#ffffff" stroke="#1a1a1a" stroke-width="2.2"/>
+<line x1="676.0" y1="232.0" x2="539.0" y2="274.0" stroke="#6f6f6f" stroke-width="1.4" stroke-linecap="round" marker-end="url(#ar)"/>
+<path d="M 576 286 L 615.6 286 L 615.6 306.88 L 642 306.88 L 642 322 L 576 322 Z" fill="#ffffff" stroke="#1a1a1a" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="589.2" cy="331" r="9" fill="#ffffff" stroke="#1a1a1a" stroke-width="2.2"/>
+<circle cx="628.8" cy="331" r="9" fill="#ffffff" stroke="#1a1a1a" stroke-width="2.2"/>
+<line x1="676.0" y1="232.0" x2="615.0" y2="274.0" stroke="#6f6f6f" stroke-width="1.4" stroke-linecap="round" marker-end="url(#ar)"/>
+<path d="M 652 286 L 691.6 286 L 691.6 306.88 L 718 306.88 L 718 322 L 652 322 Z" fill="#ffffff" stroke="#1a1a1a" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="665.2" cy="331" r="9" fill="#ffffff" stroke="#1a1a1a" stroke-width="2.2"/>
+<circle cx="704.8" cy="331" r="9" fill="#ffffff" stroke="#1a1a1a" stroke-width="2.2"/>
+<line x1="676.0" y1="232.0" x2="691.0" y2="274.0" stroke="#6f6f6f" stroke-width="1.4" stroke-linecap="round" marker-end="url(#ar)"/>
+<path d="M 728 286 L 767.6 286 L 767.6 306.88 L 794 306.88 L 794 322 L 728 322 Z" fill="#ffffff" stroke="#1a1a1a" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="741.2" cy="331" r="9" fill="#ffffff" stroke="#1a1a1a" stroke-width="2.2"/>
+<circle cx="780.8" cy="331" r="9" fill="#ffffff" stroke="#1a1a1a" stroke-width="2.2"/>
+<line x1="676.0" y1="232.0" x2="767.0" y2="274.0" stroke="#6f6f6f" stroke-width="1.4" stroke-linecap="round" marker-end="url(#ar)"/>
+<path d="M 804 286 L 843.6 286 L 843.6 306.88 L 870 306.88 L 870 322 L 804 322 Z" fill="#ffffff" stroke="#1a1a1a" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="817.2" cy="331" r="9" fill="#ffffff" stroke="#1a1a1a" stroke-width="2.2"/>
+<circle cx="856.8" cy="331" r="9" fill="#ffffff" stroke="#1a1a1a" stroke-width="2.2"/>
+<line x1="676.0" y1="232.0" x2="843.0" y2="274.0" stroke="#6f6f6f" stroke-width="1.4" stroke-linecap="round" marker-end="url(#ar)"/>
+<text x="676.0" y="396.0" font-size="15.5" font-weight="400" text-anchor="middle" fill="#6f6f6f" font-style="italic">copies, no ceiling</text>
+</svg>
