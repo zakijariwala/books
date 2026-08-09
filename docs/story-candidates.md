@@ -30,7 +30,7 @@ Status legend: `OPEN` = marker in the draft, unranked. Verdict is the author's.
 |---|---------|----------------------|---------------------------|----------------------|---------|
 | 1 | 1 | `manuscript/ch01.md`, Inside a real organization | Capacity you own is a physical place that can run out of air, on a timeline you do not control. | The chapter argues the gap but never shows it hurting anyone. The room stays a description. | OPEN |
 | 2 | 2 | `manuscript/ch02.md`, Inside a real organization. Also `articles/02` | The six stops are separate businesses, because a supply chain can half-work and a single system cannot. | The strongest structural claim in the book rests on a hypothetical. Serves two places at once. | OPEN |
-| 3 | 3 | `articles/03` | Where data lives stopped being abstract and became a line item somebody owned. | Residency stays a compliance abstraction rather than a thing that cost someone an afternoon. | OPEN |
+| 3 | 3 | `manuscript/ch03.md`, Inside a real organization. Also `articles/03` | That the residency question has teeth, and that answering it late costs more than answering it early. | The chapter is a well-organised explanation of something the reader has no evidence ever hurt anyone. Serves two places. | OPEN |
 | 4 | 4 | not yet drafted | Bigger instances were a two-hour change or a two-week one, and the bill moved. | Undetermined until ch4 is drafted. | OPEN |
 | 5 | 5 | not yet drafted | Data that was cheap to keep and expensive to move. | Undetermined until ch5 is drafted. | OPEN |
 | 6 | 6 | not yet drafted | The distant customer who saw a slower product, and what fixing it cost. | Undetermined until ch6 is drafted. | OPEN |
