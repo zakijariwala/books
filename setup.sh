@@ -110,6 +110,34 @@ install_pandoc() {
 }
 
 # ---------------------------------------------------------------------------
+# poppler-utils
+#
+# Source material arrives as PDFs, and /verify has to read them. Without this,
+# reading a PDF fails with "pdftoppm is not installed".
+# ---------------------------------------------------------------------------
+install_poppler() {
+  step "poppler-utils (PDF reading)"
+
+  if have pdftotext && have pdftoppm; then
+    log "already installed: $(pdftotext -v 2>&1 | head -1)"
+    return 0
+  fi
+
+  if ! have apt-get; then
+    log "apt-get not found, cannot install poppler-utils"
+    FAILED+=("poppler-utils (no apt-get)")
+    return 0
+  fi
+
+  log "installing poppler-utils"
+  if ! $SUDO env DEBIAN_FRONTEND=noninteractive apt-get install -y poppler-utils >/tmp/setup-poppler.log 2>&1; then
+    log "apt-get install failed, see /tmp/setup-poppler.log"
+    FAILED+=("poppler-utils (apt-get install)")
+    return 0
+  fi
+}
+
+# ---------------------------------------------------------------------------
 # Diagram tooling, deliberately not installed yet.
 #
 # HANDOVER.md holds these back until three chapters are approved, so nothing
@@ -142,6 +170,13 @@ verify() {
     ok=1
   fi
 
+  if have pdftotext; then
+    log "poppler $(pdftotext -v 2>&1 | head -1)"
+  else
+    log "poppler MISSING"
+    ok=1
+  fi
+
   if [ ${#FAILED[@]} -gt 0 ]; then
     printf '\nFailed steps:\n'
     printf '  %s\n' "${FAILED[@]}"
@@ -159,6 +194,7 @@ verify() {
 main() {
   install_vale
   install_pandoc
+  install_poppler
   # install_diagram_tools   # see the note above
   verify
 }
