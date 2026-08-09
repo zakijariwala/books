@@ -1,0 +1,44 @@
+# The narrow adverb rule, split out from Book.Adverbs.
+#
+# Book.Adverbs asks a question: does the sentence stand without it? Sometimes
+# the answer is no, and the adverb stays. This rule covers the class where the
+# answer is almost always yes: hedges and intensifiers that add emphasis instead
+# of meaning.
+#
+# The evidence for splitting them, measured 2026-08-09 across the drafted prose
+# and voice/reference-article.md:
+#
+#   - The reference article uses none of these words. Not one, in 493 words.
+#   - The drafts used "actually" 15 times across roughly 9,000 words.
+#   - The reference article repeats no adverb at all. Chapter 1 repeated six.
+#
+# So the problem was never adverb density. Chapter 1 ran at 7.9 adverbs per
+# thousand words against the article's 10.1. The problem is this specific class,
+# and repeating one of them until it becomes a tic.
+#
+# Severity stays at warning, matching every other rule here, because
+# prompts/stage3-standards.md sets warning and not error across the board. The
+# author overrules the linter, not the other way round.
+extends: existence
+message: "'%s' is a filler adverb. The reference article never uses one. Cut it."
+level: warning
+ignorecase: true
+tokens:
+  - absolutely
+  - actually
+  - basically
+  - certainly
+  - clearly
+  - definitely
+  - essentially
+  - frankly
+  - genuinely
+  - honestly
+  - literally
+  - obviously
+  - quite
+  - really
+  - simply
+  - totally
+  - truly
+  - very

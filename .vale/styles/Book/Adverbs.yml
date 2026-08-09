@@ -4,6 +4,10 @@
 # This flags candidates, it does not ban them. Read the sentence without the
 # adverb. If it still stands, cut it. The exceptions below are words that end
 # in -ly without being adverbs, plus a few the book uses on purpose.
+#
+# The hedges and intensifiers (actually, really, simply, and the rest) are
+# excepted here because Book.FillerAdverbs owns them. They get a sharper message
+# and no second warning from this rule.
 extends: existence
 message: "'%s' is an adverb. Does the sentence stand without it?"
 level: warning
@@ -11,6 +15,7 @@ ignorecase: false
 tokens:
   - '\b[A-Za-z]+ly\b'
 exceptions:
+  # Words ending in -ly that are not adverbs.
   - Italy
   - July
   - anomaly
@@ -38,3 +43,20 @@ exceptions:
   - ugly
   - weekly
   - yearly
+  # Owned by Book.FillerAdverbs, so they do not warn twice.
+  - absolutely
+  - actually
+  - basically
+  - certainly
+  - clearly
+  - definitely
+  - essentially
+  - frankly
+  - genuinely
+  - honestly
+  - literally
+  - obviously
+  - really
+  - simply
+  - totally
+  - truly
