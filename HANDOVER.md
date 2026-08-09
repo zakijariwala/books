@@ -29,11 +29,14 @@ Consequences for anyone drafting on the experiment branch:
 
 
 **Book:** The Clouds, for People Who Don't Do Servers
-**State as of 2026-08-08:** TOC frozen (12 chapters), thesis and cost rule
-written, Stage 3 scaffolding built, voice unblocked via a reference article and
-confirmed by a pilot. Ready to draft.
-**Next action:** `/article 2` or `/draft 1`. First-hand beats land as STORY-TODO
-until the transcript exists. See TASKS.md.
+**State as of 2026-08-09:** First draft complete on the experiment branch. All
+twelve chapters drafted, 45,891 words, every chapter inside the 3,800 to 4,200
+budget and clean on the hard lint rules. Twelve first-hand markers, one per
+chapter, each stating what the story must prove and what the chapter loses
+without it. Four pilot articles drafted.
+**Next action:** the shred. Read the draft cold, fill the Verdict column in
+`docs/story-candidates.md`, and pick roughly five stories to record. See the
+two-branch note below before merging anything.
 
 ---
 

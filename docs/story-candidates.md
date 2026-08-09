@@ -39,7 +39,7 @@ Status legend: `OPEN` = marker in the draft, unranked. Verdict is the author's.
 | 9 | 9 | `manuscript/ch09.md`, Inside a real organization | That the gap between what the contract pays and what the failure costs is real and lands on a person, and that the hardest work during an outage is not technical. | The chapter is a correct reading of a contract nobody has been burned by. **Duplication resolved:** chapter 2 owns the half-succeeded write; chapter 9 carries it only as a callback and its marker is the outage instead. | OPEN |
 | 10 | 10 | `manuscript/ch10.md`, Inside a real organization | That the first step is mundane and the spread is the story, and that the reach was decided years earlier by somebody solving an unrelated problem. | The chapter argues for containment with no evidence containment was ever the thing that mattered. Middling to strong, with a caveat: a real security incident may not be tellable without naming an employer. | OPEN |
 | 11 | 11 | `manuscript/ch11.md`, Inside a real organization. Also `articles/11` | That the mirror is real, that a specific line traced back to a specific human decision, and that nobody was being careless. | The chapter's central claim is an assertion about invoices the reader has never seen. Strong: serves two places, and the bill is the one artefact the reader cannot picture without help. | OPEN |
-| 12 | 12 | `articles/12` | Being inside the capacity scramble. A region that answered with a date instead of a yes. | The closer argues the gap at planetary scale with no evidence the author stood in it. | OPEN |
+| 12 | 12 | `manuscript/ch12.md`, Inside a real organization. Also `articles/12` | That the waitlist was real, that it had a date on it, and that no amount of money or seniority moved it. Include the year. | The closer argues an industry story the reader has only read about, told by somebody with no more standing than the journalists who covered it. Strong: it is the last first-hand beat in the book and serves two places. | OPEN |
 
 ## Known duplication
 
@@ -51,6 +51,28 @@ markers, two recordings, no overlap.
 
 Candidate 1 also appears in `voice/pilot-ch01.md`, which is a voice test rather
 than manuscript and does not need its own recording.
+
+## Drafting notes, recorded before the shred
+
+The first draft is complete: twelve chapters, 45,891 words, every chapter in
+budget and clean on the hard lint rules. What drafting revealed, before anyone
+has read it cold:
+
+- **No marker turned out to be pure habit.** Every chapter produced a marker that
+  could state what it would prove. That is a finding in itself, and it means the
+  CLAUDE.md rule survives the draft. Whether it survives the reading is the
+  question the shred answers.
+- **Strength is uneven and the register says so.** Candidates 2, 5, 7, 8, 11 and
+  12 were logged as strong; 4 and 6 as the weakest, because their arguments carry
+  themselves on logic and a story would confirm rather than prove.
+- **Four candidates serve two places each** (2, 3, 11, 12 also appear in the
+  pilot articles), which is the tie-breaker the ranking rules already name.
+- **One caveat sits on candidate 10.** A real security incident may not be
+  tellable without identifying an employer, so it may fail on grounds unrelated
+  to its strength.
+
+None of that substitutes for reading the draft cold. It is written down so the
+shred can disagree with it.
 
 ## What the shred produces
 
