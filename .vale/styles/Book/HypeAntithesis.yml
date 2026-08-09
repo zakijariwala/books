@@ -1,0 +1,19 @@
+# CLAUDE.md bans the "not just X, it's Y" hype cliche, and allows the plain
+# antithesis when both halves carry a real idea. This rule targets the cliche
+# only. It does not fire on:
+#   "You are not paid for what you produce. You are paid for the performance
+#    of productivity."
+# The difference is the comma splice and the "just": the cliche inflates one
+# idea into two, the plain antithesis carries a real idea in each half.
+extends: existence
+message: "The 'not just X, it's Y' hype cliche. Plain antithesis is allowed; this shape is not."
+level: warning
+ignorecase: true
+nonword: false
+tokens:
+  - "(is|are|was|were|am) not (just|only|merely|simply) [^.;]{2,60}, (it|they|that|this)['’]?s"
+  - "(is|are|was|were|am) not (just|only|merely|simply) [^.;]{2,60}, (it|they|that|this) (is|are|was|were)"
+  - "(isn|aren|wasn|weren)['’]t (just|only|merely|simply) [^.;]{2,60}, (it|they|that|this)['’]?s"
+  - "(isn|aren|wasn|weren)['’]t (just|only|merely|simply) [^.;]{2,60}, (it|they|that|this) (is|are|was|were)"
+  - "not (just|only|merely|simply) (about|a|an|the) [^.;]{2,60}, (it|they|that|this)['’]?s"
+  - "more than just an? "

@@ -1,0 +1,7 @@
+extends: existence
+message: "No em dashes. Recast the sentence, or use a comma, a colon, or a full stop."
+level: warning
+nonword: true
+tokens:
+  - '—'
+  - '–'

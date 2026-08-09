@@ -1,0 +1,33 @@
+# CLAUDE.md: no corporate jargon. The narrator talks like a person who ran the
+# infrastructure, not like a slide.
+extends: substitution
+# Vale passes the suggested replacement first, then the text it found.
+message: "Corporate jargon. Use '%s' instead of '%s'."
+level: warning
+ignorecase: true
+swap:
+  leverage: use
+  leveraging: using
+  utilize: use
+  utilizing: using
+  synergy: fit
+  synergies: fit
+  "circle back": return to
+  "reach out to": ask
+  "touch base": talk
+  "move the needle": change the outcome
+  "at the end of the day": in the end
+  "low-hanging fruit": the easy part
+  "boil the ocean": do everything at once
+  "double down": commit
+  "north star": goal
+  "value-add": worth
+  "actionable insights": something you can act on
+  "core competency": what you are good at
+  "operationalize": run
+  "ideate": think
+  "learnings": lessons
+  "bandwidth": time
+  "drill down": look closer
+  "table stakes": the minimum
+  "paradigm shift": change

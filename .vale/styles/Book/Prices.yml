@@ -1,0 +1,16 @@
+# CLAUDE.md hard content rule: never state vendor prices, never quote SKU-level
+# tiers or quotas. Teach cost shape instead: which line dominates, which one
+# surprises, which grows with users and which grows with data.
+extends: existence
+message: "'%s' looks like a price or a rate card. Teach cost shape, not cost."
+level: warning
+nonword: true
+ignorecase: true
+tokens:
+  - '\$[\d,]+'
+  - '\d+ (dollars|cents|euros|pounds)'
+  - '\d+ ?(cents|dollars) per'
+  - 'per (gigabyte|terabyte|GB|TB) per month'
+  - '\d+ ?(GB|TB|vCPU)s? (of|for) \$'
+  - 'free tier'
+  - 'reserved instance discount'

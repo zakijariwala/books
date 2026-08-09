@@ -1,0 +1,27 @@
+# CLAUDE.md: vendor neutrality always, no vendor evangelism. If one of these
+# appears, it should be inside quotation marks as something a vendor said, and
+# the narrator should be taking a swing at it.
+extends: existence
+message: "'%s' is vendor evangelism. Quote it as a vendor's word, or cut it."
+level: warning
+ignorecase: true
+tokens:
+  - game.?chang(er|ing)
+  - revolutionary
+  - seamless(ly)?
+  - best.in.class
+  - industry.leading
+  - cutting.edge
+  - world.class
+  - state.of.the.art
+  - "unlock the (power|potential)"
+  - "empower(s|ing)? (you|teams|organizations)"
+  - "digital transformation"
+  - "journey to the cloud"
+  - "cloud.first"
+  - frictionless
+  - turnkey
+  - "future.proof"
+  - "mission.critical"
+  - robust
+  - "enterprise.grade"

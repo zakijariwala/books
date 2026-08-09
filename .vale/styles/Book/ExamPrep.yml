@@ -1,0 +1,26 @@
+# CLAUDE.md: no exam-prep phrasing, no throat-clearing openers. The reader is
+# not studying for a certification and does not need to be told what she is
+# about to be told. Start on the concrete noun.
+extends: existence
+message: "'%s' is exam-prep or throat-clearing phrasing. Start on the concrete noun."
+level: warning
+ignorecase: true
+tokens:
+  - "in this (chapter|article|section),? (we|you) will"
+  - "by the end of this (chapter|article|section)"
+  - "let'?s (dive|jump) (in|into)"
+  - "we will (cover|explore|discuss|examine)"
+  - "it (is|'s) important to (note|remember|understand)"
+  - "keep in mind that"
+  - "as (we|I) mentioned (earlier|above|before)"
+  - "as discussed (earlier|above)"
+  - "remember that"
+  - "in summary"
+  - "to summarize"
+  - "first and foremost"
+  - "needless to say"
+  - "the key takeaway (is|here)"
+  - "there are (three|four|five|several) (key|main|important)"
+  - "let me explain"
+  - "here is the (idea|thing|point)"
+  - "it is worth (noting|pausing|remembering)"

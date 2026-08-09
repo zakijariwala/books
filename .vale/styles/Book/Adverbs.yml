@@ -1,0 +1,40 @@
+# CLAUDE.md: "Adverbs earn their place or get cut. Never one to prop up a weak
+# verb. If the sentence stands without it, cut it."
+#
+# This flags candidates, it does not ban them. Read the sentence without the
+# adverb. If it still stands, cut it. The exceptions below are words that end
+# in -ly without being adverbs, plus a few the book uses on purpose.
+extends: existence
+message: "'%s' is an adverb. Does the sentence stand without it?"
+level: warning
+ignorecase: false
+tokens:
+  - '\b[A-Za-z]+ly\b'
+exceptions:
+  - Italy
+  - July
+  - anomaly
+  - apply
+  - assembly
+  - belly
+  - comply
+  - daily
+  - early
+  - family
+  - holy
+  - imply
+  - italy
+  - july
+  - likely
+  - lly
+  - monopoly
+  - monthly
+  - multiply
+  - only
+  - quarterly
+  - rely
+  - reply
+  - supply
+  - ugly
+  - weekly
+  - yearly
