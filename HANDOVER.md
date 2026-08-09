@@ -1,5 +1,33 @@
 # Handover
 
+## Two branches, two jobs. Read this before merging anything.
+
+**`claude/voice-feature-2hvzrj` is an experiment. It is not a candidate for
+merge.** It exists to produce a complete first draft at the target register with
+no first-hand story anywhere in it, so the author can read it cold, analyse it,
+and shred it. The prose is not the deliverable. The deliverable is the evidence
+of where a story is load-bearing and where a `STORY-TODO` marker was inserted out
+of habit and carries nothing.
+
+**`book/clouds` is where the lessons get applied.** After the shred, the author
+picks roughly five stories that apply to this book and are worth telling, records
+in the directions the shred points, and the consolidated result lands there.
+Nothing on the experiment branch moves across wholesale.
+
+Consequences for anyone drafting on the experiment branch:
+
+- A `STORY-TODO` is a finding, not a placeholder. Write the marker so it states
+  what the story has to prove and what the chapter loses without it. A marker
+  that cannot say what it would prove is itself the finding: that chapter does
+  not need a story.
+- Do not thin the markers to hit a target. The point of drafting all twelve is to
+  let the ranking fall out of the reading.
+- `docs/story-candidates.md` collects every marker in one place for that ranking.
+- CLAUDE.md still says every chapter carries at least one first-hand story. That
+  rule describes the finished book on `book/clouds`, and it is in tension with
+  picking five. The shred settles it. Do not quietly relax the rule here.
+
+
 **Book:** The Clouds, for People Who Don't Do Servers
 **State as of 2026-08-08:** TOC frozen (12 chapters), thesis and cost rule
 written, Stage 3 scaffolding built, voice unblocked via a reference article and
