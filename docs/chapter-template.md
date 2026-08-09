@@ -14,6 +14,37 @@ Two failure tests from buyer.md, applied to every draft:
 
 ---
 
+## The arc
+
+Every chapter runs from exposure to competence. It opens on something going
+wrong and ends on the reader knowing what to do. The opening scene is a room
+overheating, a question nobody could answer, a bill nobody could explain. The
+Monday question hands her the move. Between those two points the feeling shifts
+from "I would not have known that" to "I can ask that on Tuesday."
+
+This is a structural requirement, not a mood. /review checks it:
+
+- **A chapter that opens comfortable has no reason to be read.** If the opening
+  scene contains no failure, no exposure, and nothing at stake, rewrite it.
+- **A chapter that ends anxious has taken something and given nothing back.**
+  If the last two sections leave the reader worried rather than equipped, the
+  chapter fails, however accurate it is.
+
+Two findings from Poels and Dewitte's 2006 review of emotion measurement in
+advertising sit behind this, and they are about advertising rather than books,
+so treat them as support and not proof:
+
+- Material works better when the emotional reaction shifts from negative to
+  positive across the experience, rather than sitting still. A static ad, or a
+  chapter that stays at one emotional altitude, does less work.
+- Arousal predicts recall better than pleasantness does. The passages a reader
+  can still repeat next month are the ones with something at stake, which is
+  the argument for spending the STORY-TODO beats well. The 2am call earns its
+  place twice: once because it is true, and once because it is the part she
+  will retell.
+
+---
+
 ## Sections, in order
 
 | # | Section | Serves | Budget | What it does |

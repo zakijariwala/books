@@ -63,12 +63,39 @@ to fill `STORY-TODO` markers with first-hand beats, not to gate the project.
 - [ ] `/article 12` Cloud economics. Tests whether you can carry business weight.
 - [ ] **you** Fill every STORY-TODO marker. This is the part that sells the book.
 - [ ] **you** Publish all three. Test both subtitle candidates as headlines.
-- [ ] **you** Wait. Read the comments. Collect the email address of everyone who
-      replies. That list is the launch reviewer pool.
+- [ ] **you** Wait. Then read the response in the order below, not in the order
+      it arrives.
 - [ ] **you** Settle the Option A bet. Who forwarded them? Product managers and
       founders confirm the direction. Teachers and journalists reopen it.
-- [ ] **you** Change the standards based on what strangers said, not on what a
-      model said.
+- [ ] **you** Change the standards based on what strangers did, not on what
+      friends said and not on what a model said.
+
+### Which signals count, in order
+
+Poels and Dewitte's 2006 review of emotion measurement makes one point that
+applies directly here: what people say about how something made them feel is
+distorted by what they think they should say, and what they do is not. A
+comment on a public professional network is the most distorted measurement
+available, because commenting is itself a performance. Rank the evidence:
+
+1. **Forwards and shares.** Behaviour, and the identity of the forwarder is the
+   whole bet. Strongest signal by a distance.
+2. **Unprompted messages and email replies.** Writing costs effort, and nobody
+   sends one to look good in public. This is also the launch reviewer pool, so
+   collect every address.
+3. **Saves and reread traffic**, where the platform reports it. Quiet, honest,
+   and nobody performs a save.
+4. **Public comments.** Discount heavily. "Great post" is noise. A comment that
+   argues with a specific paragraph is worth more than fifty that approve.
+
+Two traps this ordering avoids:
+
+- **Forced exposure.** Friends and colleagues who read because you asked are
+  not a sample. The paper's own limitation section makes this point about lab
+  studies, and it applies to anyone who owed you a favour. Weight strangers.
+- **Counting applause as evidence.** A post can be widely liked and forwarded
+  by nobody. Likes are the cheapest possible act. If the forward count is flat,
+  the piece did not land, whatever the comments say.
 
 ## Stage 5, chapters. Not before the articles are published.
 
