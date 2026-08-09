@@ -138,10 +138,42 @@ install_poppler() {
 }
 
 # ---------------------------------------------------------------------------
-# Diagram tooling, deliberately not installed yet.
+# librsvg
 #
-# HANDOVER.md holds these back until three chapters are approved, so nothing
-# below runs. Uncomment when the figures in docs/figures.md get drawn.
+# Renders figures/*.svg to PNG via scripts/render-figures.sh. The figures are
+# hand-authored SVG rather than generated layouts, so this is the only drawing
+# dependency the book has.
+# ---------------------------------------------------------------------------
+install_librsvg() {
+  step "librsvg (figure rendering)"
+
+  if have rsvg-convert; then
+    log "already installed: $(rsvg-convert --version)"
+    return 0
+  fi
+
+  if ! have apt-get; then
+    log "apt-get not found, cannot install librsvg2-bin"
+    FAILED+=("librsvg2-bin (no apt-get)")
+    return 0
+  fi
+
+  log "installing librsvg2-bin"
+  if ! $SUDO env DEBIAN_FRONTEND=noninteractive apt-get install -y librsvg2-bin >/tmp/setup-librsvg.log 2>&1; then
+    log "apt-get install failed, see /tmp/setup-librsvg.log"
+    FAILED+=("librsvg2-bin (apt-get install)")
+    return 0
+  fi
+}
+
+# ---------------------------------------------------------------------------
+# Diagram tooling, evaluated and not used.
+#
+# Graphviz, the Python diagrams library and mermaid-cli were considered for the
+# figures and rejected: most of them are not graph-shaped and would fight a
+# layout engine. The figures are hand-authored SVG instead, so librsvg above is
+# the only drawing dependency. Left here in case a later figure wants a
+# generated layout.
 #
 # install_diagram_tools() {
 #   step "Diagram tooling"
@@ -177,6 +209,13 @@ verify() {
     ok=1
   fi
 
+  if have rsvg-convert; then
+    log "librsvg $(rsvg-convert --version 2>&1 | head -1)"
+  else
+    log "librsvg MISSING"
+    ok=1
+  fi
+
   if [ ${#FAILED[@]} -gt 0 ]; then
     printf '\nFailed steps:\n'
     printf '  %s\n' "${FAILED[@]}"
@@ -195,6 +234,7 @@ main() {
   install_vale
   install_pandoc
   install_poppler
+  install_librsvg
   # install_diagram_tools   # see the note above
   verify
 }
