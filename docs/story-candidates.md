@@ -36,17 +36,18 @@ Status legend: `OPEN` = marker in the draft, unranked. Verdict is the author's.
 | 6 | 6 | `manuscript/ch06.md`, Inside a real organization | That the gap between what the dashboard says and what the distant customer experiences is real, expensive, and persists because everyone measuring sits in the wrong place. | The chapter has a correct explanation and no evidence any organisation was caught by it. Middling: the physics argues itself, the organisational blindness does not. | OPEN |
 | 7 | 7 | `manuscript/ch07.md`, Inside a real organization | That the seam is real, that it produces confident wrong answers rather than errors, and that a confused customer finds it before any dashboard does. | `docs/toc-review.md` calls this the moment the reader trusts the book. Strongest candidate in the manuscript: the chapter answers the note she wrote down and never looked up, and a story is what makes the answer land as lived rather than taught. | OPEN |
 | 8 | 8 | `manuscript/ch08.md`, Inside a real organization | That reaction time is a real number that loses races against real events, and that the decisions this chapter lists cannot be made while a graph is falling. | The chapter is a sensible checklist with no evidence any of it was learned the hard way. Strong: a peak event is inherently a story, and the checklist reads as theory without one. | OPEN |
-| 9 | 9 | not yet drafted | The half-succeeded write, told as failure rather than as illustration. | Risk of duplicating candidate 2. Decide which chapter owns it. | OPEN |
+| 9 | 9 | `manuscript/ch09.md`, Inside a real organization | That the gap between what the contract pays and what the failure costs is real and lands on a person, and that the hardest work during an outage is not technical. | The chapter is a correct reading of a contract nobody has been burned by. **Duplication resolved:** chapter 2 owns the half-succeeded write; chapter 9 carries it only as a callback and its marker is the outage instead. | OPEN |
 | 10 | 10 | not yet drafted | A compromise whose blast radius was larger than anyone expected. | Undetermined until ch10 is drafted. | OPEN |
 | 11 | 11 | `articles/11` | The bill line that grew, and the product decision behind it. | The bill-as-mirror argument has no proof that anyone ever traced a line back. | OPEN |
 | 12 | 12 | `articles/12` | Being inside the capacity scramble. A region that answered with a date instead of a yes. | The closer argues the gap at planetary scale with no evidence the author stood in it. | OPEN |
 
 ## Known duplication
 
-Candidates 2 and 9 are the same incident used two ways: in chapter 2 as proof
-that the stops are separate, in chapter 9 as a failure story. One recording
-covers both. Decide at shred time which chapter owns it and whether the other
-gets a two-sentence callback or nothing.
+**Resolved during drafting.** Chapter 2 owns the half-succeeded write, because
+that chapter needs it as proof that the six stops are separate businesses.
+Chapter 9 carries it as a two-sentence callback and its own marker is a different
+incident: the outage where the thing that broke belonged to the landlord. Two
+markers, two recordings, no overlap.
 
 Candidate 1 also appears in `voice/pilot-ch01.md`, which is a voice test rather
 than manuscript and does not need its own recording.
