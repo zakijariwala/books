@@ -1,0 +1,143 @@
+/* Reading copy for the shred. Print-like measure, apparatus visibly not-prose. */
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  font: 19px/1.62 Georgia, "Iowan Old Style", "Times New Roman", serif;
+  color: #17171a;
+  background: #fbfbfa;
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 8rem;
+}
+
+h1 {
+  font-size: 1.9rem;
+  line-height: 1.22;
+  margin: 4.5rem 0 0.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+h1:first-of-type { margin-top: 0; }
+
+h2 {
+  font-size: 1.18rem;
+  margin: 2.6rem 0 0.8rem;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+}
+
+h3 {
+  font-size: 1.02rem;
+  margin: 2rem 0 0.6rem;
+  font-weight: 600;
+}
+
+p { margin: 0 0 1.15rem; }
+
+strong { font-weight: 600; }
+
+code {
+  font: 0.86em ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  background: #efefec;
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+}
+
+/* Title block */
+header#title-block-header { margin-bottom: 3rem; }
+h1.title { font-size: 2.15rem; margin: 0 0 0.3rem; }
+p.subtitle {
+  font: italic 1.05rem/1.4 Georgia, serif;
+  color: #6a6a70;
+  margin: 0;
+}
+
+/* Figures */
+figure {
+  margin: 2.4rem 0;
+  padding: 0;
+}
+figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid #e3e3df;
+  background: #fff;
+}
+figcaption {
+  font: 0.83rem/1.5 -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  color: #55555c;
+  margin-top: 0.6rem;
+  padding-left: 0.1rem;
+}
+
+/* Apparatus. Deliberately not serif, so it never reads as the book. */
+.annot {
+  font: 0.82rem/1.55 -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  margin: 1.8rem 0;
+  padding: 0.85rem 1rem;
+  border-radius: 4px;
+  background: #f4f4f1;
+}
+.annot-h {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.71rem;
+  color: #6a6a70;
+  margin-bottom: 0.4rem;
+}
+.annot-b { color: #3a3a40; }
+
+.annot.chap {
+  background: none;
+  border-left: 3px solid #d6d6d0;
+  border-radius: 0;
+  padding: 0.2rem 0 0.2rem 0.9rem;
+  margin: 0.6rem 0 2rem;
+}
+
+.annot.story {
+  background: #f7f5ee;
+  border: 1px dashed #c2bda8;
+}
+.annot.story .annot-h { color: #7d7452; }
+
+.frontnote {
+  font: 0.9rem/1.6 -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  background: #f2f2ef;
+  border: 1px solid #e2e2dc;
+  border-radius: 5px;
+  padding: 1.2rem 1.4rem;
+  margin: 2.5rem 0 3rem;
+}
+.frontnote h2 { margin-top: 0; font-size: 1rem; }
+.frontnote ul { padding-left: 1.1rem; }
+.frontnote li { margin-bottom: 0.4rem; }
+
+.partbreak {
+  font: 700 0.75rem/1 -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #8a8a90;
+  text-align: center;
+  margin: 5rem 0 1rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid #e2e2dc;
+}
+
+@media (prefers-color-scheme: dark) {
+  body { background: #16161a; color: #e6e6e3; }
+  figure img { border-color: #2e2e34; }
+  figcaption { color: #a0a0a8; }
+  code { background: #26262c; }
+  .annot { background: #202027; }
+  .annot-b { color: #cfcfd4; }
+  .annot.chap { border-left-color: #3a3a42; }
+  .annot.story { background: #232019; border-color: #4d4635; }
+  .annot.story .annot-h { color: #b3a578; }
+  .frontnote { background: #1d1d22; border-color: #2e2e34; }
+  .partbreak { border-top-color: #2e2e34; }
+  p.subtitle { color: #9a9aa2; }
+}

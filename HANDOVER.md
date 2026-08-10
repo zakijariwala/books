@@ -34,9 +34,17 @@ twelve chapters drafted, 45,891 words, every chapter inside the 3,800 to 4,200
 budget and clean on the hard lint rules. Twelve first-hand markers, one per
 chapter, each stating what the story must prove and what the chapter loses
 without it. Four pilot articles drafted.
-**Next action:** the shred. Read the draft cold, fill the Verdict column in
+**Next action:** the shred. Read `build/draft.html`, fill the Verdict column in
 `docs/story-candidates.md`, and pick roughly five stories to record. See the
 two-branch note below before merging anything.
+
+**The reading copy:** `scripts/build-draft.sh` consolidates the twelve chapters
+into one file, places the figures where the prose refers to them, and turns the
+STORY-TODO markers into visible annotations rather than hidden comments, since a
+hidden comment cannot be judged. Output is `build/draft.md` and
+`build/draft.html`, both ignored by git because the manuscript is the source.
+Built ahead of the Stage 6 gate for the same reason as the figures: the draft
+cannot be judged as a whole in twelve pieces.
 
 ---
 
