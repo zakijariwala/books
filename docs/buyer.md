@@ -85,26 +85,30 @@ specificity and buy very little.
 ## The layer rule
 
 Operational, and testable during `/draft` and `/review`. Every chapter carries
-both layers in fixed places:
+both layers. **Which reader each job serves is fixed. Where the job appears in
+the chapter is not.** The labels below match the eight jobs in
+docs/chapter-template.md, which was rewritten from a running order into a
+coverage requirement after twelve chapters came out with identical headings. The
+mapping of reader to job has not changed.
 
-| Chapter template section | Serves |
-|--------------------------|--------|
-| Opening scene | Second layer. A person, a place, a thing going wrong. No term the English major must already know. |
-| The business problem | Both. State it as money and consequence, not as architecture. |
-| Core explanation | Second layer first, Meera second. The mental model has to land before the vocabulary. |
-| Worked example | Meera. This is where the utility lives and where the terms get used properly. |
-| Inside a real organization | Meera. |
-| The misconception | Second layer. Everyone holds a wrong belief about the cloud, and correcting it needs no job. |
+| Job | Serves |
+|-----|--------|
+| Open on exposure | Second layer. A person, a place, a thing going wrong. No term the English major must already know. |
+| Name the stake | Both. State it as money and consequence, not as architecture. |
+| Build the model | Second layer first, Meera second. The mental model has to land before the vocabulary. |
+| Work it through | Meera. This is where the utility lives and where the terms get used properly. |
+| Show it happening | Meera. |
+| Correct the belief | Second layer. Everyone holds a wrong belief about the cloud, and correcting it needs no job. |
 | The callback | Both. The photo thread is the spine and it belongs to everyone. |
-| Summary | Both. |
-| Monday question | Meera. Second layer reads it and moves on. |
+| Leave three things | Both. |
+| Hand her the move | Meera. Second layer reads it and moves on. |
 
-**The test, applied per chapter:** if a reader stops after the misconception
-section, did they get something worth the evening? If no, the chapter is written
-only for Meera and the second layer will quit before chapter 5.
+**The test, applied per chapter:** if a reader stops once the wrong belief has
+been corrected, did they get something worth the evening? If no, the chapter is
+written only for Meera and the second layer will quit before chapter 5.
 
-**The reverse test:** if only the opening scene and the misconception are any
-good, the chapter has drifted to general interest and Meera stops paying for it.
+**The reverse test:** if only the opening and the correction are any good, the
+chapter has drifted to general interest and Meera stops paying for it.
 
 ---
 
