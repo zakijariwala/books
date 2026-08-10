@@ -24,22 +24,17 @@ MS = ROOT / "manuscript"
 FIGS = ROOT / "figures"
 BUILD = ROOT / "build"
 
-# Short legends. The marker text is a drawing instruction; this is what a reader
-# is told the picture shows.
-CAPTIONS = {
-    1: "Demand moves in weeks. Capacity moves in eighteen months. The shaded area is the gap.",
-    2: "One tap, six businesses. The request path, end to end.",
-    3: "A country holds regions; a region holds zones. The country decides whose law reaches the file.",
-    4: "Bigger has a ceiling. More does not, provided the thing can be copied.",
-    5: "Cheap to fill. Metered to empty.",
-    6: "The same twenty round trips. Only the distance changed.",
-    7: "Changes go to the one desk that decides. Questions go to copies, a moment behind.",
-    8: "Capacity arrives at minute six. The customers arrived at minute zero.",
-    9: "The permitted absence, and the sliver a credit refunds.",
-    10: "The same hole. The bulkheads decide how far the water gets.",
-    11: "One photograph, priced by stop. Two of the six never stop.",
-    12: "The same drawing, at planetary scale.",
-}
+# Figure numbering and captions come from figures/manifest.json, written by
+# scripts/figures.py. A figure's number is its position in book order, so
+# inserting one renumbers the rest and nothing has to be renamed by hand.
+def load_figures():
+    import json
+    man = json.loads((FIGS / "manifest.json").read_text())
+    by_chapter = {}
+    for row in man:
+        by_chapter.setdefault(row["chapter"], []).append(row)
+    return by_chapter
+
 
 TITLES = {
     1: "The Great Pizza Box Purge", 2: "What Happens When You Upload a Photo",
@@ -78,6 +73,8 @@ def annotation(kind: str, title: str, body: str) -> str:
 
 
 def build():
+    global FIGURES
+    FIGURES = load_figures()
     BUILD.mkdir(exist_ok=True)
     out = []
     total = 0
@@ -121,16 +118,18 @@ def build():
         head = annotation("chap", f"Chapter {n} &middot; {w:,} words",
                           (f"<b>Promise:</b> {p}" if p else "&nbsp;"))
 
-        # figure: place it where the marker sits
-        fig_file = next(FIGS.glob(f"fig-{n:02d}-*.png"), None)
+        # figures: consume this chapter's manifest entries in marker order
+        queue = list(FIGURES.get(n, []))
 
         def fig_sub(m):
-            if fig_file is None:
-                return ""
-            rel = f"../figures/{fig_file.name}"
-            cap = CAPTIONS.get(n, "")
-            return (f'\n<figure>\n<img src="{rel}" alt="Figure {n}">\n'
-                    f'<figcaption><b>Figure {n}.</b> {cap}</figcaption>\n</figure>\n')
+            if not queue:
+                raise SystemExit(f"ch{n:02d}: more FIGURE markers than manifest entries")
+            row = queue.pop(0)
+            png = (FIGS / row["file"]).with_suffix(".png")
+            if not png.exists():
+                raise SystemExit(f"missing render: {png}. Run scripts/render-figures.sh")
+            return (f'\n<figure>\n<img src="../figures/{png.name}" alt="Figure {row["n"]}">\n'
+                    f'<figcaption><b>Figure {row["n"]}.</b> {row["caption"]}</figcaption>\n</figure>\n')
 
         def story_sub(m):
             text = m.group(1).replace("STORY-TODO:", "").strip()
@@ -138,6 +137,8 @@ def build():
             return annotation("story", f"Story marker &middot; chapter {n}", text)
 
         body = re.sub(r"<!--\s*FIGURE:.*?-->", fig_sub, body, flags=re.S)
+        if queue:
+            raise SystemExit(f"ch{n:02d}: {len(queue)} manifest figures had no marker")
         body = re.sub(r"<!--\s*(STORY-TODO:.*?)-->", story_sub, body, flags=re.S)
         body = COMMENT.sub("", body)  # anything left over
 
@@ -156,13 +157,14 @@ def build():
     for n, text in stories:
         out.append(annotation("story", f"Chapter {n} &middot; {TITLES[n]}", text))
 
+    nfig = sum(len(v) for v in FIGURES.values())
     out.append(f"\n<div class=\"frontnote\">\n\n**Draft total: {total:,} words across "
-               f"twelve chapters.** Budget is 56,000, leaving room for front and back "
-               f"matter.\n\n</div>\n")
+               f"twelve chapters, with {nfig} figures.** Budget is 56,000, leaving room "
+               f"for front and back matter.\n\n</div>\n")
 
     md = "\n".join(out)
     (BUILD / "draft.md").write_text(md)
-    print(f"build/draft.md  {total:,} words, {len(stories)} story markers")
+    print(f"build/draft.md  {total:,} words, {sum(len(v) for v in FIGURES.values())} figures, {len(stories)} story markers")
     return total, len(stories)
 
 

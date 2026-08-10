@@ -178,7 +178,7 @@ def gap_plot(h, y_label, demand_label, capacity_label, gap_label, x_ticks):
 
 # ---------------------------------------------------------------------------
 def fig01():
-    doc("fig-01-the-gap.svg", 560,
+    doc("fig-ch01-1-the-gap.svg", 560,
         gap_plot(560, "capacity", "demand", "what you have", "the gap",
                  ["now", "6 months", "12 months", "18 months"]))
 
@@ -194,7 +194,7 @@ def fig02():
     for x, lab in zip(xs, STOP_LABELS):
         for j, part in enumerate(lab.split("\n")):
             p.append(txt(x, 292 + j * 21, part, T_SMALL, anchor="middle", weight="600"))
-    doc("fig-02-the-request-path.svg", h, p)
+    doc("fig-ch02-1-the-request-path.svg", h, p)
 
 
 def fig03():
@@ -212,7 +212,7 @@ def fig03():
     p.append(line(830, 452, 830, 466, THIN, MID))
     p.append(line(70, 466, 300, 466, THIN, MID))
     p.append(line(600, 466, 830, 466, THIN, MID))
-    doc("fig-03-country-region-zone.svg", h, p)
+    doc("fig-ch03-1-country-region-zone.svg", h, p)
 
 
 def van(x, y, w=86, hgt=44, stroke=INK, fill=WHITE):
@@ -246,7 +246,7 @@ def fig04():
         p += van(x, 322, 66, 36)
         p.append(line(676, 232, x + 39, 274, THIN, MID, marker=True))
     p.append(txt(676, 396, "copies, no ceiling", T_SMALL, anchor="middle", italic=True, fill=MID))
-    doc("fig-04-bigger-or-more.svg", h, p)
+    doc("fig-ch04-1-bigger-or-more.svg", h, p)
 
 
 def fig05():
@@ -265,7 +265,7 @@ def fig05():
     p.append(txt(820, 186, "out, metered", T_LABEL, anchor="end", weight="700"))
     p.append(txt(450, 386, "storing is cheap, moving is not", T_SMALL,
                  anchor="middle", italic=True, fill=MID))
-    return doc("fig-05-the-warehouse.svg", h, p)
+    return doc("fig-ch05-1-the-warehouse.svg", h, p)
 
 
 def _trips(p, x1, x2, y, n=20, c=INK):
@@ -288,7 +288,7 @@ def fig06():
     p.append(txt(716, 330, "four seconds", T_LABEL, weight="600"))
     p.append(txt(450, 398, "same twenty round trips, longer road", T_SMALL,
                  anchor="middle", italic=True, fill=MID))
-    doc("fig-06-round-trips.svg", h, p)
+    doc("fig-ch06-1-round-trips.svg", h, p)
 
 
 def desk(x, y, w=150, hh=54, stroke=INK):
@@ -314,7 +314,7 @@ def fig07():
         p.append(line(292, 224, 592, yy + 26, THIN, MID, dash="6 6", marker=True))
     p.append(txt(693, 418, "questions go here", T_LABEL, anchor="middle", weight="700"))
     p.append(txt(440, 238, "news, a moment late", T_SMALL, anchor="middle", italic=True, fill=MID))
-    doc("fig-07-one-desk-many-copies.svg", h, p)
+    doc("fig-ch07-1-one-desk-many-copies.svg", h, p)
 
 
 def fig08():
@@ -338,7 +338,7 @@ def fig08():
         p.append(line(x, B, x, B + 8, THIN, INK))
         p.append(txt(x, B + 32, t, T_SMALL, anchor="middle", fill=MID))
     p.append(txt(L, B + 76, "capacity arrives. the customers did not wait.", T_SMALL, italic=True, fill=MID))
-    doc("fig-08-reaction-time.svg", h, p)
+    doc("fig-ch08-1-reaction-time.svg", h, p)
 
 
 def fig09():
@@ -353,7 +353,7 @@ def fig09():
     p.append(txt(722, 292, "what the credit refunds", T_SMALL, anchor="end", weight="600"))
     p.append(txt(96, 344, "the guarantee measures their component, not your customer",
                  T_SMALL, italic=True, fill=MID))
-    doc("fig-09-the-time-budget.svg", h, p)
+    doc("fig-ch09-1-the-time-budget.svg", h, p)
 
 
 def _hull(p, y, open_bulkheads, flooded):
@@ -378,17 +378,20 @@ def _hull(p, y, open_bulkheads, flooded):
 
 
 def fig10():
-    h = 520
+    h = 540
     p = []
-    _hull(p, 96, open_bulkheads=(), flooded=(2,))
-    p.append(txt(96, 84, "bulkheads hold", T_LABEL, weight="700"))
-    p.append(txt(790, 232, "one compartment", T_SMALL, anchor="end", fill=MID))
-    _hull(p, 312, open_bulkheads=(1, 2, 3, 4, 5), flooded=(0, 1, 2, 3, 4, 5))
-    p.append(txt(96, 300, "bulkheads open", T_LABEL, weight="700"))
-    p.append(txt(790, 448, "all six", T_SMALL, anchor="end", fill=MID))
-    p.append(txt(450, 486, "same hole, different blast radius", T_LABEL,
-                 anchor="middle", italic=True, fill=MID))
-    doc("fig-10-blast-radius.svg", h, p)
+    # old model: a wall around everything, nothing inside it divided
+    _hull(p, 96, open_bulkheads=(1, 2, 3, 4, 5), flooded=(0, 1, 2, 3, 4, 5))
+    p.append(path("M 96 82 L 96 218 M 824 82 L 824 218", "none", INK, 7.0))
+    p.append(txt(96, 68, "a wall around everything", T_LABEL, weight="700"))
+    p.append(txt(790, 232, "one breach, all six", T_SMALL, anchor="end", fill=MID))
+    # new model: no wall, compartments inside
+    _hull(p, 312, open_bulkheads=(), flooded=(2,))
+    p.append(txt(96, 300, "compartments inside", T_LABEL, weight="700"))
+    p.append(txt(790, 448, "one breach, one compartment", T_SMALL, anchor="end", fill=MID))
+    p.append(txt(450, 506, "the wall did not fall to an attack. it stopped meaning anything.",
+                 T_SMALL, anchor="middle", italic=True, fill=MID))
+    doc("fig-ch10-1-wall-and-compartments.svg", h, p)
 
 
 def fig11():
@@ -407,18 +410,192 @@ def fig11():
         if i in notes:
             p.append(txt(180 + wd + 14, y + 23, notes[i], T_SMALL, weight="700"))
     p.append(txt(132, 520, "one photograph, priced by stop", T_SMALL, italic=True, fill=MID))
-    doc("fig-11-one-photograph-priced.svg", h, p)
+    doc("fig-ch11-1-one-photograph-priced.svg", h, p)
 
 
 def fig12():
-    doc("fig-12-the-gap-at-scale.svg", 560,
+    doc("fig-ch12-1-the-gap-at-scale.svg", 560,
         gap_plot(560, "capacity", "industry demand", "chips and power", "the gap",
                  ["2022", "2023", "2024", "2026"]))
 
 
+# ===========================================================================
+# Second pass. Six figures added after a review of the first draft found
+# concepts carried entirely in prose at the moments a reader has to hold a
+# model in their head. Each is re-scoped to the six-label rule; the review's
+# sketches were larger than the rule allows. A seventh proposal, the security
+# perimeter, was folded into fig 10 rather than drawn twice.
+# ===========================================================================
+
+def fig_shared_responsibility():
+    """Ch3. The review proposed three stacked diagrams. The chapter's point is
+    that the line MOVES, so one figure with a moving line says it."""
+    h = 470
+    p = []
+    cols = [("bare machine", 140), ("managed database", 400), ("finished service", 660)]
+    top, bot, wd = 130, 360, 170
+    lines = (bot - 54, bot - 140, bot - 202)
+    for (label, x), ly in zip(cols, lines):
+        p.append(rect(x, top, wd, bot - top, WHITE, INK, NORMAL, r=4))
+        p.append(f'<rect x="{x}" y="{ly}" width="{wd}" height="{bot-ly}" fill="url(#hatch)" stroke="none"/>')
+        p.append(line(x, ly, x + wd, ly, HEAVY, INK))
+        p.append(txt(x + wd / 2, bot + 30, label, T_SMALL, anchor="middle", weight="700"))
+    p.append(txt(128, top + 26, "yours", T_LABEL, anchor="end", weight="700"))
+    p.append(txt(128, bot - 12, "theirs", T_LABEL, anchor="end", weight="700", fill=MID))
+    p.append(line(858, lines[0], 858, lines[2] + 6, THIN, MID, marker=True))
+    p.append(txt(846, (lines[0] + lines[2]) / 2, "the line moves", T_SMALL, anchor="end", italic=True, fill=MID))
+    doc("fig-ch03-2-shared-responsibility.svg", h, p)
+
+
+def fig_hot_cold():
+    """Ch5. Front shelf and back shelf, sized to the chapter's own point that the
+    hot object is tiny and the cold object is enormous."""
+    h = 440
+    p = []
+    p.append(rect(96, 96, 700, 250, WHITE, INK, HEAVY, r=4))
+    p.append(line(320, 96, 320, 346, THIN, LIGHT, dash="6 6"))
+    p += icon("door", 96, 221, 0.68)
+    p.append(rect(206, 202, 40, 36, PALE, INK, NORMAL, r=3))
+    p.append(txt(226, 274, "the preview, read constantly", T_SMALL, anchor="middle", weight="700"))
+    p.append(rect(548, 136, 200, 172, "url(#hatch)", INK, NORMAL, r=3))
+    p.append(txt(648, 342, "the original, read never", T_SMALL, anchor="middle", weight="700"))
+    p.append(txt(180, 80, "front shelf", T_SMALL, anchor="middle", weight="700", fill=MID))
+    p.append(txt(648, 80, "back shelf", T_SMALL, anchor="middle", weight="700", fill=MID))
+    p.append(txt(450, 412, "cheaper to keep, slower to fetch", T_SMALL, anchor="middle", italic=True, fill=MID))
+    doc("fig-ch05-2-hot-and-cold.svg", h, p)
+
+
+def fig_three_fixes():
+    """Ch6. The chapter's point is the inversion: the cheapest fix is proposed
+    last, so the figure has to show cost rising and the order reversed."""
+    h = 460
+    p = []
+    items = [("fewer round trips", 1, 140), ("copies in many cities", 2, 380), ("run closer", 4, 620)]
+    base = 330
+    for label, cost, x in items:
+        ht = 40 * cost + 14
+        p.append(rect(x, base - ht, 160, ht, PALE if cost < 4 else "url(#hatch)", INK, NORMAL, r=3))
+        p.append(txt(x + 80, base + 28, label, T_SMALL, anchor="middle", weight="700"))
+    p.append(line(100, base, 850, base, NORMAL, INK))
+    p.append(txt(100, 112, "cost and disruption", T_SMALL, fill=MID))
+    p.append(line(116, 128, 116, base - 16, THIN, MID, marker=True))
+    p.append(line(700, 400, 250, 400, NORMAL, INK, marker=True))
+    p.append(txt(710, 405, "order proposed", T_SMALL, weight="700"))
+    doc("fig-ch06-2-three-fixes.svg", h, p)
+
+
+def fig_three_availabilities():
+    """Ch9. Three layers, all latent in the prose: the vendor measures a
+    component, your product is the composition, the customer measures an
+    outcome. No new prose was needed."""
+    h = 450
+    p = []
+    rows = [("the vendor", "was our service available?", True),
+            ("your product", "did every part work together?", True),
+            ("your customer", "could I do what I came to do?", False)]
+    for i, (who, q, met) in enumerate(rows):
+        y = 110 + i * 100
+        p.append(rect(120, y, 560, 70, WHITE, INK, HEAVY if not met else NORMAL, r=4))
+        p.append(txt(142, y + 42, f"{who}: {q}", T_SMALL, weight="700"))
+        if met:
+            p.append(path(f"M 716 {y+36} l 13 14 l 26 -28", "none", MID, HEAVY))
+        else:
+            p.append(line(718, y + 22, 754, y + 54, HEAVY, INK))
+            p.append(line(754, y + 22, 718, y + 54, HEAVY, INK))
+        if i < 2:
+            p.append(line(400, y + 70, 400, y + 100, THIN, MID, marker=True))
+    p.append(txt(450, 424, "two measurements met, one customer who could not buy",
+                 T_SMALL, anchor="middle", italic=True, fill=MID))
+    doc("fig-ch09-2-three-availabilities.svg", h, p)
+
+
+def fig_four_shapes():
+    """Ch11. Four sparklines, one classification. Four small charts are still one
+    idea, which is what keeps it inside the one-idea rule."""
+    h = 350
+    p = []
+    labels = ["with users", "with data", "with mistakes", "with failure"]
+    for i, lab in enumerate(labels):
+        x0 = 76 + i * 206
+        w, base, top = 150, 240, 110
+        p.append(line(x0, 100, x0, base, THIN, INK))
+        p.append(line(x0, base, x0 + w, base, THIN, INK))
+        if i == 0:
+            # tracks activity: busy, quiet, busy. Falls as well as rises.
+            d = (f"M {x0} {base-20} L {x0+w*0.18} {base-62} L {x0+w*0.33} {base-34} "
+                 f"L {x0+w*0.52} {base-92} L {x0+w*0.68} {base-64} "
+                 f"L {x0+w*0.84} {base-116} L {x0+w} {top}")
+        elif i == 1:
+            # a ratchet. It never comes back down, whatever the business does.
+            d = (f"M {x0} {base-10} L {x0+w*0.2} {base-10} L {x0+w*0.2} {base-42} "
+                 f"L {x0+w*0.45} {base-42} L {x0+w*0.45} {base-78} "
+                 f"L {x0+w*0.72} {base-78} L {x0+w*0.72} {top+8} L {x0+w} {top+8}")
+        elif i == 2:
+            d = f"M {x0} {base-14} L {x0+w*0.42} {base-14} L {x0+w*0.42} {top+20} L {x0+w} {top+20}"
+        else:
+            d = (f"M {x0} {base-14} L {x0+w*0.34} {base-14} L {x0+w*0.5} {top} "
+                 f"L {x0+w*0.66} {base-14} L {x0+w} {base-14}")
+        p.append(path(d, "none", INK, HEAVY))
+        p.append(txt(x0 + w / 2, 288, lab, T_SMALL, anchor="middle", weight="700"))
+        if i == 1:
+            p.append(txt(x0 + w / 2, 310, "never falls", T_SMALL, anchor="middle", fill=MID, italic=True))
+    doc("fig-ch11-2-four-shapes.svg", h, p)
+
+
+def fig_bottleneck():
+    """Ch12. The chain the chapter walks, with the constraint marked well below
+    the thing anyone is trying to buy."""
+    h = 520
+    p = []
+    steps = ["what you want to buy", "chips, and the fabs that make them", "power", "grid connection"]
+    for i, s_ in enumerate(steps):
+        y = 108 + i * 92
+        p.append(rect(240, y, 380, 52, "url(#hatch)" if i else PALE, INK,
+                      HEAVY if i >= 3 else NORMAL, r=4))
+        p.append(txt(430, y + 32, s_, T_SMALL, anchor="middle", weight="700"))
+        if i < len(steps) - 1:
+            p.append(line(430, y + 52, 430, y + 80, THIN, INK, marker=True))
+    p.append(txt(430, 80, "months to want more", T_SMALL, anchor="middle", fill=MID))
+    p.append(line(650, 200, 650, 436, NORMAL, INK))
+    p.append(line(650, 200, 636, 200, THIN, INK))
+    p.append(line(650, 436, 636, 436, THIN, INK))
+    p.append(txt(666, 322, "years to add more", T_SMALL, weight="700"))
+    doc("fig-ch12-2-the-bottleneck.svg", h, p)
+
+
+# Book order. The number a figure carries is its position here, so inserting one
+# renumbers the rest automatically and nothing has to be renamed.
+MANIFEST = [
+    (1,  "fig-ch01-1-the-gap.svg", "Demand moves in weeks. Capacity moves in eighteen months. The shaded area is the gap."),
+    (2,  "fig-ch02-1-the-request-path.svg", "One tap, six businesses. The request path, end to end."),
+    (3,  "fig-ch03-1-country-region-zone.svg", "A country holds regions; a region holds zones. The country decides whose law reaches the file."),
+    (3,  "fig-ch03-2-shared-responsibility.svg", "The line between what you hold and what the landlord holds moves with what you rent."),
+    (4,  "fig-ch04-1-bigger-or-more.svg", "Bigger has a ceiling. More does not, provided the thing can be copied."),
+    (5,  "fig-ch05-1-the-warehouse.svg", "Cheap to fill. Metered to empty."),
+    (5,  "fig-ch05-2-hot-and-cold.svg", "The object read constantly is tiny. The object nobody reads is enormous."),
+    (6,  "fig-ch06-1-round-trips.svg", "The same twenty round trips. Only the distance changed."),
+    (6,  "fig-ch06-2-three-fixes.svg", "Three fixes for distance, in ascending cost and descending order of how often they are proposed."),
+    (7,  "fig-ch07-1-one-desk-many-copies.svg", "Changes go to the one desk that decides. Questions go to copies, a moment behind."),
+    (8,  "fig-ch08-1-reaction-time.svg", "Capacity arrives at minute six. The customers arrived at minute zero."),
+    (9,  "fig-ch09-1-the-time-budget.svg", "The permitted absence, and the sliver a credit refunds."),
+    (9,  "fig-ch09-2-three-availabilities.svg", "Three measurements of the same morning. Only the third is the one a customer makes."),
+    (10, "fig-ch10-1-wall-and-compartments.svg", "The wall assumed nothing would get in. Compartments assume something will."),
+    (11, "fig-ch11-1-one-photograph-priced.svg", "One photograph, priced by stop. Two of the six never stop."),
+    (11, "fig-ch11-2-four-shapes.svg", "Four ways a line grows. Naming the shape tells you which response it wants."),
+    (12, "fig-ch12-1-the-gap-at-scale.svg", "The same drawing, at planetary scale."),
+    (12, "fig-ch12-2-the-bottleneck.svg", "The thing you want to buy sits above the thing that is actually scarce."),
+]
+
+
 if __name__ == "__main__":
+    import json
     print("figures ->", OUT)
     for f in (fig01, fig02, fig03, fig04, fig05, fig06,
-              fig07, fig08, fig09, fig10, fig11, fig12):
+              fig07, fig08, fig09, fig10, fig11, fig12,
+              fig_shared_responsibility, fig_hot_cold, fig_three_fixes,
+              fig_three_availabilities, fig_four_shapes, fig_bottleneck):
         f()
-    print("done")
+    (OUT / "manifest.json").write_text(json.dumps(
+        [{"n": i + 1, "chapter": c, "file": f, "caption": cap}
+         for i, (c, f, cap) in enumerate(MANIFEST)], indent=2))
+    print(f"manifest: {len(MANIFEST)} figures")

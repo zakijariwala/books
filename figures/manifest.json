@@ -1,0 +1,110 @@
+[
+  {
+    "n": 1,
+    "chapter": 1,
+    "file": "fig-ch01-1-the-gap.svg",
+    "caption": "Demand moves in weeks. Capacity moves in eighteen months. The shaded area is the gap."
+  },
+  {
+    "n": 2,
+    "chapter": 2,
+    "file": "fig-ch02-1-the-request-path.svg",
+    "caption": "One tap, six businesses. The request path, end to end."
+  },
+  {
+    "n": 3,
+    "chapter": 3,
+    "file": "fig-ch03-1-country-region-zone.svg",
+    "caption": "A country holds regions; a region holds zones. The country decides whose law reaches the file."
+  },
+  {
+    "n": 4,
+    "chapter": 3,
+    "file": "fig-ch03-2-shared-responsibility.svg",
+    "caption": "The line between what you hold and what the landlord holds moves with what you rent."
+  },
+  {
+    "n": 5,
+    "chapter": 4,
+    "file": "fig-ch04-1-bigger-or-more.svg",
+    "caption": "Bigger has a ceiling. More does not, provided the thing can be copied."
+  },
+  {
+    "n": 6,
+    "chapter": 5,
+    "file": "fig-ch05-1-the-warehouse.svg",
+    "caption": "Cheap to fill. Metered to empty."
+  },
+  {
+    "n": 7,
+    "chapter": 5,
+    "file": "fig-ch05-2-hot-and-cold.svg",
+    "caption": "The object read constantly is tiny. The object nobody reads is enormous."
+  },
+  {
+    "n": 8,
+    "chapter": 6,
+    "file": "fig-ch06-1-round-trips.svg",
+    "caption": "The same twenty round trips. Only the distance changed."
+  },
+  {
+    "n": 9,
+    "chapter": 6,
+    "file": "fig-ch06-2-three-fixes.svg",
+    "caption": "Three fixes for distance, in ascending cost and descending order of how often they are proposed."
+  },
+  {
+    "n": 10,
+    "chapter": 7,
+    "file": "fig-ch07-1-one-desk-many-copies.svg",
+    "caption": "Changes go to the one desk that decides. Questions go to copies, a moment behind."
+  },
+  {
+    "n": 11,
+    "chapter": 8,
+    "file": "fig-ch08-1-reaction-time.svg",
+    "caption": "Capacity arrives at minute six. The customers arrived at minute zero."
+  },
+  {
+    "n": 12,
+    "chapter": 9,
+    "file": "fig-ch09-1-the-time-budget.svg",
+    "caption": "The permitted absence, and the sliver a credit refunds."
+  },
+  {
+    "n": 13,
+    "chapter": 9,
+    "file": "fig-ch09-2-three-availabilities.svg",
+    "caption": "Three measurements of the same morning. Only the third is the one a customer makes."
+  },
+  {
+    "n": 14,
+    "chapter": 10,
+    "file": "fig-ch10-1-wall-and-compartments.svg",
+    "caption": "The wall assumed nothing would get in. Compartments assume something will."
+  },
+  {
+    "n": 15,
+    "chapter": 11,
+    "file": "fig-ch11-1-one-photograph-priced.svg",
+    "caption": "One photograph, priced by stop. Two of the six never stop."
+  },
+  {
+    "n": 16,
+    "chapter": 11,
+    "file": "fig-ch11-2-four-shapes.svg",
+    "caption": "Four ways a line grows. Naming the shape tells you which response it wants."
+  },
+  {
+    "n": 17,
+    "chapter": 12,
+    "file": "fig-ch12-1-the-gap-at-scale.svg",
+    "caption": "The same drawing, at planetary scale."
+  },
+  {
+    "n": 18,
+    "chapter": 12,
+    "file": "fig-ch12-2-the-bottleneck.svg",
+    "caption": "The thing you want to buy sits above the thing that is actually scarce."
+  }
+]
