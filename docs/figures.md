@@ -1,8 +1,5 @@
 # Figures
 
-Twelve figures, one per chapter, collected from the `<!-- FIGURE: -->` markers in
-the manuscript.
-
 **Eighteen figures as of 2026-08-10.** Twelve were drawn first, one per chapter.
 Six more were added after a review of the first draft, at the moments where the
 reader has to hold a model in their head and the prose was carrying it alone.
@@ -22,7 +19,7 @@ against figures the reader cannot see. Style is provisional.
 
 ## A judgement recorded, so it can be overturned
 
-The rule is at most six labels. Figures 1, 8 and 12 are plots carrying four
+The rule is at most six labels. Figures 1, 11 and 17 are plots carrying four
 labels plus four axis tick values. **Axis ticks are counted as scale rather than
 as labels**, on the grounds that the rule exists to limit named things competing
 for attention, and a tick is a unit of measure. Every figure is at or under six
@@ -52,24 +49,24 @@ groups repeat, and the repetition is the argument.
 same order, same icons, same left-to-right reading:
 
 - **Fig 2** introduces them as the request path.
-- **Fig 10** turns them into a ship's compartments to show blast radius.
-- **Fig 11** turns them into cost bars to show which two never stop.
+- **Fig 14** turns them into a ship's compartments to show blast radius.
+- **Fig 15** turns them into cost bars to show which two never stop.
 
-A reader who recognises the shape in figure 10 as the thing they met in figure 2
+A reader who recognises the shape in figure 14 as the thing they met in figure 2
 gets the chapter's argument before reading a word of it. That only works if they
 are drawn as the same object three times.
 
 **The gap** appears twice and is a deliberate visual rhyme:
 
 - **Fig 1** is demand against capacity for one company, over eighteen months.
-- **Fig 12** is the same drawing at planetary scale, 2022 to 2026, with the axes
+- **Fig 17** is the same drawing at planetary scale, 2022 to 2026, with the axes
   relabelled to industry demand against chip and power supply.
 
-Figure 12 should be recognisable as figure 1 redrawn. Same line weights, same
+Figure 17 should be recognisable as figure 1 redrawn. Same line weights, same
 shading, same composition. The closer's whole argument is that the reader has
 seen this picture before.
 
-**The photograph** is a single recurring icon, appearing in figures 3 and 11 and
+**The photograph** is a single recurring icon, appearing in figures 3 and 15 and
 implied in 2. One icon, used consistently.
 
 ## The second pass, and what was declined
@@ -78,8 +75,8 @@ A review of the first draft proposed eighteen additions across three tiers. Six
 were built. The rest were declined or deferred, and the reasons are worth keeping:
 
 - **Folded rather than added.** The proposed wall-versus-compartments figure for
-  chapter 10 would have put a second compartment drawing next to figure 10 and
-  weakened the rhyme. It became a revision of figure 10 instead: the old model is
+  chapter 10 would have put a second compartment drawing next to figure 14 and
+  weakened the rhyme. It became a revision of figure 14 instead: the old model is
   now the first panel.
 - **Deferred until the shred.** A migration timeline for chapter 5 and a
   replication-lag timeline for chapter 7 both sit exactly where a story marker
@@ -99,47 +96,44 @@ were built. The rest were declined or deferred, and the reasons are worth keepin
 
 ## The eighteen
 
-| # | Ch | Shows | Labels |
-|---|----|-------|--------|
-| 1 | 1 | Demand rising smoothly against capacity as a step function jumping every eighteen months. Gap between them shaded. | ≤6 |
-| 2 | 2 | The request path as six stops left to right: phone, front door, warehouse (the file), day labourer (the thumbnail), ledger (the record), back to the friend's phone. | 6 |
-| 3 | 3 | Three nested boxes: country (courthouse icon), region (a city), availability zone (a building). Photo icon in the innermost. Outer box labelled "whose law reaches it". | ≤6 |
-| 4 | 4 | Two panels. Left, "bigger": one van becoming a lorry, ceiling line above labelled "largest size sold". Right, "more": one van becoming five, front door distributing work, no ceiling. | ≤6 |
-| 5 | 5 | A warehouse with three arrows: thick "in, free or close to it", small circular "keep, a little every month, forever", thick "out, metered" drawn heaviest. | ≤6 |
-| 6 | 6 | Two lanes. "Near": short road, twenty return arrows, "under a second". "Far": identical twenty arrows over a road many times longer, "four seconds". Arrow count identical. | ≤6 |
-| 7 | 7 | One desk left, "changes go here, decides what is true", single arrow in. Two desks right, "questions go here", many arrows in. Thin arrows between, "news, a moment late". | ≤6 |
-| 8 | 8 | Traffic rising vertically at minute zero. Capacity flat until minute one, then rising in steps, meeting traffic at minute six. Area between shaded, "the outage". | ≤6 |
-| 9 | 9 | A bar representing one month: small shaded segment "permitted, about forty minutes", rest "promised". Thinner bar beneath, "what the credit refunds", a sliver of the shaded segment. | ≤6 |
-| 10 | 10 | Ship's hull, six compartments matching fig 2. Top panel: bulkheads hold, one compartment shaded. Bottom panel: bulkheads open, shading across all six. | ≤6 |
-| 11 | 11 | One photograph icon above six horizontal bars, one per stop, no numbers. Two shaded: warehouse "every month, forever", road out "every view". | ≤6 |
-| 12 | 12 | Figure 1 redrawn at planetary scale. Same two lines, same shaded gap, axes relabelled to industry demand against chip and power supply, 2022 to 2026. | ≤6 |
+Generated from `figures/manifest.json`, which is the source of truth for both
+numbering and captions. Regenerate this table rather than editing it by hand.
 
-Second pass, renumbered into book order:
-
-| # | Ch | Shows | Labels |
-|---|----|-------|--------|
-| 4 | 3 | Three columns, bare machine to finished service, each divided by a heavy line with yours above and theirs below. The line sits higher in each column. | 6 |
-| 7 | 5 | A warehouse in section. A tiny box by the door, read constantly. An enormous hatched box at the back, read never. | 5 |
-| 9 | 6 | Three bars of rising height for the three fixes, with a separate arrow running right to left marking the order companies propose them. | 5 |
-| 13 | 9 | Three stacked rows: the vendor, your product, your customer. The first two are met, the third is not. | 4 |
-| 14 | 10 | Revised. The old wall around an undivided hull, then compartments containing a single breach. | 6 |
-| 16 | 11 | Four small charts. Users oscillates and trends up, data is a staircase that never falls, mistakes is one step that stays, failure is a spike that returns. | 5 |
-| 18 | 12 | A chain from what you want to buy down to the grid connection, with a bracket marking years to add more against months to want more. | 6 |
+| # | Ch | File | Caption |
+|---|----|------|---------|
+| 1 | 1 | `fig-ch01-1-the-gap.svg` | Demand moves in weeks. Capacity moves in eighteen months. The shaded area is the gap. |
+| 2 | 2 | `fig-ch02-1-the-request-path.svg` | One tap, six businesses. The request path, end to end. |
+| 3 | 3 | `fig-ch03-1-country-region-zone.svg` | A country holds regions; a region holds zones. The country decides whose law reaches the file. |
+| 4 | 3 | `fig-ch03-2-shared-responsibility.svg` | The line between what you hold and what the landlord holds moves with what you rent. |
+| 5 | 4 | `fig-ch04-1-bigger-or-more.svg` | Bigger has a ceiling. More does not, provided the thing can be copied. |
+| 6 | 5 | `fig-ch05-1-the-warehouse.svg` | Cheap to fill. Metered to empty. |
+| 7 | 5 | `fig-ch05-2-hot-and-cold.svg` | The object read constantly is tiny. The object nobody reads is enormous. |
+| 8 | 6 | `fig-ch06-1-round-trips.svg` | The same twenty round trips. Only the distance changed. |
+| 9 | 6 | `fig-ch06-2-three-fixes.svg` | Three fixes for distance, in ascending cost and descending order of how often they are proposed. |
+| 10 | 7 | `fig-ch07-1-one-desk-many-copies.svg` | Changes go to the one desk that decides. Questions go to copies, a moment behind. |
+| 11 | 8 | `fig-ch08-1-reaction-time.svg` | Capacity arrives at minute six. The customers arrived at minute zero. |
+| 12 | 9 | `fig-ch09-1-the-time-budget.svg` | The permitted absence, and the sliver a credit refunds. |
+| 13 | 9 | `fig-ch09-2-three-availabilities.svg` | Three measurements of the same morning. Only the third is the one a customer makes. |
+| 14 | 10 | `fig-ch10-1-wall-and-compartments.svg` | The wall assumed nothing would get in. Compartments assume something will. |
+| 15 | 11 | `fig-ch11-1-one-photograph-priced.svg` | One photograph, priced by stop. Two of the six never stop. |
+| 16 | 11 | `fig-ch11-2-four-shapes.svg` | Four ways a line grows. Naming the shape tells you which response it wants. |
+| 17 | 12 | `fig-ch12-1-the-gap-at-scale.svg` | The same drawing, at planetary scale. |
+| 18 | 12 | `fig-ch12-2-the-bottleneck.svg` | The thing you want to buy sits above the thing that is actually scarce. |
 
 ## Notes on the hard ones
 
-**Figure 9** is the only one carrying a quantity, and CLAUDE.md bans prices but
+**Figure 12** is the only one carrying a quantity, and CLAUDE.md bans prices but
 not durations. Keep it to minutes and proportions, never money. The refund bar
 must be visibly a sliver; that proportion is the entire point of the figure.
 
-**Figure 6** fails if the two lanes have different numbers of arrows. The
+**Figure 8** fails if the two lanes have different numbers of arrows. The
 argument is that the round-trip count is identical and only the distance changed.
 Count them when drawing.
 
-**Figure 12** is not a new drawing. It is figure 1 with new labels, and any
+**Figure 17** is not a new drawing. It is figure 1 with new labels, and any
 divergence in style weakens the closer.
 
-**Figures 4 and 5** use vans and warehouses, which are on the approved analogy
+**Figures 5, 6 and 7** use vans and warehouses, which are on the approved analogy
 list. Do not substitute anything from outside airports, warehouses, hotels,
 utilities, transportation, or supply chains.
 
@@ -160,12 +154,12 @@ To regenerate:
 
 Listed so they are not mistaken for decisions:
 
-- The lorry in figure 4 is a stylised L-shape and reads as a truck only in
+- The lorry in figure 5 is a stylised L-shape and reads as a truck only in
   context. Worth redrawing if the figure survives.
-- Figure 6 is verified: both lanes carry exactly twenty arcs, which is the whole
+- Figure 8 is verified: both lanes carry exactly twenty arcs, which is the whole
   argument. Any redraw must preserve that.
 - Figure 2 labels the fourth stop "the worker" rather than "nine-second worker",
   which keeps it to one line and six labels. The nine seconds lives in the prose
-  and in figure 11.
+  and in figure 15.
 - Grayscale is enforced by construction: the palette holds five neutral values
   and shaded regions use a hatch, so nothing depends on tone alone.
