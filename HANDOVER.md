@@ -61,15 +61,21 @@ cannot be judged as a whole in twelve pieces.
 | `voice/pilot-ch01.md` | Voice pilot, ch1 opening (~817 words). | Written. Confirmed the blended voice holds. |
 | `voice/BRIEF.md` | Target register, extraction method, straw-man specimen. | Written. Not a voice source, do not read it as style input. |
 | `voice/sample.md` | The transcript. | Stub. No longer blocking; fills STORY-TODO beats when it exists. |
-| `prompts/` | Stage 2, 3, and 6 prompt text. | Stage 2 spent. Stage 3 ready. Stage 6 deferred. |
+| `prompts/` | Stage 2, 3, and 6 prompt text. | Stage 2 and 3 spent. Stage 6 partly overtaken: figures and the build exist. |
 | `.claude/skills/` | `/article` `/draft` `/review` `/approve` `/verify` | Live. |
-| `articles/` `manuscript/` `reviews/` `scripts/` | Empty. | Waiting on the transcript. |
+| `manuscript/` | Twelve chapters, ch01 to ch12. | Complete first draft, 45,891 words. |
+| `articles/` | Four pilot articles (2, 3, 11, 12). | Drafted, unpublished. |
+| `figures/` | Twelve grayscale SVGs plus rendered PNGs. | Drawn 2026-08-09. SVG tracked, PNG ignored. |
+| `docs/figures.md` `docs/story-candidates.md` | Figure spec; story ranking instrument. | Live. Verdict column awaits the shred. |
+| `scripts/` | `figures.py` `render-figures.sh` `build-draft.py` `build-draft.sh` `draft.css` | Live. |
+| `setup.sh` `.claude/hooks/` | Toolchain install and SessionStart hook. | Live. Vale, Pandoc, poppler, librsvg. |
+| `.vale.ini` `.vale/styles/Book/` | Seven prose rules from CLAUDE.md. | Live, warning severity. |
+| `reviews/` | Empty. | `/review` has not been run on the draft. |
 
-Not yet built, on purpose: `docs/chapter-template.md`, `docs/terminology.md`,
-both registries, `.vale.ini`, `.vale/styles/Book/`, `setup.sh`, `Makefile`,
-`scripts/wordcount.py`. Governing rule is build only what the next 5,000 words
-need. Stage 3 makes the first six. Stage 6 makes the rest after three chapters
-exist.
+Still not built, and not needed yet: a `Makefile` and `scripts/wordcount.py`.
+The governing rule is build only what the next work needs.
+`scripts/build-draft.sh` covers assembly, and word counts come from the chapter
+headers in the reading copy.
 
 ---
 
@@ -88,13 +94,18 @@ A general book cannot retrofit the utility that made it worth 40 copies.
 chapter-template section to the reader it serves, and states two failure tests.
 `/review` checks them.
 
-**14 chapters become 11.** From `docs/toc-review.md`:
+**14 chapters become 12.** From `docs/toc-review.md`, with one authored
+override. The kill test recommended eleven; the author kept The AI Infrastructure
+Wars and re-aimed it as the closer, which also gave Part IV two chapters. See
+`docs/toc.md`:
 
-- **Cut chapter 13, The AI Infrastructure Wars.** No Monday action without
-  inventing one. All stale-able figures in a book that dates its figures. Zero
-  dependencies in either direction. Best-written by a chatbot, which is the
-  material buyer.md says the reader is escaping. GPU cost shape moves to compute,
-  AI as a growing bill line moves to economics.
+- **Chapter 13, The AI Infrastructure Wars: recommended for cutting, kept.** The
+  kill test was right that it aged fastest and depended on nothing. The author
+  overruled it because the turmoil of the AI era does not survive being merged
+  into cost sidebars. Terms of the override: it becomes the closer, it depends on
+  the whole book, it carries turmoil rather than billing mechanics, and every
+  figure carries the year it was true. GPU cost shape still moved to compute and
+  the AI bill line still moved to economics.
 - **Cut chapter 10, Containers and Serverless, as a standalone.** The business
   story is two facts and neither needs the word Docker. Position 10 is where
   buyer.md predicts she stops reading. Redistributed: shipping cadence into
@@ -102,7 +113,7 @@ chapter-template section to the reader it serves, and states two failure tests.
 - **Merge chapter 14, Vendor Lock-In,** half into Meet the Landlords and half
   into Cloud Economics. If it stays standalone it moves to Part I, never the end.
 - **Shrink chapter 1** to carry the thesis rather than datacenter nostalgia.
-- **Guard chapter 11, Security,** against growing a service catalogue. Its
+- **Guard chapter 10, Security,** against growing a service catalogue. Its
   misconception section carries the chapter: security is not a wall, it is blast
   radius.
 
@@ -120,24 +131,25 @@ never looked it up. That is the moment the reader trusts the book.
 
 ---
 
-## Open items that block drafting
+## Open items (nothing blocks drafting)
 
-**The cost rule.** Outcome O1 asks the reader to name what each box costs.
-CLAUDE.md bans vendor prices outright. Both are correct and they collide in six
-of eleven chapters. Resolution has to be written into CLAUDE.md once, before
-chapter 4: the book teaches cost **shape**, not cost. Which line dominates, which
-surprises, which grows with users and which grows with data, and the ratios
-between them. No dollars, no rate cards. Without that sentence, eleven chapters
-each invent their own compromise.
+**Resolved: the cost rule.** Written into CLAUDE.md hard content rules. The book
+teaches cost shape rather than cost: which line dominates, which surprises, which
+grows with users and which with data. No dollars, no rate cards. Every chapter
+was drafted against it and the Vale `Book.Prices` rule enforces it.
 
-**Part IV holds one chapter after the cuts,** which is not a part. Either promote
-economics into Part III and run three parts, or keep lock-in as a short chapter
-12. Reasonable people take either.
+**Resolved: Part IV.** Keeping The AI Infrastructure Wars gave Part IV two
+chapters, Economics and the closer. No promotion needed.
 
-**The discussion guide has no home.** buyer.md's bulk buyer needs it and the TOC
-does not hold it. The eleven Monday questions are the raw material. Decide back
-matter, downloadable, or both, before drafting, so the Monday questions get
-written to carry it.
+**Open: the discussion guide.** buyer.md's bulk buyer needs it and the TOC does
+not hold it. The twelve Monday questions are the raw material and all twelve are
+now written. Decide back matter, downloadable, or both.
+
+**Open: `docs/terminology.md` needs the author's edit.** TASKS.md is right that
+the definitions do not survive being left to a model, and the seeded ones have
+not been reviewed.
+
+**Open: the shred.** The whole point of this branch. See the top of this file.
 
 ---
 
