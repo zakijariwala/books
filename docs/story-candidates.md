@@ -52,6 +52,40 @@ markers, two recordings, no overlap.
 Candidate 1 also appears in `voice/pilot-ch01.md`, which is a voice test rather
 than manuscript and does not need its own recording.
 
+## Two outside reads, and where they landed
+
+The draft was reviewed twice by a reader who had it as a finished document. Both
+reads are recorded here because they converge, and because one corrected a
+ranking made during drafting.
+
+**Confirmed by the second read, with evidence produced afterwards:**
+
+- **Structural repetition.** All twelve chapters ended with the same five
+  identically titled sections. Twelve of twelve share three headings verbatim.
+  docs/chapter-template.md has been rewritten from a running order into a
+  coverage requirement as a result.
+- **Over-teaching.** Chapter 1 restates its central rent-versus-own trade four
+  times. CLAUDE.md now says to say it once.
+- **Padding toward the budget.** Eight of twelve chapters landed within 26 words
+  of the 3,800 floor, which is a fingerprint rather than a coincidence. The
+  budget is now a range with the failure mode named.
+
+**Where the outside read beat the drafting judgement:**
+
+- **Chapter 1 was under-ranked here.** It was not on the strong list. The better
+  argument: chapter 1 is the physical foundation the whole book rests on, and it
+  currently runs on an invented composite room. If that room is not real, every
+  later chapter inherits a hollow root. Promoted to the top group.
+- **Chapters 2 and 7 may overlap in felt experience.** The mechanisms differ, a
+  permanent inconsistency against a transient one, but both land on the reader as
+  "someone reported something the system denied." If both are told, the second
+  reads as a repeat. Decide rather than discover.
+
+**Ranking after both reads.** The top group is 7, 5, 1, 11, and then either 9 or
+12: 9 if the book needs the gap between what a contract pays and what a failure
+costs proven, 12 if the closer needs standing. Two independent reads agreed on 5,
+7 and 11 without conferring, which is the strongest signal in this table.
+
 ## Drafting notes, recorded before the shred
 
 The first draft is complete: twelve chapters, 45,891 words, every chapter in

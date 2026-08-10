@@ -1,16 +1,25 @@
 # Chapter template
 
-Every chapter follows this shape. The per-section budgets total 3,800 to 4,200
-words. The "Serves" column comes straight from docs/buyer.md's layer rule and is
-checked during /review. Read docs/toc.md, docs/concept-registry.md, and
-docs/terminology.md before drafting any chapter.
+**This is a coverage requirement, not a running order.** Every chapter must do
+the eight jobs below and must serve both readers. Nothing here says the jobs
+appear in a fixed sequence, under fixed headings, in every chapter.
+
+That distinction is not pedantry. It was written the other way first, as a
+numbered running order, and twelve chapters were drafted against it. The result:
+all twelve ended with the same five identically titled sections in the same
+order, and a reader sees the machinery by chapter three. The layer rule in
+docs/buyer.md asks that both readers be served. It never asked for identical
+headings.
+
+Read docs/toc.md, docs/concept-registry.md, and docs/terminology.md before
+drafting any chapter.
 
 Two failure tests from buyer.md, applied to every draft:
-- **The layer test.** If a reader stops after The Misconception, did they get
-  something worth the evening? If no, the chapter is written only for Meera and
-  the second layer quits.
-- **The reverse test.** If only the opening scene and the misconception are any
-  good, the chapter has drifted to general interest and Meera stops paying.
+- **The layer test.** If a reader stops once the belief has been corrected, did
+  they get something worth the evening? If no, the chapter is written only for
+  Meera and the second layer quits.
+- **The reverse test.** If only the opening and the correction are any good, the
+  chapter has drifted to general interest and Meera stops paying.
 
 ---
 
@@ -45,20 +54,41 @@ so treat them as support and not proof:
 
 ---
 
-## Sections, in order
+## The eight jobs
 
-| # | Section | Serves | Budget | What it does |
-|---|---------|--------|--------|--------------|
-| 1 | Opening scene | Second layer | 400-500 | A person, a place, a thing going wrong. No term the English major must already know. Start on the concrete noun. |
-| 2 | The business problem | Both | 350-450 | State it as money and consequence, not architecture. What does this cost, who pays, what happens when it breaks. |
-| 3 | Core explanation | Second layer first, Meera second | 900-1,100 | The mental model lands before the vocabulary. Analogy from the approved set. The photo-thread callback opens this section in 2-3 sentences. |
-| 4 | Worked example | Meera | 600-750 | Where the utility lives and where the terms get used properly. This is the section that earns O1-O6. |
-| 5 | Inside a real organization | Meera | 500-650 | A first-hand story or a borrowed case study. First-hand carries at least half. Mark missing first-hand beats `<!-- STORY-TODO: ... -->`. |
-| 6 | The misconception | Second layer | 350-450 | The wrong belief everyone holds, corrected. Needs no job to understand. For ch10 this section carries the chapter. |
-| 7 | Summary | Both | 200-300 | The three things a reader keeps. No new material. |
-| 8 | Monday question | Meera | 50-100 | One question she should ask at work. Second layer reads it and moves on. These twelve become the discussion guide. |
+Every chapter does all eight. The order is the writer's, chosen for the material.
+The rough sizes are there to stop one job eating the chapter, not to be totalled.
 
-Midpoint total: ~3,975 words.
+| Job | Serves | Rough size | What it has to accomplish |
+|-----|--------|-----------|---------------------------|
+| **Open on exposure** | Second layer | 400-500 | A person, a place, a thing going wrong. No term the English major must already know. Start on the concrete noun. |
+| **Name the stake** | Both | 350-450 | Money and consequence, not architecture. What it costs, who pays, what happens when it breaks. |
+| **Build the model** | Second layer first, Meera second | 900-1,100 | The mental model lands before the vocabulary. Analogy from the approved set. The photo-thread callback rides here, two or three sentences. |
+| **Work it through** | Meera | 600-750 | Where the utility lives and the terms get used properly. This earns O1-O6. |
+| **Show it happening** | Meera | 500-650 | A first-hand story or a borrowed case study. Missing first-hand beats are `<!-- STORY-TODO: ... -->`. |
+| **Correct the belief** | Second layer | 350-450 | The wrong thing everyone holds. Needs no job to understand. |
+| **Leave three things** | Both | 200-300 | What the reader keeps. No new material. |
+| **Hand her the move** | Meera | 50-100 | One question to ask at work. These twelve become the discussion guide. |
+
+## How to vary it
+
+The jobs are fixed. Everything else is a choice, and the choice should follow
+the material:
+
+- **Order.** A chapter with a strong incident can open on the incident and reach
+  the model late. A chapter built on a trade can open on the trade. Chapter 7
+  should let the reader feel the contradiction before it explains replication.
+- **Headings.** Name sections for their content, not their function. "The
+  librarian" and "Who sees stale data" are headings. "The business problem" is a
+  label from a template, and twelve of them in a row read as a curriculum.
+- **Merging.** Two jobs can share a section where they belong together. Naming
+  the stake and correcting the belief often want to be the same passage.
+- **The tail.** Do not let the last three jobs become a fixed closing sequence.
+  A chapter can end on the story, or on the misconception, or on the question.
+
+**The repetition test, applied across chapters rather than inside one:** lay the
+section headings of every drafted chapter side by side. If more than half share a
+heading, the book has a formula and the reader will find it before you do.
 
 ---
 
@@ -74,14 +104,17 @@ Midpoint total: ~3,975 words.
   a source and a fact-check date in docs/case-study-registry.md.
 - **Cost is taught as shape, not price.** No dollars, no rate cards. See
   CLAUDE.md hard content rules.
-- **Figures** are grayscale-safe, one idea each, at most six labels. Do not draw
-  them until three chapters are approved. Mark planned figures `<!-- FIGURE:
-  what it shows -->`.
+- **Figures** are grayscale-safe, one idea each, at most six labels. Mark planned
+  figures `<!-- FIGURE: what it shows -->`. Numbering and captions live in
+  figures/manifest.json. See docs/figures.md.
+- **Say it once.** Reach the insight, land it, move on. If an argument is made,
+  then restated for Meera, then restated in the summary, the reader has been told
+  three times that they were not trusted the first time.
 - **Voice** follows CLAUDE.md: rhythm and argument from voice/reference-article.md,
   first-hand register from voice/sample.md.
 
-## Optional sections
+## Omitting a job
 
-- **Inside a real organization** may be omitted only when a chapter has two
-  strong first-hand stories elsewhere and the word budget is tight. Note the
-  omission at the top of the draft so /review does not flag it as missing.
+Any job may be omitted when the chapter is genuinely better without it. Note the
+omission at the top of the draft with a reason, so /review reads it as a decision
+rather than a gap. The one job that cannot be dropped is opening on exposure.

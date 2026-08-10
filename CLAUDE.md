@@ -18,8 +18,19 @@ docs/chapter-template.md, docs/concept-registry.md, and docs/terminology.md.
 docs/buyer.md wins any argument about scope.
 
 ## Budget
-56,000 words total. 14 chapters as drafted, expected to land at 11 or 12.
-3,800 to 4,200 words per chapter. Report word count after every draft.
+56,000 words total, 12 chapters. Aim for 3,500 to 4,200 words per chapter and
+report the count after every draft.
+
+**The range is not a target. Never add words to reach it.** A chapter that says
+what it has to say in 3,400 words is finished at 3,400. Padding shows up as a
+third angle on an argument that already landed, and the reader feels it as being
+told they were not trusted the first time.
+
+The failure mode is documented because it happened. The first full draft was
+written against a 3,800 floor and eight of twelve chapters landed within 26 words
+of it, which is not natural variation. If the finished counts cluster at either
+end of the range, the range was being chased and the chapters need cutting rather
+than checking.
 
 ## Principles
 Story before concept. Business before implementation. Mental models before
