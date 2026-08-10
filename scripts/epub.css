@@ -1,0 +1,116 @@
+/* Kindle-friendly. Relative units only, no layout that a reflowable reader
+   will fight. The apparatus stays visibly separate from the prose. */
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.5;
+  margin: 0 5%;
+  text-align: left;
+}
+
+h1 {
+  font-size: 1.5em;
+  line-height: 1.25;
+  margin: 1.2em 0 0.4em;
+  font-weight: bold;
+  page-break-before: always;
+}
+
+h2 {
+  font-size: 1.1em;
+  margin: 1.6em 0 0.5em;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 1em;
+  margin: 1.3em 0 0.4em;
+  font-weight: bold;
+  font-style: italic;
+}
+
+p {
+  margin: 0 0 0.85em;
+  widows: 2;
+  orphans: 2;
+}
+
+/* Figures. Kindle scales images to the screen; keep them block and captioned. */
+figure {
+  margin: 1.4em 0;
+  text-align: center;
+  page-break-inside: avoid;
+}
+
+figure img {
+  max-width: 100%;
+  height: auto;
+}
+
+figcaption {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 0.75em;
+  line-height: 1.4;
+  color: #444444;
+  text-align: left;
+  margin-top: 0.5em;
+}
+
+/* Apparatus. Sans face so it never reads as the book. */
+.annot {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 0.8em;
+  line-height: 1.45;
+  margin: 1.3em 0;
+  padding: 0.6em 0.8em;
+  background: #f2f1ec;
+  page-break-inside: avoid;
+}
+
+.annot-h {
+  font-weight: bold;
+  font-size: 0.85em;
+  letter-spacing: 0.05em;
+  color: #555555;
+  margin-bottom: 0.3em;
+}
+
+.annot-b { color: #333333; }
+
+.annot.chap {
+  background: transparent;
+  border-left: 3px solid #bbbbbb;
+  padding: 0.2em 0 0.2em 0.7em;
+}
+
+.annot.story {
+  background: #f6f3e9;
+  border: 1px dashed #b8b096;
+}
+
+.frontnote {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 0.85em;
+  line-height: 1.5;
+  background: #f2f1ec;
+  padding: 0.9em 1em;
+  margin: 1.4em 0;
+}
+
+.frontnote h2 { margin-top: 0; font-size: 1em; }
+
+.partbreak {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 0.75em;
+  font-weight: bold;
+  letter-spacing: 0.2em;
+  color: #666666;
+  text-align: center;
+  margin: 2em 0 0.5em;
+  page-break-before: always;
+}
+
+code {
+  font-family: monospace;
+  font-size: 0.9em;
+}
