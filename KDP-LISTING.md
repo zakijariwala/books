@@ -69,7 +69,7 @@ keys committed to Git.
   beside Google Cloud
 - An architecture drill per chapter in Part I, with worked discussion
 - Appendix A: five one-page decision cheat sheets, one per domain
-- Appendix B: 59 exam traps, each giving the requirement, the answer that looks
+- Appendix B: 62 exam traps, each giving the requirement, the answer that looks
   right, and the one that scores
 - Mapping tables from AWS and Azure services to their Google Cloud equivalents
 
@@ -96,7 +96,7 @@ expects you to bring experience to it.
 <li>17 chapters and 33 figures, every architecture figure showing on-premises beside Google Cloud</li>
 <li>An architecture drill per chapter in Part I, with worked discussion</li>
 <li>Appendix A: five one-page decision cheat sheets, one per domain</li>
-<li>Appendix B: 59 exam traps, each giving the requirement, the answer that looks right, and the one that scores</li>
+<li>Appendix B: 62 exam traps, each giving the requirement, the answer that looks right, and the one that scores</li>
 <li>Mapping tables from AWS and Azure services to their Google Cloud equivalents</li>
 </ul>
 <p><b>Skip it if</b> you want a 500-page reference, you have never worked in a cloud, or you came for practice questions in bulk. This book teaches judgement and expects you to bring experience to it.</p>

@@ -113,7 +113,7 @@ The appendices were built to be excerpted, and cost nothing to repurpose:
   condensing a chapter to the sentence the exam gives you and the answer it
   selects. Natural lead magnets and LinkedIn carousels.
 - **Appendix B, exam traps.** Requirement, the answer that looks right, the one
-  that is. Grouped by domain, 59 of them. Individually postable; collectively a
+  that is. Grouped by domain, 62 of them. Individually postable; collectively a
   reason to buy.
 - **The database selection matrix (ch06) and security control mapping (ch09).**
   The two highest-yield pages and the most screenshot-able.

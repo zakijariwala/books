@@ -28,6 +28,7 @@ Memorystore
 Dataflow('s)?
 Dataproc
 Datastream
+Apigee
 Hyperdisk
 Coldline
 Nearline
@@ -56,6 +57,7 @@ Visio
 etcd
 IPsec
 onprem
+SFTP
 
 # Architecture vocabulary
 [Mm]icroservices

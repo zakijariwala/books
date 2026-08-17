@@ -181,20 +181,48 @@ manuscript has **no coverage of API management anywhere**: no Apigee, no API
 Gateway, no mention of the pattern. Ardwick has no partner-sharing requirement
 either, so the book never raises it. This is a live case study's central
 decision with zero treatment, and it is a coverage hole rather than a
-positioning one. Cheapest remedies, in order: a partner-API row in the ch09 or
-back-matter decision tables, an Appendix B trap on it, or a stated
-partner-sharing requirement added to Ardwick — which would also differentiate
-ch16 from the very scenario it resembles. Budget is available (§5).
+positioning one.
 
-## 5. Spare word budget — mostly spent
+**Both are now actioned.** The parallel is named in the Part II opener rather
+than disguised, and the paragraph turns it into an exercise: work Ardwick, then
+read KnightMotives and write down what it asks for that Ardwick does not. That
+sends the reader at the partner-sharing decision under their own steam.
 
-1,888 words remain of the 33,000 budget, raised from 28,000 during the editorial
-review. The drills, decision tables, and appendices consumed the rest.
+The API-management hole is closed away from ch16, deliberately. Adding a
+partner-sharing requirement to Ardwick would have made it *more* like
+KnightMotives, not less. It went to Northmoor in ch13 instead, which already
+stated in its premise that it processes results for eight hundred external
+clinics and then never said how those clinics get them — a hole in that
+chapter's own worked solution, quite apart from the coverage gap. Northmoor now
+carries the requirement, the SFTP-drop current state with two clinics polling
+hourly, a worked paragraph resolving it to Apigee or API Gateway, and a question
+in its exam-shapes list. ch09 gained the reference treatment beside
+Identity-Aware Proxy, including the distinction the exam tests between an API
+for on-demand records and an authorised view or Analytics Hub listing for a
+partner running their own queries. Two rows went into the ch09 mapping table,
+two into Appendix A's security sheet, three into Appendix B, and Apigee into the
+glossary. `accept.txt` gained `Apigee` and `SFTP`, without which Vale fails at
+error level and the pre-commit hook blocks.
 
-The obvious use for what is left is Appendix B, which has 59 traps against the
-review's suggested 100. Adding rows is cheap and the appendix is pure revision
-value. Anything else needs the budget raised again, which would start to cost
-the compression positioning in BOOK-SPEC.
+Still open from this section: re-run the comparison against Google's real exam
+guide, per the caveat above.
+
+## 5. Spare word budget — nearly spent
+
+436 words remain of the 33,000 budget, raised from 28,000 during the editorial
+review. The drills, decision tables, and appendices consumed most of it; the
+API-management work in §4 took about 720 words of what was left.
+
+That was the right call over the alternative, which was padding Appendix B
+towards the review's suggested 100 traps. A trap the book has no chapter behind
+is a trivia row, and the API gap was a live case study's central decision with
+no treatment anywhere.
+
+What remains does not fund another section. Appendix B stands at 62 traps and
+adding rows is still the cheapest way to spend the last of it, at roughly 15
+words a row. Anything larger needs the budget raised again, which starts to cost
+the compression positioning in BOOK-SPEC, and that positioning is what
+`KDP-LISTING.md` leads on.
 
 ## 6. Part II numbers — checked
 

@@ -130,6 +130,8 @@ the answer it selects.
 | Authorised user must not copy data out | VPC Service Controls |
 | Internal apps without a VPN | Identity-Aware Proxy |
 | Managed devices only | Context-aware access |
+| Partners get data, not access | Apigee or API Gateway |
+| Partners query a curated slice | Authorised view or Analytics Hub |
 | Prove who read the data | Data Access logs, enabled in advance |
 
 **Reliability and cost**
@@ -219,6 +221,9 @@ Grouped by area so you can revise a weak domain on its own.
 | Logs must survive an admin | Longer retention | Sink to another project |
 | Named compliance regime | Hand-built controls | Assured Workloads |
 | Store an API key | Environment variable | Secret Manager |
+| Share data with partners | A role in your project | Apigee or API Gateway |
+| Throttle a partner per contract | Load balancer rate limits | Quotas at the API layer |
+| Partner runs their own analysis | Export a copy to them | Authorised view or Analytics Hub |
 
 **Migration, reliability, and operations**
 
@@ -377,6 +382,10 @@ architects lose questions.
 # Glossary
 
 Google's names for things an experienced architect already understands.
+
+**Apigee** — API management, publishing an API to consumers outside your
+organisation with credentials, quotas, and analytics per consumer. API Gateway
+is the lighter option for the same job.
 
 **Autopilot** — GKE mode where Google manages nodes and you pay for pod
 requests.
