@@ -63,6 +63,29 @@ pages is fine; splitting a single trap's row across a page boundary is not.
   likely layout defect in this manuscript
 - Sources live in `diagrams/`; regenerate rather than editing the PNGs
 
+## Container metadata
+
+`make epub` and `make docx` both end by running `scripts/scrub_metadata.py`,
+which empties the generator strings Pandoc stamps into the files: `<Application>`
+and friends in the DOCX's `docProps/app.xml`, and the `<meta name="generator">`
+element in the EPUB package document. It also clears `cp:lastModifiedBy`, which
+on some toolchains carries an account name. None of this changes how the book
+renders.
+
+It deliberately leaves the bibliographic data from `metadata.yaml` alone: title,
+author, language, rights, date, and the EPUB identifier. Do not extend it to
+strip the identifier. That value is how a reader's device recognises an updated
+file as the same book, and losing it orphans every copy already downloaded from
+the replacement.
+
+If you re-export from Word after the layout pass, Word writes its own
+`<Application>` back in. Re-run the script on the final file, or accept it, but
+know which you chose:
+
+```
+python scripts/scrub_metadata.py build/book.docx
+```
+
 ## Front matter
 
 - Half title, title, copyright, contents, then "About this book"

@@ -125,9 +125,13 @@ def test_epub_zip_is_intact(epub):
 
 
 def test_epub_mimetype_is_first_and_correct(epub):
-    # The one ordering rule in the EPUB container spec.
+    # The one ordering rule in the EPUB container spec. The compression check
+    # matters because scrub_metadata.py rewrites this archive after Pandoc, and
+    # a rewrite that deflates mimetype leaves the entry first, correct, and the
+    # container invalid.
     assert epub.namelist()[0] == "mimetype"
     assert epub.read("mimetype").decode("utf-8").strip() == "application/epub+zip"
+    assert epub.getinfo("mimetype").compress_type == zipfile.ZIP_STORED
 
 
 def test_epub_manifest_lists_every_figure(epub):
@@ -139,6 +143,36 @@ def test_epub_has_a_spine_and_a_toc(epub):
     opf = epub.read(next(n for n in epub.namelist() if n.endswith(".opf"))).decode("utf-8")
     assert opf.count("<itemref") >= 17
     assert "nav" in opf or "ncx" in opf
+
+
+def test_epub_carries_no_generator_metadata(epub):
+    opf = epub.read(next(n for n in epub.namelist() if n.endswith(".opf"))).decode("utf-8")
+    assert "generator" not in opf
+    assert "pandoc" not in opf.lower()
+
+
+def test_epub_keeps_the_identifier_that_tracks_updates(epub):
+    # Scrubbing must take the toolchain's metadata and leave the author's. This
+    # identifier is how a reader's device recognises an updated file as the same
+    # book, so losing it orphans every copy already downloaded.
+    opf = epub.read(next(n for n in epub.namelist() if n.endswith(".opf"))).decode("utf-8")
+    identifier = re.search(r"<dc:identifier[^>]*>([^<]+)</dc:identifier>", opf)
+    assert identifier and identifier.group(1).strip()
+
+
+def test_docx_carries_no_application_fingerprint(docx):
+    if "docProps/app.xml" not in docx.namelist():
+        pytest.skip("Pandoc emitted no app.xml")
+    app = docx.read("docProps/app.xml").decode("utf-8")
+    for tag in ("Application", "AppVersion", "Company"):
+        found = re.search(rf"<{tag}>([^<]*)</{tag}>", app)
+        assert not (found and found.group(1).strip()), f"{tag} still populated"
+
+
+def test_docx_keeps_the_author(docx):
+    core = docx.read("docProps/core.xml").decode("utf-8")
+    creator = re.search(r"<dc:creator>([^<]*)</dc:creator>", core)
+    assert creator and creator.group(1).strip()
 
 
 def test_no_broken_image_references_in_epub(epub):

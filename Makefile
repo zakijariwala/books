@@ -75,14 +75,19 @@ reference: $(REFERENCE_DOCX)
 $(REFERENCE_DOCX): scripts/make_reference_docx.py
 	$(PY) scripts/make_reference_docx.py
 
+# scrub_metadata.py runs last in both targets: it strips the generator strings
+# Pandoc stamps into the containers, and it must see the final file, after
+# patch_docx.py has rewritten the DOCX zip.
 epub: diagrams
 	@mkdir -p $(BUILD)
 	pandoc $(PANDOC_COMMON) --css=$(EPUB_CSS) --epub-title-page=false -o $(BUILD)/book.epub
+	$(PY) scripts/scrub_metadata.py $(BUILD)/book.epub
 
 docx: diagrams $(REFERENCE_DOCX)
 	@mkdir -p $(BUILD)
 	pandoc $(PANDOC_COMMON) --reference-doc=$(REFERENCE_DOCX) -o $(BUILD)/book.docx
 	$(PY) scripts/patch_docx.py $(BUILD)/book.docx
+	$(PY) scripts/scrub_metadata.py $(BUILD)/book.docx
 
 lint:
 	vale --config=.vale.ini $(MANUSCRIPT)

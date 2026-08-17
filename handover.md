@@ -50,6 +50,7 @@ Here is the layout of the repository and the primary files you will interact wit
     *   [`normalize_image.py`](file:///D:/books/scripts/normalize_image.py) — Fits every figure to the text block, converts to grayscale, and fails the build if type would print below 8pt. Run it on any figure you render.
     *   [`make_reference_docx.py`](file:///D:/books/scripts/make_reference_docx.py) — Generates reference templates for Pandoc.
     *   [`patch_docx.py`](file:///D:/books/scripts/patch_docx.py) — Custom XML patches for word processor outputs.
+    *   [`scrub_metadata.py`](file:///D:/books/scripts/scrub_metadata.py) — Empties the generator strings Pandoc stamps into the DOCX and EPUB containers. Runs last in both build targets. Leaves the bibliographic metadata, including the EPUB identifier, alone; see PRODUCTION-NOTES.md.
 *   [`styles/`](file:///D:/books/styles/) — Formatting templates.
     *   [`epub.css`](file:///D:/books/styles/epub.css) — Custom stylesheet for the EPUB layout.
     *   [`reference.docx`](file:///D:/books/styles/reference.docx) — Pandoc Word template (6x9 trim, print margins).
