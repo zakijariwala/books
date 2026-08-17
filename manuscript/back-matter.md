@@ -4,9 +4,11 @@ The exam runs two hours and carries 50 to 60 multiple-choice and multiple-select
 questions, of which 20 to 30 per cent attach to two case studies shown on a
 split screen. It costs $200 and the certification is valid for two years. The
 renewal exam is shorter — around an hour and roughly 25 questions at about half
-the cost — and it weights whatever Google has added since, which currently means
-generative AI. Confirm all of this on the certification page before you book;
-these figures move.
+the cost — and it weights whatever Google has added since. At the time of
+writing that means a single generative-AI case study carrying almost the whole
+paper, so renewal is a narrower examination than the one you are sitting now,
+not a lighter version of it. Confirm all of this on the certification page
+before you book; these figures move.
 
 That arithmetic gives you a little over two minutes a question, and the case
 studies eat reading time before you answer anything.

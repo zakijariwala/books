@@ -3,9 +3,10 @@ title: "Google Cloud Professional Cloud Architect"
 subtitle: "A Decision-Mapping Guide for Experienced Architects"
 author:
   - "Zaki Jariwala"
-# Imprint is blocked on the publishing route: a trade publisher supplies its
-# own, a direct KDP launch needs one invented. See AGENT-BRIEF.md.
-publisher: "TODO Imprint"
+# The route is settled as a direct KDP launch, so this is KDP's own standard
+# string rather than an invented imprint. Replace it if a named imprint is
+# registered later; nothing downstream depends on the value. See AGENT-BRIEF.md.
+publisher: "Independently published"
 rights: "© 2026 Zaki Jariwala. All rights reserved."
 lang: en-GB
 date: "2026"
