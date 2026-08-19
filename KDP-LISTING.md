@@ -77,6 +77,13 @@ keys committed to Git.
 or you came for practice questions in bulk. This book teaches judgement and
 expects you to bring experience to it.
 
+**About the author**
+
+Zaki Jariwala is a systems engineer in banking infrastructure, four years into
+running the kind of regulated on-premises estate this book uses as its starting
+point. He holds the Google Cloud Professional Cloud Architect certification and
+wrote this, his first book, while preparing for the exam.
+
 ### HTML version
 
 ```html
@@ -100,9 +107,34 @@ expects you to bring experience to it.
 <li>Mapping tables from AWS and Azure services to their Google Cloud equivalents</li>
 </ul>
 <p><b>Skip it if</b> you want a 500-page reference, you have never worked in a cloud, or you came for practice questions in bulk. This book teaches judgement and expects you to bring experience to it.</p>
+<h4>About the author</h4>
+<p>Zaki Jariwala is a systems engineer in banking infrastructure, four years into running the kind of regulated on-premises estate this book uses as its starting point. He holds the Google Cloud Professional Cloud Architect certification and wrote this, his first book, while preparing for the exam.</p>
 ```
 
 ---
+
+## Author bio
+
+Amazon Author Central, plain text only. Amazon strips formatting from this
+field, so it carries no markup. Kept in the same register as the description.
+
+> Zaki Jariwala is a systems engineer working in banking infrastructure, where
+> four years of regulated on-premises estates gave him the starting point this
+> book keeps returning to: Active Directory, a SQL Server cluster, and a
+> Kubernetes estate somebody stood up years ago and nobody wants to touch. He
+> holds the Google Cloud Professional Cloud Architect certification.
+>
+> He writes for engineers who already have the craft and need the vocabulary.
+> His first book, *Google Cloud Professional Cloud Architect: A Decision-Mapping
+> Guide for Experienced Architects*, compresses Google's 182-hour learning path
+> into a two-hour read for architects crossing from another cloud. It carries no
+> console screenshots and no quota tables, both of which date inside a printing,
+> and spends its pages on the part that survives: which tradeoff you accepted,
+> and how you defend it when somebody asks.
+>
+> He takes positions. The book argues that most organisations running Kubernetes
+> should not be, and that team capability is an architectural constraint rather
+> than an excuse.
 
 ## Keywords
 

@@ -129,3 +129,8 @@ Mountkirk
 # Possessives Vale splits oddly
 balancer's
 else's
+
+# Author name and one compound the dictionary lacks
+Zaki
+Jariwala
+walkthroughs?

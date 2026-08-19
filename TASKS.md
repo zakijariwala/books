@@ -209,18 +209,19 @@ guide, per the caveat above.
 
 ## 5. Spare word budget — nearly spent
 
-436 words remain of the 33,000 budget, raised from 28,000 during the editorial
+185 words remain of the 33,000 budget, raised from 28,000 during the editorial
 review. The drills, decision tables, and appendices consumed most of it; the
-API-management work in §4 took about 720 words of what was left.
+API-management work in §4 took about 720 words of what was left, and the author
+bio added to `back-matter.md` took a further 102 once the certification came
+through.
 
 That was the right call over the alternative, which was padding Appendix B
 towards the review's suggested 100 traps. A trap the book has no chapter behind
 is a trivia row, and the API gap was a live case study's central decision with
 no treatment anywhere.
 
-What remains does not fund another section. Appendix B stands at 62 traps and
-adding rows is still the cheapest way to spend the last of it, at roughly 15
-words a row. Anything larger needs the budget raised again, which starts to cost
+What remains does not fund another section, and at 185 words it barely funds a
+dozen Appendix B rows at roughly 15 words each. Appendix B stands at 62 traps. Anything larger needs the budget raised again, which starts to cost
 the compression positioning in BOOK-SPEC, and that positioning is what
 `KDP-LISTING.md` leads on.
 
@@ -256,6 +257,13 @@ about two columns of short labels before type drops below the 8pt floor.
 
 ## 7b. Before uploading to KDP
 
+- **KDP account.** Created 2026-08-19.
+- **Author credential.** Done. Zaki passed the Professional Cloud Architect exam
+  on 2026-08-19, so the book can claim a certified author. An "About the author"
+  section closes `manuscript/back-matter.md`, and `KDP-LISTING.md` carries a
+  short version in both description variants plus a full Author Central bio.
+  Note the exam NDA: nothing recalled from sitting it may enter the manuscript,
+  and the volatile facts in §3 stay sourced from Google's public pages.
 - **Imprint name.** Done. `metadata.yaml` says "Independently published", KDP's
   own string, chosen because the route is settled as a direct KDP launch and an
   invented imprint buys nothing. Replace it if a named imprint is registered

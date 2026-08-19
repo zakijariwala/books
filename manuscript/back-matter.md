@@ -449,3 +449,17 @@ without a key file, from GKE or an external identity provider.
 - Google Cloud Skills Boost, for the hands-on labs this book does not replace
 - Release notes for the services in chapters 7 and 8, which move fastest and
   date any book soonest
+
+
+# About the author
+
+Zaki Jariwala is a systems engineer in banking infrastructure, four years into
+running the kind of regulated on-premises estate this book keeps using as its
+starting point. He holds the Google Cloud Professional Cloud Architect
+certification.
+
+This is his first book, and it is the one he wanted while preparing for the
+exam. The guides he found ran four hundred pages and rehearsed documentation
+Google publishes free; none of them explained how to strike two wrong answers
+off a scenario in ninety seconds. He wrote the short, argumentative version
+instead and left the console walkthroughs where they belong.
