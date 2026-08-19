@@ -31,6 +31,12 @@ MD_CHAPTERS := $(wildcard $(MANUSCRIPT)/front-matter.md) \
 # Pandoc splits this on the platform's path separator: ';' on Windows, ':'
 # elsewhere. Getting it wrong does not fail the build -- Pandoc warns
 # "Could not fetch resource" for every figure and emits a book with no images.
+#
+# The value must also stay quoted at the point of use. Make runs recipes through
+# sh here, and an unquoted ';' is a command separator: the recipe splits, pandoc
+# loses its -o and writes the book to stdout, and the run dies on "assets:
+# command not found". Double quotes rather than single, so a cmd.exe shell works
+# too.
 ifeq ($(OS),Windows_NT)
 PATH_SEP := ;
 else
@@ -39,7 +45,7 @@ endif
 RESOURCE_PATH := .$(PATH_SEP)$(ASSETS)$(PATH_SEP)$(ASSETS)/architecture$(PATH_SEP)$(ASSETS)/flowcharts
 
 PANDOC_COMMON := $(METADATA) $(MD_CHAPTERS) \
-	--resource-path=$(RESOURCE_PATH) \
+	--resource-path="$(RESOURCE_PATH)" \
 	--toc \
 	--top-level-division=chapter
 
